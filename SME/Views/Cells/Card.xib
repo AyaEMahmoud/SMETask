@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Card" customModule="Monsh2atTask" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Card" customModule="Monsh2atTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="161" height="219"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03B-pL-aCj">
+                    <rect key="frame" x="0.0" y="0.0" width="161" height="219"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1d07329c79980bb563646a63e80c07b3_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="QQu-tl-ZU2">
+                    <rect key="frame" x="43.5" y="26" width="74" height="74"/>
+                    <accessibility key="accessibilityConfiguration" identifier="Card"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73.900000000000006" id="a4Q-py-y2r"/>
+                        <constraint firstAttribute="height" constant="73.900000000000006" id="nXL-GF-a6b"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سارة الدرينى" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-6o-ttC">
+                    <rect key="frame" x="0.0" y="110" width="161" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19.899999618530273"/>
+                    <color key="textColor" name="Dark slate gray"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9D-WI-T27">
+                    <rect key="frame" x="0.0" y="144" width="161" height="14"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="chK-ZJ-WtF"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المالية ، التسويق ، العمليات.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzy-RY-WSk">
+                    <rect key="frame" x="0.0" y="165.5" width="161" height="16.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13.899999618530273"/>
+                    <color key="textColor" name="Light slate gray "/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متاح الآن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-ZX-0ar">
+                    <rect key="frame" x="0.0" y="187" width="161" height="19"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15.899999618530273"/>
+                    <color key="textColor" name="Mantis"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-online" translatesAutoresizingMaskIntoConstraints="NO" id="Pp6-q7-Nxc">
+                    <rect key="frame" x="40.5" y="82" width="19" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="19" id="EBi-u7-0Uo"/>
+                        <constraint firstAttribute="height" constant="18" id="UxL-o8-lJB"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="a9D-WI-T27" secondAttribute="trailing" id="4aU-Un-baW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="L9e-6o-ttC" secondAttribute="trailing" id="54r-jv-1rF"/>
+                <constraint firstItem="QQu-tl-ZU2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cz4-cu-sWM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kzy-RY-WSk" secondAttribute="trailing" id="QoV-cQ-vPG"/>
+                <constraint firstItem="deS-ZX-0ar" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SpB-W1-zG3"/>
+                <constraint firstItem="Kzy-RY-WSk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XPn-mB-ULB"/>
+                <constraint firstItem="Kzy-RY-WSk" firstAttribute="top" secondItem="a9D-WI-T27" secondAttribute="bottom" constant="7.5" id="gGD-dh-Ys7"/>
+                <constraint firstItem="Pp6-q7-Nxc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40.399999999999999" id="hZh-ze-Un6"/>
+                <constraint firstItem="deS-ZX-0ar" firstAttribute="top" secondItem="Kzy-RY-WSk" secondAttribute="bottom" constant="5" id="iAp-oU-l8y"/>
+                <constraint firstItem="a9D-WI-T27" firstAttribute="top" secondItem="L9e-6o-ttC" secondAttribute="bottom" constant="10" id="mMv-JM-4Xu"/>
+                <constraint firstItem="a9D-WI-T27" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oQa-6k-hUr"/>
+                <constraint firstItem="QQu-tl-ZU2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="26" id="pGK-ua-ijk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="deS-ZX-0ar" secondAttribute="trailing" id="qHH-l2-XIK"/>
+                <constraint firstItem="L9e-6o-ttC" firstAttribute="top" secondItem="QQu-tl-ZU2" secondAttribute="bottom" constant="10" id="sNv-6n-f5c"/>
+                <constraint firstItem="Pp6-q7-Nxc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="82" id="xJe-Fh-76I"/>
+                <constraint firstItem="L9e-6o-ttC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xUm-xF-5u4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="activeStatus" destination="deS-ZX-0ar" id="Peg-OH-3xE"/>
+                <outlet property="activeStatusIcon" destination="Pp6-q7-Nxc" id="8WT-Dl-dBn"/>
+                <outlet property="cardInfo" destination="Kzy-RY-WSk" id="QnW-RD-SnV"/>
+                <outlet property="cardName" destination="L9e-6o-ttC" id="7by-mx-IkR"/>
+                <outlet property="cardRating" destination="a9D-WI-T27" id="1Qq-nb-lZ7"/>
+                <outlet property="cardView" destination="03B-pL-aCj" id="3j4-gO-Sj9"/>
+                <outlet property="imageView" destination="QQu-tl-ZU2" id="ECn-ya-3vX"/>
+            </connections>
+            <point key="canvasLocation" x="56.799999999999997" y="-65.217391304347828"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="1d07329c79980bb563646a63e80c07b3_icon.png" width="512" height="512"/>
+        <image name="ic-online" width="19" height="18"/>
+        <namedColor name="Dark slate gray">
+            <color red="0.19215686274509805" green="0.30196078431372547" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Light slate gray ">
+            <color red="0.47058823529411764" green="0.53725490196078429" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Mantis">
+            <color red="0.36100000143051147" green="0.70599997043609619" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
