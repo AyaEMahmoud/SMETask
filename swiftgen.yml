@@ -1,0 +1,13 @@
+fonts:
+  inputs: SME/Resources/Fonts
+ 
+  outputs:
+    - templateName: swift5
+      output: SME/Resources/Fonts/Generated/Fonts.swift
+xcassets:
+  - inputs:
+      - SME/Resources/Assets/Colors.xcassets
+      - SME/Resources/Assets/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: SME/Resources/Assets/Generated/Assets.swift

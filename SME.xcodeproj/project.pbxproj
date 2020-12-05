@@ -32,6 +32,14 @@
 		E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D79257B6ABA009198C4 /* CardViewController.xib */; };
 		E0E70D80257B6B43009198C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D7E257B6B43009198C4 /* Card.swift */; };
 		E0E70D81257B6B43009198C4 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D7F257B6B43009198C4 /* Card.xib */; };
+		E0E70D8E257B6BDA009198C4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D85257B6BDA009198C4 /* Fonts.swift */; };
+		E0E70D8F257B6BDA009198C4 /* 29LTAzer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */; };
+		E0E70D90257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */; };
+		E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D8A257B6BDA009198C4 /* Assets.swift */; };
+		E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8B257B6BDA009198C4 /* Colors.xcassets */; };
+		E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8C257B6BDA009198C4 /* Assets.xcassets */; };
+		E0E70D94257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */; };
+		E0E70D96257B6BF5009198C4 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D95257B6BF5009198C4 /* swiftgen.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +83,14 @@
 		E0E70D79257B6ABA009198C4 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		E0E70D7E257B6B43009198C4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E0E70D7F257B6B43009198C4 /* Card.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
+		E0E70D85257B6BDA009198C4 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29LTAzer.ttf; sourceTree = "<group>"; };
+		E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SF_Pro_Text_Semibold.ttf; sourceTree = "<group>"; };
+		E0E70D8A257B6BDA009198C4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E0E70D8B257B6BDA009198C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E0E70D8C257B6BDA009198C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1d07329c79980bb563646a63e80c07b3_icon.png; sourceTree = "<group>"; };
+		E0E70D95257B6BF5009198C4 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 				E0E70D5C257B664D009198C4 /* .gitignore */,
 				E0E70D5E257B665A009198C4 /* Cartfile */,
 				E0E70D59257B660E009198C4 /* .swiftlint.yml */,
+				E0E70D95257B6BF5009198C4 /* swiftgen.yml */,
 				E0E70D44257B65B2009198C4 /* SME */,
 				E0E70D43257B65B2009198C4 /* Products */,
 				E0E70D60257B698D009198C4 /* Frameworks */,
@@ -119,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E70D7C257B6B43009198C4 /* Views */,
+				E0E70D82257B6BDA009198C4 /* Resources */,
 				E0E70D45257B65B2009198C4 /* AppDelegate.swift */,
 				E0E70D47257B65B2009198C4 /* SceneDelegate.swift */,
 				E0E70D4E257B65B4009198C4 /* Assets.xcassets */,
@@ -159,6 +177,52 @@
 				E0E70D7F257B6B43009198C4 /* Card.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0E70D82257B6BDA009198C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D83257B6BDA009198C4 /* Fonts */,
+				E0E70D88257B6BDA009198C4 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0E70D83257B6BDA009198C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D84257B6BDA009198C4 /* Generated */,
+				E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */,
+				E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E0E70D84257B6BDA009198C4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D85257B6BDA009198C4 /* Fonts.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E0E70D88257B6BDA009198C4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D89257B6BDA009198C4 /* Generated */,
+				E0E70D8B257B6BDA009198C4 /* Colors.xcassets */,
+				E0E70D8C257B6BDA009198C4 /* Assets.xcassets */,
+				E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E0E70D89257B6BDA009198C4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D8A257B6BDA009198C4 /* Assets.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,11 +286,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E70D96257B6BF5009198C4 /* swiftgen.yml in Resources */,
 				E0E70D5F257B665A009198C4 /* Cartfile in Resources */,
+				E0E70D90257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf in Resources */,
+				E0E70D94257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png in Resources */,
+				E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
 				E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */,
 				E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */,
+				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
 				E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */,
+				E0E70D8F257B6BDA009198C4 /* 29LTAzer.ttf in Resources */,
 				E0E70D4F257B65B4009198C4 /* Assets.xcassets in Resources */,
 				E0E70D81257B6B43009198C4 /* Card.xib in Resources */,
 			);
@@ -284,6 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */,
+				E0E70D8E257B6BDA009198C4 /* Fonts.swift in Sources */,
+				E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */,
 				E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */,
 				E0E70D7A257B6ABA009198C4 /* CardViewController.swift in Sources */,
 				E0E70D80257B6B43009198C4 /* Card.swift in Sources */,
