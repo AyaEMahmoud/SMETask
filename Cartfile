@@ -1,0 +1,6 @@
+github "Moya/Moya" ~> 14.0
+github "Interactive-Studio/Windless" ~> 0.1.5
+github "LeoMobileDeveloper/PullToRefreshKit"
+github "tristanhimmelman/ObjectMapper" ~> 3.5 
+github "onevcat/Kingfisher" ~> 5.0
+github "evgenyneu/Cosmos" ~> 23.0
