@@ -10,10 +10,10 @@ import Foundation
 struct Office: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case id
-    case center
+    case id = "id"
+    case center = "center"
     case createdAt = "created_at"
-    case name
+    case name = "name"
   }
 
   var id: String?

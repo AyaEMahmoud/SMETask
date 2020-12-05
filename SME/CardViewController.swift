@@ -13,6 +13,8 @@ import Windless
 
 class CardViewController: UIViewController {
 
+    @IBOutlet weak var bannerTopView: UIView!
+    @IBOutlet weak var bannerBottomView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -20,19 +22,35 @@ class CardViewController: UIViewController {
     var profiles = [Profiles]()
     var page = 1
     var windelssCount = 10;
-
+    
+    let networkManager = ProfilesService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.addObserver(self,
                                         forKeyPath: "contentSize",
                                         options: .new,
                                         context: nil)
+        
+        self.roundCorners(view: bannerBottomView, corners: [.bottomRight], radius: 90.0)
+//        self.roundCorners(view: bannerTopView, corners: [.bottomRight], radius: 90.0)
+
+//        let gradient = CAGradientLayer()
+//        gradient.frame = bannerTopView.bounds
+//        gradient.colors = [Asset.Colors.seaBlue, Asset.Colors.pacificBlue]
+//        bannerTopView.layer.insertSublayer(gradient, at: 0)
+//        bannerBottomView.layer.insertSublayer(gradient, at: 0)
+
         registerCell()
 //        startWindless()
 //        initLoadMore()
         getProfiles()
     }
 
+    func greadiant(view: UIView) {
+        
+    }
+    
     func registerCell() {
         collectionView.register(UINib(nibName: "Card", bundle: nil), forCellWithReuseIdentifier: "Card")
       }
@@ -84,21 +102,19 @@ class CardViewController: UIViewController {
     
     func getProfiles() {
          let profilesRequest = ProfilesRequest(byParameter: "نافذة الاستفسارات العامة", page: page)
-         ProfilesService.getProfiels(profilesRequest: profilesRequest) { (profiles, error) in
+         networkManager.getProfiles(profilesRequest: profilesRequest) { (profiles, error) in
              self.collectionView.switchRefreshFooter(to: .normal)
              self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
              self.collectionView.windless.end()
              self.windelssCount = 0
 
+            print("error \(error)")
             if error == nil {
                  if self.page == 1 {
-                     self.profiles = profiles
-                    print("profiles.isEmpty \(profiles.count)")
+                    self.profiles = profiles
 
                  } else {
-                     self.profiles.append(contentsOf: profiles)
-                    print("profiles.isEmpty \(profiles.count)")
-
+                    self.profiles.append(contentsOf: profiles)
                  }
                  self.collectionView.reloadData()
              } else {
@@ -111,6 +127,13 @@ class CardViewController: UIViewController {
              }
          }
      }
+    
+    func roundCorners(view:UIView, corners: UIRectCorner, radius: CGFloat) {
+            let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            view.layer.mask = mask
+    }
 }
 
 extension CardViewController: UICollectionViewDelegate {
@@ -131,7 +154,7 @@ extension CardViewController: UICollectionViewDataSource {
         
         print("profiles.isEmpty \(profiles.isEmpty)")
         
-        if profiles.count > 0 {
+        if !profiles.isEmpty {
             let card = profiles[indexPath.row]
             cell?.cardName.text = card.ssoUser?.fullName
             if !(card.isAvailable ?? false) {

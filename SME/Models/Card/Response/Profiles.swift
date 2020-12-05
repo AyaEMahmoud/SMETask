@@ -15,16 +15,16 @@ struct Profiles: Codable {
     case isOnline = "is_online"
     case joinNowEnabled = "join_now_enabled"
     case ssoUser = "sso_user"
-    case zoom
-    case rating
-    case availability
+    case zoom = "zoom"
+    case rating = "rating"
+    case availability = "availability"
     case chatStatus = "chat_status"
-    case id
-    case office
-    case subject
+    case id = "id"
+    case office = "office"
+    case subject = "subject"
     case createdAt = "created_at"
-//    case interests
-    case bsa
+    case interests = "interests"
+    case bsa = "bsa"
   }
 
   var onlineEnabled: Bool?
@@ -40,7 +40,7 @@ struct Profiles: Codable {
   var office: Office?
   var subject: Subject?
   var createdAt: Int?
-//  var interests: Any?
+  var interests: [String]?
   var bsa: Bsa?
 
 
@@ -60,8 +60,71 @@ struct Profiles: Codable {
     office = try container.decodeIfPresent(Office.self, forKey: .office)
     subject = try container.decodeIfPresent(Subject.self, forKey: .subject)
     createdAt = try container.decodeIfPresent(Int.self, forKey: .createdAt)
-//    interests = try container.decodeIfPresent([].self, forKey: .interests)
+    interests = try container.decodeIfPresent([String].self, forKey: .interests)
     bsa = try container.decodeIfPresent(Bsa.self, forKey: .bsa)
   }
 
 }
+
+//import ObjectMapper
+//
+//class Profiles: Mappable {
+//    
+//    // MARK: Declaration for string constants to be used to decode and also serialize.
+//    private struct SerializationKeys {
+//       static let profiles = "data"
+//       static let onlineEnabled = "online_enabled"
+//       static let isAvailable = "is_available"
+//       static let isOnline = "is_online"
+//       static let joinNowEnabled = "join_now_enabled"
+//       static let ssoUser = "sso_user"
+//       static let zoom = "zoom"
+//       static let rating = "rating"
+//       static let availability = "availability"
+//       static let chatStatus = "chat_status"
+//       static let id = "id"
+//       static let office = "office"
+//       static let subject = "subject"
+//       static let createdAt = "created_at"
+//       static let interests = "interests"
+//       static let bsa = "bsa"
+//    }
+//    
+//    // MARK: Properties
+//     var onlineEnabled: Bool?
+//      var isAvailable: Bool?
+//      var isOnline: Bool?
+//      var joinNowEnabled: Bool?
+//      var ssoUser: SsoUser?
+//      var zoom: Zoom?
+//      var rating: Int?
+//      var availability: Int?
+//      var chatStatus: Bool?
+//      var id: String?
+//      var office: Office?
+//      var subject: Subject?
+//      var createdAt: Int?
+//      var interests: Any?
+//      var bsa: Bsa?
+//    
+//    required init?(map: Map) { }
+//    
+//    func mapping(map: Map) {
+//        onlineEnabled <- map[SerializationKeys.onlineEnabled]
+//        isOnline <- map[SerializationKeys.isOnline]
+//        isAvailable <- map[SerializationKeys.isAvailable]
+//        joinNowEnabled <- map[SerializationKeys.joinNowEnabled]
+//        ssoUser <- map[SerializationKeys.ssoUser]
+//        zoom <- map[SerializationKeys.zoom]
+//        rating <- map[SerializationKeys.rating]
+//        availability <- map[SerializationKeys.availability]
+//        chatStatus <- map[SerializationKeys.chatStatus]
+//        id <- map[SerializationKeys.id]
+//        office <- map[SerializationKeys.office]
+//        subject <- map[SerializationKeys.subject]
+//        createdAt <- map[SerializationKeys.createdAt]
+//        bsa <- map[SerializationKeys.bsa]
+//        interests <- map[SerializationKeys.interests]
+//    }
+//    
+//}

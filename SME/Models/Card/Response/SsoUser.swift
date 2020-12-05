@@ -10,12 +10,12 @@ import Foundation
 struct SsoUser: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case id
-    case gender
+    case id = "id"
+    case gender = "gender"
     case fullName = "full_name"
     case createdAt = "created_at"
     case nationalIdentity = "national_identity"
-    case user
+    case user = "user"
   }
 
   var id: String?

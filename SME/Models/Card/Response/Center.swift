@@ -10,13 +10,13 @@ import Foundation
 struct Center: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case id
-    case latitude
-    case city
-    case longitude
+    case id = "id"
+    case latitude = "latitude"
+    case city = "city"
+    case longitude = "longitude"
     case createdAt = "created_at"
-    case name
-    case address
+    case name = "name"
+    case address = "address"
   }
 
   var id: String?

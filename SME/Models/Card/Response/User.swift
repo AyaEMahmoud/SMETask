@@ -10,9 +10,9 @@ import Foundation
 struct User: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case email
+    case email = "email"
     case createdAt = "created_at"
-    case id
+    case id = "id"
   }
 
   var email: String?

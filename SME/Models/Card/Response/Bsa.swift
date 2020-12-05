@@ -10,7 +10,7 @@ import Foundation
 struct Bsa: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case id
+    case id = "id"
     case createdAt = "created_at"
   }
 

@@ -10,9 +10,9 @@ import Foundation
 struct City: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case id
+    case id = "id"
     case createdAt = "created_at"
-    case name
+    case name = "name"
   }
 
   var id: String?

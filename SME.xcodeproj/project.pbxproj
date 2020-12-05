@@ -54,6 +54,7 @@
 		E0E70DCF257B74FA009198C4 /* SsoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DC5257B74F9009198C4 /* SsoUser.swift */; };
 		E0E70DD0257B74FA009198C4 /* Bsa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DC6257B74FA009198C4 /* Bsa.swift */; };
 		E0E70DD1257B74FA009198C4 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DC7257B74FA009198C4 /* Center.swift */; };
+		E0E70DD5257BC585009198C4 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DD4257BC585009198C4 /* Networkable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +120,7 @@
 		E0E70DC5257B74F9009198C4 /* SsoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SsoUser.swift; sourceTree = "<group>"; };
 		E0E70DC6257B74FA009198C4 /* Bsa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bsa.swift; sourceTree = "<group>"; };
 		E0E70DC7257B74FA009198C4 /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
+		E0E70DD4257BC585009198C4 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				E0E70D53257B65B4009198C4 /* Info.plist */,
 				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
 				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
+				E0E70DD4257BC585009198C4 /* Networkable.swift */,
 			);
 			path = SME;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				E0E70DCC257B74FA009198C4 /* Profiles.swift in Sources */,
 				E0E70DD1257B74FA009198C4 /* Center.swift in Sources */,
 				E0E70DCE257B74FA009198C4 /* Zoom.swift in Sources */,
+				E0E70DD5257BC585009198C4 /* Networkable.swift in Sources */,
 				E0E70D9C257B7401009198C4 /* ProfilesApi.swift in Sources */,
 				E0E70DCD257B74FA009198C4 /* Subject.swift in Sources */,
 				E0E70DA9257B745E009198C4 /* ProfilesRequest.swift in Sources */,

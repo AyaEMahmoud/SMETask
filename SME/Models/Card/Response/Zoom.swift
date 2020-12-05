@@ -11,9 +11,9 @@ struct Zoom: Codable {
 
   enum CodingKeys: String, CodingKey {
     case meetingPassword = "meeting_password"
-    case pid
-    case id
-    case email
+    case pid = "pid"
+    case id = "id"
+    case email = "email"
     case createdAt = "created_at"
   }
 
