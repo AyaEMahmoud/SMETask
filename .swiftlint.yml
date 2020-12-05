@@ -6,6 +6,8 @@ disabled_rules: # rule identifiers to exclude from running
  - control_statement
  - trailing_newline
  - vertical_whitespace
+ - empty_count
+ - force_cast
  
 excluded:
   - Frameworks
@@ -52,7 +54,7 @@ vertical_parameter_alignment_on_call: error
 multiline_parameters: error
 notification_center_detachment: error
 
-warning_threshold: 25
+warning_threshold: 70
 
 line_length:
   error: 180
@@ -73,7 +75,7 @@ number_separator:
   minimum_length: 5
 
 type_name:
-  min_length: 4 # only warning
+  min_length: 3 # only warning
   max_length: # warning and error
     warning: 50
     error: 60

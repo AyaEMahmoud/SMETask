@@ -13,11 +13,11 @@ class Card: UICollectionViewCell {
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var imageView: UIImageView!
     
-    @IBOutlet private weak var cardRating: UIView!
-    @IBOutlet private weak var activeStatus: UILabel!
-    @IBOutlet private weak var cardInfo: UILabel!
-    @IBOutlet private weak var cardName: UILabel!
-    @IBOutlet private weak var activeStatusIcon: UIImageView!
+    @IBOutlet weak var cardRating: UIView!
+    @IBOutlet weak var activeStatus: UILabel!
+    @IBOutlet weak var cardInfo: UILabel!
+    @IBOutlet weak var cardName: UILabel!
+    @IBOutlet weak var activeStatusIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +28,9 @@ class Card: UICollectionViewCell {
         cardView.layer.cornerRadius = 16
         
     }
+    
+//    func setCellData(profile: Profiles) {
+//        self.activeStatus
+//    }
     
 }
