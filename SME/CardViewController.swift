@@ -10,11 +10,12 @@ import UIKit
 import Kingfisher
 import PullToRefreshKit
 import Windless
+import Network
 
 class CardViewController: UIViewController {
 
-    @IBOutlet weak var bannerTopView: UIView!
-    @IBOutlet weak var bannerBottomView: UIView!
+    @IBOutlet private weak var bannerTopView: UIView!
+    @IBOutlet private weak var bannerBottomView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -22,19 +23,16 @@ class CardViewController: UIViewController {
     var profiles = [Profiles]()
     var page = 1
     var windelssCount = 10;
-    
-    let networkManager = ProfilesService()
-    
+    let monitor = NWPathMonitor()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.collectionView.addObserver(self,
                                         forKeyPath: "contentSize",
                                         options: .new,
                                         context: nil)
         
-        self.roundCorners(view: bannerBottomView, corners: [.bottomRight], radius: 90.0)
-//        self.roundCorners(view: bannerTopView, corners: [.bottomRight], radius: 90.0)
-
 //        let gradient = CAGradientLayer()
 //        gradient.frame = bannerTopView.bounds
 //        gradient.colors = [Asset.Colors.seaBlue, Asset.Colors.pacificBlue]
@@ -42,13 +40,27 @@ class CardViewController: UIViewController {
 //        bannerBottomView.layer.insertSublayer(gradient, at: 0)
 
         registerCell()
+        inputTextFieldStyle()
+        gradient()
 //        startWindless()
 //        initLoadMore()
-        getProfiles()
+//        getProfiles()
     }
 
-    func greadiant(view: UIView) {
-        
+    func gradient() {
+         let gradientLayer: CAGradientLayer = CAGradientLayer()
+         gradientLayer.frame.size = self.bannerTopView.frame.size
+         gradientLayer.colors = [Asset.Colors.pacificBlue, Asset.Colors.seaBlue]
+         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+         bannerTopView.layer.addSublayer(gradientLayer)
+    }
+    
+    fileprivate func inputTextFieldStyle() {
+        bannerBottomView.layer.masksToBounds = true
+        bannerBottomView.layer.borderWidth = 1
+        bannerBottomView.layer.cornerRadius = 20
+        bannerBottomView.layer.maskedCorners = [.layerMaxXMaxYCorner]
     }
     
     func registerCell() {
@@ -61,7 +73,13 @@ class CardViewController: UIViewController {
              self.getProfiles()
          }
      }
-
+    
+    func initPullToRefresh() {
+           self.collectionView.configRefreshHeader(container: self) {
+               self.page = 1
+               self.getProfiles()
+           }
+       }
      func startWindless() {
          self.collectionView.windless
              .apply {
@@ -81,7 +99,6 @@ class CardViewController: UIViewController {
         if (keyPath == "contentSize"),
             let newvalue = change?[.newKey],
             let newsize = newvalue as? CGSize {
-            
             
             if newsize.height == 0 {
                 self.collectionViewHeightConstraint.constant = 752
@@ -127,13 +144,6 @@ class CardViewController: UIViewController {
              }
          }
      }
-    
-    func roundCorners(view:UIView, corners: UIRectCorner, radius: CGFloat) {
-            let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            let mask = CAShapeLayer()
-            mask.path = path.cgPath
-            view.layer.mask = mask
-    }
 }
 
 extension CardViewController: UICollectionViewDelegate {
@@ -145,7 +155,8 @@ extension CardViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         print("profiles.isEmpty \(profiles.count)")
-        return profiles.count
+//        return profiles.count
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -164,7 +175,7 @@ extension CardViewController: UICollectionViewDataSource {
                 cell?.activeStatusIcon.isHidden = true
             }
             cell?.cardInfo.text = card.subject?.title
-//            cell?.cardRating.rating =
+//            cell?.cardRating.
 //            if let imageString = movie.posterPath, let url = URL(string: APPURL.BaseURL + imageString) {
 //                print("url \(url)")
 //                cell?.movieImage.kf.setImage(with: url)
@@ -179,8 +190,8 @@ extension CardViewController: UICollectionViewDataSource {
 extension CardViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
-                           layout collectionViewLayout: UICollectionViewLayout,
-                           sizeForItemAt indexPath: IndexPath)
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath)
         -> CGSize {
         return CGSize(width: 160.81, height: 219.73)
     }

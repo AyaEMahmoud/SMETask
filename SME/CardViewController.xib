@@ -28,9 +28,28 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPN-9Z-2iz">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التمويل و الاستثمار" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyq-NP-8rp">
+                                    <rect key="frame" x="222" y="95" width="174" height="26"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="SvQ-O0-eeZ">
+                                    <rect key="frame" x="385" y="56" width="11" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="PFl-sz-hEc"/>
+                                        <constraint firstAttribute="width" constant="11" id="dK4-tD-TNm"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" name="Sea blue"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="SvQ-O0-eeZ" secondAttribute="trailing" constant="18" id="AMT-RF-7t1"/>
+                                <constraint firstAttribute="trailing" secondItem="zyq-NP-8rp" secondAttribute="trailing" constant="18" id="HXe-cX-kSL"/>
+                                <constraint firstItem="SvQ-O0-eeZ" firstAttribute="top" secondItem="xPN-9Z-2iz" secondAttribute="top" constant="56" id="Zsk-N7-DnY"/>
                                 <constraint firstAttribute="height" constant="135" id="c4H-W2-gkx"/>
+                                <constraint firstItem="zyq-NP-8rp" firstAttribute="top" secondItem="xPN-9Z-2iz" secondAttribute="top" constant="95" id="usg-An-LBU"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPn-Vm-eRL">
@@ -122,6 +141,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back" width="12" height="21"/>
         <namedColor name="Ghost white">
             <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

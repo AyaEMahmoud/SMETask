@@ -55,6 +55,8 @@
 		E0E70DD0257B74FA009198C4 /* Bsa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DC6257B74FA009198C4 /* Bsa.swift */; };
 		E0E70DD1257B74FA009198C4 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DC7257B74FA009198C4 /* Center.swift */; };
 		E0E70DD5257BC585009198C4 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DD4257BC585009198C4 /* Networkable.swift */; };
+		E0E70DD9257CAD7E009198C4 /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70DD8257CAD7E009198C4 /* NoInternetView.xib */; };
+		E0E70DDB257CB096009198C4 /* UIButton+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +123,8 @@
 		E0E70DC6257B74FA009198C4 /* Bsa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bsa.swift; sourceTree = "<group>"; };
 		E0E70DC7257B74FA009198C4 /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		E0E70DD4257BC585009198C4 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
+		E0E70DD8257CAD7E009198C4 /* NoInternetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
+		E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
 				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
 				E0E70DD4257BC585009198C4 /* Networkable.swift */,
+				E0E70DD8257CAD7E009198C4 /* NoInternetView.xib */,
+				E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */,
 			);
 			path = SME;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				E0E70D94257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png in Resources */,
 				E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
+				E0E70DD9257CAD7E009198C4 /* NoInternetView.xib in Resources */,
 				E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */,
 				E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */,
 				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
@@ -480,6 +487,7 @@
 				E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */,
 				E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */,
 				E0E70D7A257B6ABA009198C4 /* CardViewController.swift in Sources */,
+				E0E70DDB257CB096009198C4 /* UIButton+Extentions.swift in Sources */,
 				E0E70D9D257B7401009198C4 /* ProfilesService.swift in Sources */,
 				E0E70DCF257B74FA009198C4 /* SsoUser.swift in Sources */,
 				E0E70D80257B6B43009198C4 /* Card.swift in Sources */,

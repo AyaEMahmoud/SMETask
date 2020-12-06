@@ -40,7 +40,9 @@ extension ProfilesApi: TargetType {
         switch self {
         case .getProfiles(let profilesRequest):
             return .requestParameters(parameters:
-                [ProfilesParamters.byParameter: profilesRequest.byParameter, ProfilesParamters.page: profilesRequest.page], encoding: URLEncoding.default)
+                [ProfilesParamters.byParameter: profilesRequest.byParameter,
+                 ProfilesParamters.page: profilesRequest.page],
+                                      encoding: URLEncoding.default)
         }
     }
     

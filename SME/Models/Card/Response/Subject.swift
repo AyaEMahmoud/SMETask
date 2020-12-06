@@ -10,9 +10,9 @@ import Foundation
 struct Subject: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case title = "title"
-    case type = "type"
-    case id = "id"
+    case title
+    case type
+    case id
   }
 
   var title: String?
