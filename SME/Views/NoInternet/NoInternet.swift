@@ -10,6 +10,10 @@ import UIKit
 
 class NoInternet: UIView {
     
+    @IBOutlet weak var tryAgainButton: UIButton!
+    @IBOutlet weak var checkConnectionLable: UILabel!
+    @IBOutlet weak var noInternetLable: UILabel!
+    
     init() {
       super.init(frame: CGRect.zero)
       self.setupView()
@@ -24,10 +28,12 @@ class NoInternet: UIView {
     }
     
     private func setupView() {
-      guard let view = loadViewFromNib() else { return }
-      view.frame = self.bounds
-      view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-      self.addSubview(view)
+        guard let view = loadViewFromNib() else { return }
+        noInternetLable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 18.2)
+        checkConnectionLable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 18.2)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(view)
     }
     
 }

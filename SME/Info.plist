@@ -6,6 +6,8 @@
 	<array>
 		<string>29LTAzer.ttf</string>
 		<string>SF_Pro_Text_Semibold.ttf</string>
+		<string>29LTAzer_Bold.ttf</string>
+		<string>29LTAzer_Medium.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

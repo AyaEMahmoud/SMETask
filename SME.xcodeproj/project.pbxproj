@@ -31,8 +31,6 @@
 		E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D79257B6ABA009198C4 /* CardViewController.xib */; };
 		E0E70D80257B6B43009198C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D7E257B6B43009198C4 /* Card.swift */; };
 		E0E70D81257B6B43009198C4 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D7F257B6B43009198C4 /* Card.xib */; };
-		E0E70D8E257B6BDA009198C4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D85257B6BDA009198C4 /* Fonts.swift */; };
-		E0E70D8F257B6BDA009198C4 /* 29LTAzer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */; };
 		E0E70D90257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */; };
 		E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D8A257B6BDA009198C4 /* Assets.swift */; };
 		E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8B257B6BDA009198C4 /* Colors.xcassets */; };
@@ -88,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E0978DFA257E9DC6004C769B /* 29LTAzer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29LTAzer.ttf; sourceTree = "<group>"; };
 		E0E70D42257B65B2009198C4 /* SME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E70D45257B65B2009198C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E70D47257B65B2009198C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,8 +106,6 @@
 		E0E70D79257B6ABA009198C4 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		E0E70D7E257B6B43009198C4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E0E70D7F257B6B43009198C4 /* Card.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
-		E0E70D85257B6BDA009198C4 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29LTAzer.ttf; sourceTree = "<group>"; };
 		E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SF_Pro_Text_Semibold.ttf; sourceTree = "<group>"; };
 		E0E70D8A257B6BDA009198C4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E0E70D8B257B6BDA009198C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -160,6 +157,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0978DF9257E987B004C769B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		E0E70D39257B65B2009198C4 = {
 			isa = PBXGroup;
 			children = (
@@ -247,19 +251,11 @@
 		E0E70D83257B6BDA009198C4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E0E70D84257B6BDA009198C4 /* Generated */,
-				E0E70D86257B6BDA009198C4 /* 29LTAzer.ttf */,
+				E0978DF9257E987B004C769B /* Generated */,
 				E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */,
+				E0978DFA257E9DC6004C769B /* 29LTAzer.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		E0E70D84257B6BDA009198C4 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				E0E70D85257B6BDA009198C4 /* Fonts.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		E0E70D88257B6BDA009198C4 /* Assets */ = {
@@ -481,7 +477,6 @@
 				E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */,
 				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
 				E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */,
-				E0E70D8F257B6BDA009198C4 /* 29LTAzer.ttf in Resources */,
 				E0E70D81257B6B43009198C4 /* Card.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +539,6 @@
 				E0E70DA3257B740E009198C4 /* URLConstants.swift in Sources */,
 				E0E70DCB257B74FA009198C4 /* Response.swift in Sources */,
 				E0E70DC8257B74FA009198C4 /* City.swift in Sources */,
-				E0E70D8E257B6BDA009198C4 /* Fonts.swift in Sources */,
 				E0E70DA2257B740E009198C4 /* KeyConstants.swift in Sources */,
 				E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */,
 				E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */,
