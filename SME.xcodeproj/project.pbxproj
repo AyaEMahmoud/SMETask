@@ -61,6 +61,7 @@
 		E0E70DEE257CF6A5009198C4 /* NoInternet.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E70DEC257CF6A5009198C4 /* NoInternet.xib */; };
 		E0E70DF0257D1A49009198C4 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DEF257D1A49009198C4 /* UIView+Extentions.swift */; };
 		E0E70DF2257D1B88009198C4 /* NoInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DF1257D1B88009198C4 /* NoInternet.swift */; };
+		E0E70DFA257DFF44009198C4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70DF9257DFF44009198C4 /* CardPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,7 @@
 		E0E70DEC257CF6A5009198C4 /* NoInternet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoInternet.xib; sourceTree = "<group>"; };
 		E0E70DEF257D1A49009198C4 /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		E0E70DF1257D1B88009198C4 /* NoInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternet.swift; sourceTree = "<group>"; };
+		E0E70DF9257DFF44009198C4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,22 +180,19 @@
 		E0E70D44257B65B2009198C4 /* SME */ = {
 			isa = PBXGroup;
 			children = (
-				E0E70DA4257B7424009198C4 /* Models */,
+				E0E70DF7257DFE85009198C4 /* Presenters */,
+				E0E70DF5257DFE60009198C4 /* Protocals */,
+				E0E70DF3257DFDFF009198C4 /* Extentions */,
 				E0E70D97257B7401009198C4 /* Domain */,
 				E0E70D9E257B740E009198C4 /* Helpers */,
+				E0E70DF4257DFE17009198C4 /* ViewControllers */,
+				E0E70DA4257B7424009198C4 /* Models */,
 				E0E70D7C257B6B43009198C4 /* Views */,
 				E0E70D82257B6BDA009198C4 /* Resources */,
 				E0E70D45257B65B2009198C4 /* AppDelegate.swift */,
 				E0E70D47257B65B2009198C4 /* SceneDelegate.swift */,
 				E0E70D50257B65B4009198C4 /* LaunchScreen.storyboard */,
 				E0E70D53257B65B4009198C4 /* Info.plist */,
-				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
-				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
-				E0E70DD4257BC585009198C4 /* Networkable.swift */,
-				E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */,
-				E0E70DF1257D1B88009198C4 /* NoInternet.swift */,
-				E0E70DEC257CF6A5009198C4 /* NoInternet.xib */,
-				E0E70DEF257D1A49009198C4 /* UIView+Extentions.swift */,
 			);
 			path = SME;
 			sourceTree = "<group>";
@@ -216,6 +215,7 @@
 		E0E70D7C257B6B43009198C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0E70DF6257DFE73009198C4 /* NoInternet */,
 				E0E70D7D257B6B43009198C4 /* Cells */,
 			);
 			path = Views;
@@ -358,6 +358,49 @@
 				E0E70DC4257B74F9009198C4 /* Zoom.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		E0E70DF3257DFDFF009198C4 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */,
+				E0E70DEF257D1A49009198C4 /* UIView+Extentions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		E0E70DF4257DFE17009198C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
+				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E0E70DF5257DFE60009198C4 /* Protocals */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DD4257BC585009198C4 /* Networkable.swift */,
+			);
+			path = Protocals;
+			sourceTree = "<group>";
+		};
+		E0E70DF6257DFE73009198C4 /* NoInternet */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DF1257D1B88009198C4 /* NoInternet.swift */,
+				E0E70DEC257CF6A5009198C4 /* NoInternet.xib */,
+			);
+			path = NoInternet;
+			sourceTree = "<group>";
+		};
+		E0E70DF7257DFE85009198C4 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DF9257DFF44009198C4 /* CardPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +554,7 @@
 				E0E70DD1257B74FA009198C4 /* Center.swift in Sources */,
 				E0E70DCE257B74FA009198C4 /* Zoom.swift in Sources */,
 				E0E70DD5257BC585009198C4 /* Networkable.swift in Sources */,
+				E0E70DFA257DFF44009198C4 /* CardPresenter.swift in Sources */,
 				E0E70D9C257B7401009198C4 /* ProfilesApi.swift in Sources */,
 				E0E70DCD257B74FA009198C4 /* Subject.swift in Sources */,
 				E0E70DA9257B745E009198C4 /* ProfilesRequest.swift in Sources */,

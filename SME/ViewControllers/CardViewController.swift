@@ -20,27 +20,22 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
 
     var profiles = [Profiles]()
-    var page = 1
     var windelssCount = 10;
-    
-    let networkManager = ProfilesService()
     
     let reachability = try! Reachability()
     
     var maximumBannerHeight: CGFloat = 219
     var minimumBannerHeight: CGFloat = 145
     
+    lazy var presenter = CardPresenter(with: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.collectionView.addObserver(self,
-//                                        forKeyPath: "contentSize",
-//                                        options: .new,
-//                                        context: nil)
         registerCell()
-//        startWindless()
-//        initLoadMore()
-        getProfiles()
+        startWindless()
+        initLoadMore()
+        presenter.getProfiles()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -85,15 +80,15 @@ class CardViewController: UIViewController {
    
     func initLoadMore() {
          self.collectionView.configRefreshFooter(container: self) {
-             self.page += 1
-             self.getProfiles()
+             self.presenter.page += 1
+             self.presenter.getProfiles()
          }
      }
     
     func initPullToRefresh() {
            self.collectionView.configRefreshHeader(container: self) {
-               self.page = 1
-               self.getProfiles()
+               self.presenter.page = 1
+               self.presenter.getProfiles()
            }
        }
      func startWindless() {
@@ -107,57 +102,10 @@ class CardViewController: UIViewController {
              .start()
      }
     
-//    override func observeValue(forKeyPath keyPath: String?,
-//                               of object: Any?,
-//                               change: [NSKeyValueChangeKey: Any]?,
-//                               context: UnsafeMutableRawPointer?) {
-//
-//        if (keyPath == "contentSize"),
-//            let newvalue = change?[.newKey],
-//            let newsize = newvalue as? CGSize {
-//
-//            if newsize.height == 0 {
-//                self.collectionViewHeightConstraint.constant = 752
-//            } else if self.collectionViewHeightConstraint.constant != newsize.height {
-//                self.collectionViewHeightConstraint.constant = newsize.height
-//
-//            }
-//
-//        }
-//
-//    }
-    
     deinit {
            self.collectionView.removeObserver(self, forKeyPath: "contentSize")
        }
     
-    func getProfiles() {
-         let profilesRequest = ProfilesRequest(byParameter: "نافذة الاستفسارات العامة", page: page)
-         networkManager.getProfiles(profilesRequest: profilesRequest) { (profiles, error) in
-             self.collectionView.switchRefreshFooter(to: .normal)
-             self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-             self.collectionView.windless.end()
-             self.windelssCount = 0
-
-            print("error \(error)")
-            if error == nil {
-                 if self.page == 1 {
-                    self.profiles = profiles
-
-                 } else {
-                    self.profiles.append(contentsOf: profiles)
-                 }
-                 self.collectionView.reloadData()
-             } else {
-                 let alert = UIAlertController(title: "", message: "Nothing to show!", preferredStyle: .alert)
-                 let action = UIAlertAction(title: "OK", style: .default, handler: { _ in
-                 })
-                 alert.addAction(action)
-                 self.present(alert, animated: true, completion: nil)
-
-             }
-         }
-     }
 }
 
 extension CardViewController: UICollectionViewDelegate {
@@ -190,7 +138,7 @@ extension CardViewController: UICollectionViewDataSource {
                 cell?.activeStatusIcon.isHidden = true
             }
             cell?.cardInfo.text = card.subject?.title
-            
+//            cell?.cardRating.
 //            if let imageString = movie.posterPath, let url = URL(string: APPURL.BaseURL + imageString) {
 //                print("url \(url)")
 //                cell?.movieImage.kf.setImage(with: url)
@@ -200,6 +148,14 @@ extension CardViewController: UICollectionViewDataSource {
         return cell!
     }
     
+    func showAlert(){
+         let alert = UIAlertController(title: "", message: "Nothing to show!", preferredStyle: .alert)
+         let action = UIAlertAction(title: "OK", style: .default, handler: {
+             action in
+         })
+         alert.addAction(action)
+         self.present(alert, animated: true, completion: nil)
+     }
 }
 
 extension CardViewController: UICollectionViewDelegateFlowLayout {
@@ -214,10 +170,7 @@ extension CardViewController: UICollectionViewDelegateFlowLayout {
 
 extension CardViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset;
-//        if offset.y < minimumBannerHeight {
-//            bannerHeightConstraint.constant = maximumBannerHeight - offset.y
-//        }
+        
         let offset: CGFloat = scrollView.contentOffset.y
         let newHeaderViewHeight: CGFloat = bannerHeightConstraint.constant - offset
 
@@ -228,6 +181,29 @@ extension CardViewController: UIScrollViewDelegate {
         } else {
             bannerHeightConstraint.constant = newHeaderViewHeight
             scrollView.contentOffset.y = 0 // block scroll view
+        }
+    }
+}
+
+extension CardViewController: CardPresenterView {
+    
+    func updateModel(profiles: [Profiles]) {
+
+        self.collectionView.switchRefreshFooter(to: .normal)
+              self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
+              self.collectionView.windless.end()
+              self.windelssCount = 0
+        
+        if profiles.count > 0 {
+            self.collectionView.switchRefreshFooter(to: .normal)
+            self.collectionView.switchRefreshHeader(to: .normal(.success,0.0))
+
+            self.collectionView.windless.end()
+            self.windelssCount = 0
+            self.profiles = profiles
+            self.collectionView.reloadData()
+        } else {
+            showAlert()
         }
     }
 }
