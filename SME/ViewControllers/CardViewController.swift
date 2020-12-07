@@ -16,7 +16,8 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var rootView: UIView!
     @IBOutlet private weak var bannerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    @IBOutlet private weak var imageMarkView: UIImageView!
+    
     var profiles = [Profiles]()
     var windelssCount = 10;
     
@@ -30,6 +31,7 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.imageMarkView.layer.cornerRadius = 2
         if !InternetChecker.isConnectedToNetwork() {
             self.collectionView.isHidden = true
             self.rootView.addSubview(NoInternet())

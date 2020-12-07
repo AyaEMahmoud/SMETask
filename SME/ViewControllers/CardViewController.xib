@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="bannerHeightConstraint" destination="1C9-gv-FR0" id="jg3-Jk-cHv"/>
                 <outlet property="collectionView" destination="J01-kP-Lgx" id="mAa-bB-J2d"/>
+                <outlet property="imageMarkView" destination="DwF-nv-9dT" id="Cs1-p7-I47"/>
                 <outlet property="rootView" destination="8I1-OS-Ysg" id="Omk-Hf-pLk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,11 +50,19 @@
                             <state key="normal" image="back"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التمويل و الاستثمار" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-AM-cUX">
-                            <rect key="frame" x="227" y="112" width="174" height="26.5"/>
+                            <rect key="frame" x="210" y="112" width="174" height="26.5"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DwF-nv-9dT">
+                            <rect key="frame" x="392" y="113.5" width="4" height="23"/>
+                            <color key="backgroundColor" name="Non-photo blue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="AAL-hC-69f"/>
+                                <constraint firstAttribute="width" constant="4" id="k1T-NP-Kye"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" name="Ghost white"/>
                     <constraints>
@@ -65,8 +74,10 @@
                         <constraint firstItem="N6J-AM-cUX" firstAttribute="top" secondItem="ltt-9M-Sdb" secondAttribute="bottom" constant="16" id="NSg-62-mwz"/>
                         <constraint firstItem="J01-kP-Lgx" firstAttribute="top" secondItem="8I1-OS-Ysg" secondAttribute="top" constant="144" id="Nje-jT-7zN"/>
                         <constraint firstAttribute="trailing" secondItem="J01-kP-Lgx" secondAttribute="trailing" constant="19" id="Ssu-xU-2mt"/>
-                        <constraint firstAttribute="trailing" secondItem="N6J-AM-cUX" secondAttribute="trailing" constant="13" id="a1O-KK-PmQ"/>
+                        <constraint firstAttribute="trailing" secondItem="N6J-AM-cUX" secondAttribute="trailing" constant="30" id="a1O-KK-PmQ"/>
+                        <constraint firstItem="DwF-nv-9dT" firstAttribute="top" secondItem="ltt-9M-Sdb" secondAttribute="bottom" constant="17.5" id="drY-S6-nM8"/>
                         <constraint firstAttribute="bottom" secondItem="J01-kP-Lgx" secondAttribute="bottom" id="eAb-0k-OCY"/>
+                        <constraint firstAttribute="trailing" secondItem="DwF-nv-9dT" secondAttribute="trailing" constant="18" id="l8D-Kh-BjU"/>
                         <constraint firstItem="ltt-9M-Sdb" firstAttribute="top" secondItem="8I1-OS-Ysg" secondAttribute="top" constant="54" id="sF3-5H-WZg"/>
                     </constraints>
                 </view>
@@ -87,6 +98,9 @@
         <image name="baner" width="375" height="225"/>
         <namedColor name="Ghost white">
             <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Non-photo blue">
+            <color red="0.65100002288818359" green="0.86699998378753662" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
