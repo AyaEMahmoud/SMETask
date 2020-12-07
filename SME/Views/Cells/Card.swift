@@ -12,14 +12,14 @@ import Cosmos
 class Card: UICollectionViewCell {
     
     @IBOutlet private weak var cardView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     
-    @IBOutlet weak var unAvaliable: UILabel!
-    @IBOutlet weak var cosmosView: CosmosView!
-    @IBOutlet weak var activeStatus: UILabel!
-    @IBOutlet weak var cardInfo: UILabel!
-    @IBOutlet weak var cardName: UILabel!
-    @IBOutlet weak var activeStatusIcon: UIImageView!
+    @IBOutlet private weak var unAvaliable: UILabel!
+    @IBOutlet private weak var cosmosView: CosmosView!
+    @IBOutlet private weak var activeStatus: UILabel!
+    @IBOutlet private weak var cardInfo: UILabel!
+    @IBOutlet private weak var cardName: UILabel!
+    @IBOutlet private weak var activeStatusIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +30,26 @@ class Card: UICollectionViewCell {
             .cgColor
         imageView.layer.cornerRadius = 16
         cardView.layer.cornerRadius = 16
+    }
+    
+    func setCellData(profile: Profiles) {
+        
+        cardName.text = profile.ssoUser?.fullName
+        if profile.isAvailable ?? false {
+           unAvaliable.isHidden = true
+        } else {
+            activeStatus.isHidden = true
+        }
+        if !(profile.isOnline ?? false) {
+            activeStatusIcon.isHidden = true
+        }
+        cardInfo.text = profile.subject?.title
+        cosmosView.rating = profile.rating ?? 0
+        cosmosView.text = String(format: "%.1f", profile.rating ?? 0)
+                  
+        if let imageString = profile.file?.path, let url = URL(string: APPURL.BaseURL + imageString) {
+            imageView.kf.setImage(with: url)
+        }
     }
     
 }

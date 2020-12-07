@@ -32,29 +32,4 @@ class ProfilesService: Networkable {
             }
         }
     }
-    
-//    var provider: MoyaProvider<ProfilesApi>
-//
-//   class func getProfiels(profilesRequest:ProfilesRequest, completionHandler: @escaping ([Profiles], Error?)-> Void) {
-//
-//            let provider = MoyaProvider<ProfilesApi>()
-//            provider.request(.getProfiles(profilesRequest: profilesRequest), completion: { result in
-//                switch result {
-//                case let .success(profilesResponse):
-//                    let decoder = JSONDecoder()
-//                    do {
-//                        print(try profilesResponse.mapJSON() as! [String: Any])
-//                        let response = try decoder.decode([Profiles].self, from: profilesResponse.data)
-////                        let response = Mapper<Response>().map(JSON: try profilesResponse.mapJSON() as! [String : Any])
-//                        print("profiles.isEmpty response?.profiles \(response?.profiles)")
-//                        completionHandler(response?.profiles ?? [], nil)
-//                    } catch {
-//                        completionHandler([], error)
-//                    }
-//                    case .failure(let error):
-//                    completionHandler([], error)
-//                }
-//
-//            })
-//    }
 }

@@ -15,8 +15,8 @@ import Cosmos
 
 class CardViewController: UIViewController {
 
-    @IBOutlet weak var bannerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var rootView: UIView!
+    @IBOutlet private weak var bannerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
 
     var profiles = [Profiles]()
@@ -32,46 +32,17 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        registerCell()
-        startWindless()
-        initLoadMore()
-        presenter.getProfiles()
-    }
+        if !InternetChecker.isConnectedToNetwork() {
+            self.collectionView.isHidden = true
+            self.rootView.addSubview(NoInternet())
+//            self.collectionView.backgroundView = NoInternet()
 
-    override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reachabilityChanged(note:)),
-                                               name: .reachabilityChanged, object: reachability)
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
+        } else {
+            registerCell()
+            startWindless()
+            initLoadMore()
+            presenter.getProfiles()
         }
-    }
-
-    @objc
-    func reachabilityChanged(note: Notification) {
-        let reachability = note.object as! Reachability
-
-        switch reachability.connection {
-        case .wifi:
-            print("Wifi Connection")
-        case .cellular:
-            print("Cellular Connection")
-        case .unavailable:
-             print("no connection")
-            self.collectionView.backgroundView = NoInternet()
-        case .none:
-            print("no connection")
-        @unknown default:
-            print("no connection")
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        reachability.stopNotifier()
-        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
     
     func registerCell() {
@@ -128,23 +99,7 @@ extension CardViewController: UICollectionViewDataSource {
         
         if !profiles.isEmpty {
             let card = profiles[indexPath.row]
-            cell?.cardName.text = card.ssoUser?.fullName
-            if card.isAvailable ?? false {
-                cell?.unAvaliable.isHidden = true
-            } else {
-                cell?.activeStatus.isHidden = true
-            }
-            if !(card.isOnline ?? false) {
-                cell?.activeStatusIcon.isHidden = true
-            }
-            cell?.cardInfo.text = card.subject?.title
-            cell?.cosmosView.rating = card.rating ?? 0
-            cell?.cosmosView.text = String(format: "%.1f", card.rating ?? 0)
-            
-            if let imageString = card.file?.path, let url = URL(string: APPURL.BaseURL + imageString) {
-                print("url \(url)")
-                cell?.imageView.kf.setImage(with: url)
-            }
+            cell?.setCellData(profile: card)
         }
         return cell!
     }
@@ -196,7 +151,7 @@ extension CardViewController: CardPresenterView {
         
         if profiles.count > 0 {
             self.collectionView.switchRefreshFooter(to: .normal)
-            self.collectionView.switchRefreshHeader(to: .normal(.success,0.0))
+            self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
 
             self.collectionView.windless.end()
             self.windelssCount = 0

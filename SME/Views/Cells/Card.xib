@@ -49,7 +49,7 @@
                             <real key="value" value="14"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                            <color key="value" red="1" green="0.83137254900000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" name="Mikado yellow"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                             <color key="value" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,11 +58,14 @@
                             <color key="value" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                            <color key="value" red="1" green="0.83137254900000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" name="Mikado yellow"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="text" value="3"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="textSize">
                             <real key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                            <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -151,6 +154,9 @@
         </namedColor>
         <namedColor name="Mantis">
             <color red="0.36100000143051147" green="0.70599997043609619" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Mikado yellow">
+            <color red="0.97299998998641968" green="0.80400002002716064" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
