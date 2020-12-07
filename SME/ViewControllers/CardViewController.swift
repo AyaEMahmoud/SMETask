@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import Kingfisher
 import PullToRefreshKit
 import Windless
 import Reachability
-import Cosmos
 
 class CardViewController: UIViewController {
 
@@ -72,10 +70,6 @@ class CardViewController: UIViewController {
              }
              .start()
      }
-    
-    deinit {
-           self.collectionView.removeObserver(self, forKeyPath: "contentSize")
-       }
     
 }
 

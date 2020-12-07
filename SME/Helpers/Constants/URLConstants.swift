@@ -32,6 +32,10 @@ struct APPURL {
         return  APPURL.Domain + APPURL.Route + APPURL.Version
     }
     
+    public static var StorageURL: String {
+        return  APPURL.Domain
+    }
+    
     struct Paths {
         static let Profiles = "/profile/bsa"
     }

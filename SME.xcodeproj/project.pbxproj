@@ -35,7 +35,6 @@
 		E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D8A257B6BDA009198C4 /* Assets.swift */; };
 		E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8B257B6BDA009198C4 /* Colors.xcassets */; };
 		E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8C257B6BDA009198C4 /* Assets.xcassets */; };
-		E0E70D94257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */; };
 		E0E70D96257B6BF5009198C4 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D95257B6BF5009198C4 /* swiftgen.yml */; };
 		E0E70D9C257B7401009198C4 /* ProfilesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D99257B7401009198C4 /* ProfilesApi.swift */; };
 		E0E70D9D257B7401009198C4 /* ProfilesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D9B257B7401009198C4 /* ProfilesService.swift */; };
@@ -110,7 +109,6 @@
 		E0E70D8A257B6BDA009198C4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E0E70D8B257B6BDA009198C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E0E70D8C257B6BDA009198C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1d07329c79980bb563646a63e80c07b3_icon.png; sourceTree = "<group>"; };
 		E0E70D95257B6BF5009198C4 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		E0E70D99257B7401009198C4 /* ProfilesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilesApi.swift; sourceTree = "<group>"; };
 		E0E70D9B257B7401009198C4 /* ProfilesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilesService.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 				E0E70D89257B6BDA009198C4 /* Generated */,
 				E0E70D8B257B6BDA009198C4 /* Colors.xcassets */,
 				E0E70D8C257B6BDA009198C4 /* Assets.xcassets */,
-				E0E70D8D257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -469,7 +466,6 @@
 				E0E70D96257B6BF5009198C4 /* swiftgen.yml in Resources */,
 				E0E70D5F257B665A009198C4 /* Cartfile in Resources */,
 				E0E70D90257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf in Resources */,
-				E0E70D94257B6BDA009198C4 /* 1d07329c79980bb563646a63e80c07b3_icon.png in Resources */,
 				E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */,
 				E0E70DEE257CF6A5009198C4 /* NoInternet.xib in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
