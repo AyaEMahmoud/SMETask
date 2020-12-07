@@ -24,8 +24,8 @@ class ProfilesService: Networkable {
             case .success(let value):
                 let decoder = JSONDecoder()
                 do {
-                    let profiles = try decoder.decode([Profiles].self, from: value.data)
-                    completion(profiles, nil)
+                    let profiles = try decoder.decode(Response.self, from: value.data)
+                    completion(profiles.profiles ?? [], nil)
                 } catch let error {
                     completion([], error)
                 }

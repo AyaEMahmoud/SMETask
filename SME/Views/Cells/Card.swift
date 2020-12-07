@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Cosmos
 
 class Card: UICollectionViewCell {
     
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var imageView: UIImageView!
     
+    @IBOutlet weak var unAvaliable: UILabel!
     @IBOutlet weak var cardRating: UIView!
     @IBOutlet weak var activeStatus: UILabel!
     @IBOutlet weak var cardInfo: UILabel!
@@ -25,13 +25,13 @@ class Card: UICollectionViewCell {
         
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 6
-        imageView.layer.borderColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1).cgColor
+        imageView.layer.borderColor = UIColor(red: 216/255,
+                                              green: 216/255,
+                                              blue: 216/255,
+                                              alpha: 1)
+            .cgColor
         imageView.layer.cornerRadius = 16
         cardView.layer.cornerRadius = 16
     }
-    
-//    func setCellData(profile: Profiles) {
-//        self.activeStatus
-//    }
     
 }

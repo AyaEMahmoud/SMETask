@@ -8,6 +8,7 @@ disabled_rules: # rule identifiers to exclude from running
  - vertical_whitespace
  - empty_count
  - force_cast
+ - force_try
  
 excluded:
   - Frameworks

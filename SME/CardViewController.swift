@@ -10,57 +10,73 @@ import UIKit
 import Kingfisher
 import PullToRefreshKit
 import Windless
-import Network
+import Reachability
+import Cosmos
 
 class CardViewController: UIViewController {
 
-    @IBOutlet private weak var bannerTopView: UIView!
-    @IBOutlet private weak var bannerBottomView: UIView!
-    @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bannerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
 
     var profiles = [Profiles]()
     var page = 1
     var windelssCount = 10;
-    let monitor = NWPathMonitor()
-        
+    
+    let networkManager = ProfilesService()
+    
+    let reachability = try! Reachability()
+    
+    var maximumBannerHeight: CGFloat = 219
+    var minimumBannerHeight: CGFloat = 145
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.addObserver(self,
-                                        forKeyPath: "contentSize",
-                                        options: .new,
-                                        context: nil)
-        
-//        let gradient = CAGradientLayer()
-//        gradient.frame = bannerTopView.bounds
-//        gradient.colors = [Asset.Colors.seaBlue, Asset.Colors.pacificBlue]
-//        bannerTopView.layer.insertSublayer(gradient, at: 0)
-//        bannerBottomView.layer.insertSublayer(gradient, at: 0)
-
+//        self.collectionView.addObserver(self,
+//                                        forKeyPath: "contentSize",
+//                                        options: .new,
+//                                        context: nil)
         registerCell()
-        inputTextFieldStyle()
-        gradient()
 //        startWindless()
 //        initLoadMore()
-//        getProfiles()
+        getProfiles()
     }
 
-    func gradient() {
-         let gradientLayer: CAGradientLayer = CAGradientLayer()
-         gradientLayer.frame.size = self.bannerTopView.frame.size
-         gradientLayer.colors = [Asset.Colors.pacificBlue, Asset.Colors.seaBlue]
-         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-         bannerTopView.layer.addSublayer(gradientLayer)
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reachabilityChanged(note:)),
+                                               name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+
+    @objc
+    func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+
+        switch reachability.connection {
+        case .wifi:
+            print("Wifi Connection")
+        case .cellular:
+            print("Cellular Connection")
+        case .unavailable:
+             print("no connection")
+            self.collectionView.backgroundView = NoInternet()
+        case .none:
+            print("no connection")
+        @unknown default:
+            print("no connection")
+        }
     }
     
-    fileprivate func inputTextFieldStyle() {
-        bannerBottomView.layer.masksToBounds = true
-        bannerBottomView.layer.borderWidth = 1
-        bannerBottomView.layer.cornerRadius = 20
-        bannerBottomView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
     
     func registerCell() {
@@ -91,27 +107,25 @@ class CardViewController: UIViewController {
              .start()
      }
     
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey: Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        
-        if (keyPath == "contentSize"),
-            let newvalue = change?[.newKey],
-            let newsize = newvalue as? CGSize {
-            
-            if newsize.height == 0 {
-                self.collectionViewHeightConstraint.constant = 752
-                self.containerViewHeightConstraint.constant = 761
-            } else if self.collectionViewHeightConstraint.constant != newsize.height {
-                self.collectionViewHeightConstraint.constant = newsize.height
-                self.containerViewHeightConstraint.constant = newsize.height + 9
-
-            }
-            
-        }
-        
-    }
+//    override func observeValue(forKeyPath keyPath: String?,
+//                               of object: Any?,
+//                               change: [NSKeyValueChangeKey: Any]?,
+//                               context: UnsafeMutableRawPointer?) {
+//
+//        if (keyPath == "contentSize"),
+//            let newvalue = change?[.newKey],
+//            let newsize = newvalue as? CGSize {
+//
+//            if newsize.height == 0 {
+//                self.collectionViewHeightConstraint.constant = 752
+//            } else if self.collectionViewHeightConstraint.constant != newsize.height {
+//                self.collectionViewHeightConstraint.constant = newsize.height
+//
+//            }
+//
+//        }
+//
+//    }
     
     deinit {
            self.collectionView.removeObserver(self, forKeyPath: "contentSize")
@@ -155,8 +169,7 @@ extension CardViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         print("profiles.isEmpty \(profiles.count)")
-//        return profiles.count
-        return 20
+        return profiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -168,14 +181,16 @@ extension CardViewController: UICollectionViewDataSource {
         if !profiles.isEmpty {
             let card = profiles[indexPath.row]
             cell?.cardName.text = card.ssoUser?.fullName
-            if !(card.isAvailable ?? false) {
+            if card.isAvailable ?? false {
+                cell?.unAvaliable.isHidden = true
+            } else {
                 cell?.activeStatus.isHidden = true
             }
             if !(card.isOnline ?? false) {
                 cell?.activeStatusIcon.isHidden = true
             }
             cell?.cardInfo.text = card.subject?.title
-//            cell?.cardRating.
+            
 //            if let imageString = movie.posterPath, let url = URL(string: APPURL.BaseURL + imageString) {
 //                print("url \(url)")
 //                cell?.movieImage.kf.setImage(with: url)
@@ -194,5 +209,25 @@ extension CardViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath)
         -> CGSize {
         return CGSize(width: 160.81, height: 219.73)
+    }
+}
+
+extension CardViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offset = scrollView.contentOffset;
+//        if offset.y < minimumBannerHeight {
+//            bannerHeightConstraint.constant = maximumBannerHeight - offset.y
+//        }
+        let offset: CGFloat = scrollView.contentOffset.y
+        let newHeaderViewHeight: CGFloat = bannerHeightConstraint.constant - offset
+
+        if newHeaderViewHeight > maximumBannerHeight {
+            bannerHeightConstraint.constant = maximumBannerHeight
+        } else if newHeaderViewHeight < minimumBannerHeight {
+            bannerHeightConstraint.constant = minimumBannerHeight
+        } else {
+            bannerHeightConstraint.constant = newHeaderViewHeight
+            scrollView.contentOffset.y = 0 // block scroll view
+        }
     }
 }
