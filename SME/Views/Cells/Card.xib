@@ -132,8 +132,8 @@
                 <outlet property="activeStatusIcon" destination="Pp6-q7-Nxc" id="8WT-Dl-dBn"/>
                 <outlet property="cardInfo" destination="Kzy-RY-WSk" id="QnW-RD-SnV"/>
                 <outlet property="cardName" destination="L9e-6o-ttC" id="7by-mx-IkR"/>
-                <outlet property="cardRating" destination="tgd-sj-bvz" id="bUd-e5-nb7"/>
                 <outlet property="cardView" destination="03B-pL-aCj" id="3j4-gO-Sj9"/>
+                <outlet property="cosmosView" destination="tgd-sj-bvz" id="h9v-VV-pV5"/>
                 <outlet property="imageView" destination="QQu-tl-ZU2" id="ECn-ya-3vX"/>
                 <outlet property="unAvaliable" destination="nhs-P8-flC" id="nFZ-5S-FGT"/>
             </connections>

@@ -138,20 +138,20 @@ extension CardViewController: UICollectionViewDataSource {
                 cell?.activeStatusIcon.isHidden = true
             }
             cell?.cardInfo.text = card.subject?.title
-//            cell?.cardRating.
-//            if let imageString = movie.posterPath, let url = URL(string: APPURL.BaseURL + imageString) {
-//                print("url \(url)")
-//                cell?.movieImage.kf.setImage(with: url)
-//            }
+            cell?.cosmosView.rating = card.rating ?? 0
+            cell?.cosmosView.text = String(format: "%.1f", card.rating ?? 0)
+            
+            if let imageString = card.file?.path, let url = URL(string: APPURL.BaseURL + imageString) {
+                print("url \(url)")
+                cell?.imageView.kf.setImage(with: url)
+            }
         }
-        
         return cell!
     }
     
-    func showAlert(){
+    func showAlert() {
          let alert = UIAlertController(title: "", message: "Nothing to show!", preferredStyle: .alert)
-         let action = UIAlertAction(title: "OK", style: .default, handler: {
-             action in
+         let action = UIAlertAction(title: "OK", style: .default, handler: { _ in
          })
          alert.addAction(action)
          self.present(alert, animated: true, completion: nil)

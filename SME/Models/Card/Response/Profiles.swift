@@ -25,6 +25,7 @@ struct Profiles: Codable {
     case createdAt = "created_at"
 //    case interests = "interests"
     case bsa = "bsa"
+    case file = "file"
   }
 
   var onlineEnabled: Bool?
@@ -41,8 +42,8 @@ struct Profiles: Codable {
   var subject: Subject?
   var createdAt: Int?
 //  var interests: [String]?
-  var bsa: Bsa?
-
+    var bsa: Bsa?
+    var file: File?
 
 
   init(from decoder: Decoder) throws {
@@ -62,6 +63,7 @@ struct Profiles: Codable {
     createdAt = try container.decodeIfPresent(Int.self, forKey: .createdAt)
     //interests = try container.decodeIfPresent([String].self, forKey: .interests)
     bsa = try container.decodeIfPresent(Bsa.self, forKey: .bsa)
+    file = try container.decodeIfPresent(File.self, forKey: .file)
   }
 
 }
