@@ -10,7 +10,6 @@ import UIKit
 
 class NoInternet: UIView {
     
-    @IBOutlet private weak var tryAgainButton: UIButton!
     @IBOutlet private weak var checkConnectionLable: UILabel!
     @IBOutlet private weak var noInternetLable: UILabel!
     
@@ -25,6 +24,10 @@ class NoInternet: UIView {
     required init?(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)
       self.setupView()
+    }
+    
+    @IBAction func tryAgain(_ sender: UIButton) {
+        
     }
     
     private func setupView() {

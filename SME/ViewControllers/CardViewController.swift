@@ -31,16 +31,18 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        registerCell()
+
         self.imageMarkView.layer.cornerRadius = 2
         if !InternetChecker.isConnectedToNetwork() {
-            self.collectionView.isHidden = true
-            self.rootView.addSubview(NoInternet())
-//            self.collectionView.backgroundView = NoInternet()
+//            self.collectionView.isHidden = true
+//            self.rootView.addSubview(NoInternet())
+            self.collectionView.backgroundView = NoInternet()
 
         } else {
-            registerCell()
             startWindless()
             initLoadMore()
+            initPullToRefresh()
             presenter.getProfiles()
         }
     }
@@ -50,18 +52,25 @@ class CardViewController: UIViewController {
       }
    
     func initLoadMore() {
-         self.collectionView.configRefreshFooter(container: self) {
-             self.presenter.page += 1
-             self.presenter.getProfiles()
-         }
+        if InternetChecker.isConnectedToNetwork() {
+            self.collectionView.configRefreshFooter(container: self) {
+                self.presenter.page += 1
+                self.presenter.getProfiles()
+            }
+        }
      }
     
     func initPullToRefresh() {
-           self.collectionView.configRefreshHeader(container: self) {
-               self.presenter.page = 1
-               self.presenter.getProfiles()
-           }
-       }
+        if InternetChecker.isConnectedToNetwork() {
+            self.collectionView.configRefreshHeader(container: self) {
+                self.presenter.page = 1
+                self.presenter.getProfiles()
+            }
+        } else {
+            self.collectionView.backgroundView = NoInternet()
+        }
+    }
+    
      func startWindless() {
          self.collectionView.windless
              .apply {
@@ -83,7 +92,6 @@ extension CardViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        print("profiles.isEmpty \(profiles.count)")
         return profiles.count
     }
     
