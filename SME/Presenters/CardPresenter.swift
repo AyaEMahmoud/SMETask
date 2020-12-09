@@ -37,9 +37,6 @@ class CardPresenter {
                    }
                 
                 self.view?.updateModel(profiles: self.profiles)
-                
-               } else {
-                   
                }
            }
        }

@@ -10,6 +10,7 @@ import UIKit
 import PullToRefreshKit
 import Windless
 import Reachability
+import ToastSwiftFramework
 
 class CardViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var imageMarkView: UIImageView!
     
+    @IBOutlet weak var bannerLabel: UILabel!
     var profiles = [Profiles]()
     var windelssCount = 10;
     
@@ -30,6 +32,8 @@ class CardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        bannerLabel.font = UIFont(font: FontFamily._29LTAzer.bold, size: 21.9)
 
         registerCell()
 
@@ -162,7 +166,7 @@ extension CardViewController: CardPresenterView {
             self.profiles = profiles
             self.collectionView.reloadData()
         } else {
-            showAlert()
+            self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
         }
     }
 }

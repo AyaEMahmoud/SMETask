@@ -19,8 +19,10 @@ internal typealias Font = FontConvertible.Font
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
   internal enum _29LTAzer {
-    internal static let regular = FontConvertible(name: "29LTAzer", family: "29LT Azer", path: "29LTAzer.ttf")
-    internal static let all: [FontConvertible] = [regular]
+    internal static let bold = FontConvertible(name: "29LTAzer-Bold", family: "29LT Azer", path: "29LT_Azer-Bold.OTF")
+    internal static let medium = FontConvertible(name: "29LTAzer-Medium", family: "29LT Azer", path: "29LT_Azer-Medium.OTF")
+    internal static let regular = FontConvertible(name: "29LTAzer-Regular", family: "29LT Azer", path: "29LT_Azer-Regular.OTF")
+    internal static let all: [FontConvertible] = [bold, medium, regular]
   }
   internal enum SFProText {
     internal static let semibold = FontConvertible(name: "SFProText-Semibold", family: "SF Pro Text", path: "SF_Pro_Text_Semibold.ttf")

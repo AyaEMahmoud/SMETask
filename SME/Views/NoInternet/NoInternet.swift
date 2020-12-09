@@ -32,8 +32,8 @@ class NoInternet: UIView {
     
     private func setupView() {
         guard let view = loadViewFromNib() else { return }
-//        noInternetLable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 18.2)
-//        checkConnectionLable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 18.2)
+        noInternetLable.font = UIFont(font: FontFamily._29LTAzer.bold, size: 18.25)
+        checkConnectionLable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 18.25)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)

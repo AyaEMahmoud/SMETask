@@ -36,20 +36,20 @@ class Card: UICollectionViewCell {
     func setCellData(profile: Profiles) {
         
         cardName.text = profile.ssoUser?.fullName
-//        cardName.font = UIFont(font: FontFamily._29LTAzer.regular, size: 20.0)
+        cardName.font = UIFont(font: FontFamily._29LTAzer.medium, size: 19.98)
         
         if profile.isAvailable ?? false {
             unAvaliable.isHidden = true
-//            activeStatus.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15.9)
+            activeStatus.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15.9)
         } else {
             activeStatus.isHidden = true
-//            unAvaliable.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15.9)
+            unAvaliable.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15.9)
         }
         if !(profile.isOnline ?? false) {
             activeStatusIcon.isHidden = true
         }
         cardInfo.text = profile.subject?.title
-//        cardInfo.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13.9)
+        cardInfo.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13.9)
         cosmosView.rating = profile.rating ?? 0
         cosmosView.text = String(format: "%.1f", profile.rating ?? 0)
                   

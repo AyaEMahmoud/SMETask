@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="SME" customModuleProvider="target">
             <connections>
                 <outlet property="bannerHeightConstraint" destination="1C9-gv-FR0" id="jg3-Jk-cHv"/>
+                <outlet property="bannerLabel" destination="N6J-AM-cUX" id="5AF-cy-CTh"/>
                 <outlet property="collectionView" destination="J01-kP-Lgx" id="mAa-bB-J2d"/>
                 <outlet property="imageMarkView" destination="DwF-nv-9dT" id="Cs1-p7-I47"/>
                 <outlet property="rootView" destination="8I1-OS-Ysg" id="Omk-Hf-pLk"/>

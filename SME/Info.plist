@@ -4,10 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>29LTAzer.ttf</string>
+		<string>29LT_Azer-Bold.OTF</string>
 		<string>SF_Pro_Text_Semibold.ttf</string>
-		<string>29LTAzer_Bold.ttf</string>
-		<string>29LTAzer_Medium.ttf</string>
+		<string>29LT_Azer-Medium.OTF</string>
+		<string>29LT_Azer-Regular.OTF</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E05433852580C0900036A881 /* 29LT_Azer-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */; };
+		E05433862580C0900036A881 /* 29LT_Azer-Bold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */; };
+		E05433872580C0900036A881 /* 29LT_Azer-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */; };
+		E05433892580C19D0036A881 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05433882580C19D0036A881 /* Fonts.swift */; };
+		E054338B2580C3770036A881 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; };
+		E054338C2580C3770036A881 /* ToastSwiftFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D45257B65B2009198C4 /* AppDelegate.swift */; };
 		E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D47257B65B2009198C4 /* SceneDelegate.swift */; };
 		E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D50257B65B4009198C4 /* LaunchScreen.storyboard */; };
@@ -74,6 +80,7 @@
 				E0E70D67257B6990009198C4 /* Cosmos.framework in Embed Frameworks */,
 				E0E70D70257B699A009198C4 /* ObjectMapper.framework in Embed Frameworks */,
 				E0E70DE2257CCE17009198C4 /* Reachability.framework in Embed Frameworks */,
+				E054338C2580C3770036A881 /* ToastSwiftFramework.framework in Embed Frameworks */,
 				E0E70D76257B69A2009198C4 /* Windless.framework in Embed Frameworks */,
 				E0E70D6A257B6994009198C4 /* Kingfisher.framework in Embed Frameworks */,
 				E0E70D63257B698D009198C4 /* Alamofire.framework in Embed Frameworks */,
@@ -85,7 +92,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E0978DFA257E9DC6004C769B /* 29LTAzer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 29LTAzer.ttf; sourceTree = "<group>"; };
+		E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Medium.OTF"; sourceTree = "<group>"; };
+		E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Bold.OTF"; sourceTree = "<group>"; };
+		E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Regular.OTF"; sourceTree = "<group>"; };
+		E05433882580C19D0036A881 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		E054338A2580C3760036A881 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		E0E70D42257B65B2009198C4 /* SME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E70D45257B65B2009198C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E70D47257B65B2009198C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +156,7 @@
 				E0E70D66257B6990009198C4 /* Cosmos.framework in Frameworks */,
 				E0E70D6F257B699A009198C4 /* ObjectMapper.framework in Frameworks */,
 				E0E70DE1257CCE17009198C4 /* Reachability.framework in Frameworks */,
+				E054338B2580C3770036A881 /* ToastSwiftFramework.framework in Frameworks */,
 				E0E70D75257B69A2009198C4 /* Windless.framework in Frameworks */,
 				E0E70D69257B6994009198C4 /* Kingfisher.framework in Frameworks */,
 				E0E70D62257B698D009198C4 /* Alamofire.framework in Frameworks */,
@@ -158,6 +170,7 @@
 		E0978DF9257E987B004C769B /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				E05433882580C19D0036A881 /* Fonts.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -207,6 +220,7 @@
 		E0E70D60257B698D009198C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E054338A2580C3760036A881 /* ToastSwiftFramework.framework */,
 				E0E70DE0257CCE16009198C4 /* Reachability.framework */,
 				E0E70D74257B69A2009198C4 /* Windless.framework */,
 				E0E70D71257B699C009198C4 /* PullToRefreshKit.framework */,
@@ -251,7 +265,9 @@
 			children = (
 				E0978DF9257E987B004C769B /* Generated */,
 				E0E70D87257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf */,
-				E0978DFA257E9DC6004C769B /* 29LTAzer.ttf */,
+				E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */,
+				E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */,
+				E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -469,11 +485,14 @@
 				E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */,
 				E0E70DEE257CF6A5009198C4 /* NoInternet.xib in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
+				E05433872580C0900036A881 /* 29LT_Azer-Regular.OTF in Resources */,
 				E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */,
 				E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */,
 				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
 				E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */,
+				E05433852580C0900036A881 /* 29LT_Azer-Medium.OTF in Resources */,
 				E0E70D81257B6B43009198C4 /* Card.xib in Resources */,
+				E05433862580C0900036A881 /* 29LT_Azer-Bold.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +532,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PullToRefreshKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Windless.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -529,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E05433892580C19D0036A881 /* Fonts.swift in Sources */,
 				E0E70DC9257B74FA009198C4 /* User.swift in Sources */,
 				E0E70DCA257B74FA009198C4 /* Office.swift in Sources */,
 				E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */,
