@@ -140,36 +140,34 @@ extension CardViewController: CardPresenterView {
     
     func displayToast(isInternetConnectionError: Bool) {
         if isInternetConnectionError {
-            print("in tosat")
-            self.collectionView.switchRefreshFooter(to: .normal)
-            self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-            self.collectionView.windless.end()
-            self.windelssCount = 0
+            windlessSetup()
 
             self.view.makeToast("The Internet connection appears to be offline!", duration: 3.0, position: .bottom)
         } else {
+            windlessSetup()
             self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
         }
     }
     
     func updateCollectionBackground() {
-        self.collectionView.switchRefreshFooter(to: .normal)
-        self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-        self.collectionView.windless.end()
-        self.windelssCount = 0
+        windlessSetup()
         self.collectionView.backgroundView = NoInternet()
     }
     
     func updateModel(profiles: [Profiles]) {
 
-        self.collectionView.switchRefreshFooter(to: .normal)
-        self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-        self.collectionView.windless.end()
+        windlessSetup()
         self.collectionView.backgroundView = nil
-        self.windelssCount = 0
         self.profiles = profiles
         self.collectionView.reloadData()
        
+    }
+    
+    func windlessSetup() {
+        self.collectionView.switchRefreshFooter(to: .normal)
+        self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.collectionView.windless.end()
+        self.windelssCount = 0
     }
     
 }
