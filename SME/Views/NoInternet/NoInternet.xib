@@ -67,14 +67,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="snW-cy-nst" firstAttribute="centerX" secondItem="dqB-jJ-hld" secondAttribute="centerX" id="8lp-E7-BYg"/>
+                        <constraint firstItem="snW-cy-nst" firstAttribute="centerX" secondItem="dqB-jJ-hld" secondAttribute="centerX" id="7Z5-yJ-Qxa"/>
                         <constraint firstItem="eVV-d9-xuW" firstAttribute="leading" secondItem="dqB-jJ-hld" secondAttribute="leading" constant="49" id="9Rs-eK-0cS"/>
                         <constraint firstAttribute="bottom" secondItem="LEO-U0-U6l" secondAttribute="bottom" constant="36" id="HW0-gP-eM9"/>
                         <constraint firstAttribute="trailing" secondItem="eVV-d9-xuW" secondAttribute="trailing" constant="49" id="I9b-7x-Gv9"/>
                         <constraint firstItem="LEO-U0-U6l" firstAttribute="leading" secondItem="dqB-jJ-hld" secondAttribute="leading" constant="15" id="Jhu-aY-1LG"/>
                         <constraint firstAttribute="trailing" secondItem="LEO-U0-U6l" secondAttribute="trailing" constant="15" id="TCN-ya-Gwb"/>
-                        <constraint firstAttribute="height" constant="539" id="UkW-RE-5es"/>
-                        <constraint firstAttribute="width" constant="414" id="ZK4-7q-8Y2"/>
                         <constraint firstItem="LEO-U0-U6l" firstAttribute="top" secondItem="eVV-d9-xuW" secondAttribute="bottom" constant="204" id="bpZ-Zj-057"/>
                         <constraint firstItem="eVV-d9-xuW" firstAttribute="top" secondItem="snW-cy-nst" secondAttribute="bottom" constant="35" id="vbw-Kq-jaO"/>
                     </constraints>

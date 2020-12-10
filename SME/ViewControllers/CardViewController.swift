@@ -18,8 +18,8 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var bannerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var imageMarkView: UIImageView!
+    @IBOutlet private weak var bannerLabel: UILabel!
     
-    @IBOutlet weak var bannerLabel: UILabel!
     var profiles = [Profiles]()
     var windelssCount = 10;
     
@@ -34,21 +34,15 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
 
         bannerLabel.font = UIFont(font: FontFamily._29LTAzer.bold, size: 21.9)
-
-        registerCell()
-
+        
         self.imageMarkView.layer.cornerRadius = 2
-        if !InternetChecker.isConnectedToNetwork() {
-//            self.collectionView.isHidden = true
-//            self.rootView.addSubview(NoInternet())
-            self.collectionView.backgroundView = NoInternet()
-
-        } else {
-            startWindless()
-            initLoadMore()
-            initPullToRefresh()
-            presenter.getProfiles()
-        }
+        
+        registerCell()
+        startWindless()
+        initLoadMore()
+        initPullToRefresh()
+        presenter.getProfiles()
+        
     }
     
     func registerCell() {
@@ -56,22 +50,16 @@ class CardViewController: UIViewController {
       }
    
     func initLoadMore() {
-        if InternetChecker.isConnectedToNetwork() {
-            self.collectionView.configRefreshFooter(container: self) {
-                self.presenter.page += 1
-                self.presenter.getProfiles()
-            }
+        self.collectionView.configRefreshFooter(container: self) {
+            self.presenter.page += 1
+            self.presenter.getProfiles()
         }
      }
     
     func initPullToRefresh() {
-        if InternetChecker.isConnectedToNetwork() {
-            self.collectionView.configRefreshHeader(container: self) {
-                self.presenter.page = 1
-                self.presenter.getProfiles()
-            }
-        } else {
-            self.collectionView.backgroundView = NoInternet()
+        self.collectionView.configRefreshHeader(container: self) {
+            self.presenter.page = 1
+            self.presenter.getProfiles()
         }
     }
     
@@ -150,23 +138,38 @@ extension CardViewController: UIScrollViewDelegate {
 
 extension CardViewController: CardPresenterView {
     
-    func updateModel(profiles: [Profiles]) {
-
-        self.collectionView.switchRefreshFooter(to: .normal)
-              self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-              self.collectionView.windless.end()
-              self.windelssCount = 0
-        
-        if profiles.count > 0 {
+    func displayToast(isInternetConnectionError: Bool) {
+        if isInternetConnectionError {
+            print("in tosat")
             self.collectionView.switchRefreshFooter(to: .normal)
             self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
-
             self.collectionView.windless.end()
             self.windelssCount = 0
-            self.profiles = profiles
-            self.collectionView.reloadData()
+
+            self.view.makeToast("The Internet connection appears to be offline!", duration: 3.0, position: .bottom)
         } else {
             self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
         }
     }
+    
+    func updateCollectionBackground() {
+        self.collectionView.switchRefreshFooter(to: .normal)
+        self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.collectionView.windless.end()
+        self.windelssCount = 0
+        self.collectionView.backgroundView = NoInternet()
+    }
+    
+    func updateModel(profiles: [Profiles]) {
+
+        self.collectionView.switchRefreshFooter(to: .normal)
+        self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.collectionView.windless.end()
+        self.collectionView.backgroundView = nil
+        self.windelssCount = 0
+        self.profiles = profiles
+        self.collectionView.reloadData()
+       
+    }
+    
 }

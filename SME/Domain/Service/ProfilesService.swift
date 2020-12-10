@@ -8,7 +8,7 @@
 
 import Foundation
 import Moya
-import ObjectMapper
+import ToastSwiftFramework
 
 class ProfilesService: Networkable {
     
