@@ -25,6 +25,7 @@ internal enum Asset {
     internal static let back = ImageAsset(name: "back")
     internal static let baner = ImageAsset(name: "baner")
     internal static let icOnline = ImageAsset(name: "ic-online")
+    internal static let icAvatar = ImageAsset(name: "ic_avatar")
     internal static let icNoInternet = ImageAsset(name: "ic_no-internet")
   }
   internal enum Colors {

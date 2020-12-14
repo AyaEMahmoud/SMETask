@@ -53,10 +53,10 @@ class Card: UICollectionViewCell {
         cosmosView.rating = profile.rating ?? 0
         cosmosView.text = String(format: "%.1f", profile.rating ?? 0)
                   
-        if profile.file?.path != nil {
-            let url = URL(string: APPURL.StorageURL + (profile.file?.path)!)
+        if let imageString = profile.file?.path, let url = URL(string: APPURL.StorageURL + imageString) {
             imageView.kf.setImage(with: url)
         }
+        
         
     }
     

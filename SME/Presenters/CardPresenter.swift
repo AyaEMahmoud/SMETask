@@ -37,7 +37,6 @@ class CardPresenter {
             let profilesRequest = ProfilesRequest(byParameter: "نافذة الاستفسارات العامة", page: page)
             networkManager.getProfiles(profilesRequest: profilesRequest) { (profiles, error) in
             if error == nil {
-                print(profiles)
                 if self.page == 1 {
                     self.profiles = profiles
 
@@ -47,7 +46,9 @@ class CardPresenter {
                         self.view?.endLoadMore()
                     }
                 }
+                
                 self.view?.updateModel(profiles: self.profiles)
+                
                 } else {
                 if let error = ((error as? MoyaError)?.errorUserInfo["NSUnderlyingError"] as? Alamofire.AFError)?.underlyingError as NSError?,
                     error.domain == NSURLErrorDomain,

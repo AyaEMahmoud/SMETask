@@ -29,7 +29,7 @@ class CardViewController: UIViewController {
     var minimumBannerHeight: CGFloat = 145
     
     lazy var presenter = CardPresenter(with: self)
-    lazy var noInternet = NoInternetPresenter(with: self)
+    lazy var noInternet = NoInternet(with: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,8 +94,8 @@ extension CardViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath as IndexPath) as? Card
                 
         if !profiles.isEmpty {
-            let card = profiles[indexPath.row]
-            cell?.setCellData(profile: card)
+            let profile = profiles[indexPath.row]
+            cell?.setCellData(profile: profile)
         }
         return cell!
     }
@@ -166,7 +166,6 @@ extension CardViewController: CardPresenterView {
         self.collectionView.backgroundView = nil
         self.profiles = profiles
         self.collectionView.reloadData()
-       
     }
     
     func windlessSetup() {

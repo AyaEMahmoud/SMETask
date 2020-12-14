@@ -12,14 +12,6 @@ protocol NoInternetView: class {
     func tryAgain()
 }
 
-class NoInternetPresenter {
-    weak var view: NoInternetView?
-    
-    init(with view: NoInternetView) {
-      self.view = view
-    }
-}
-
 class NoInternet: UIView {
     
     @IBOutlet private weak var checkConnectionLable: UILabel!
@@ -27,9 +19,10 @@ class NoInternet: UIView {
          
     weak var view: NoInternetView?
 
-    init() {
+    init(with view: NoInternetView) {
       super.init(frame: CGRect.zero)
       self.setupView()
+      self.view = view
     }
     
     override init(frame: CGRect) {
