@@ -55,6 +55,8 @@ class Card: UICollectionViewCell {
                   
         if let imageString = profile.file?.path, let url = URL(string: APPURL.StorageURL + imageString) {
             imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = nil
         }
         
         
