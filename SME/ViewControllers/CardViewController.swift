@@ -149,16 +149,13 @@ extension CardViewController: CardPresenterView {
     }
     
     func updateCollectionBackground() {
-        let header = DefaultRefreshHeader.header()
-        header.setText("", mode: .releaseToRefresh)
-
         self.collectionView.windless.end()
         self.windelssCount = 0
         self.profiles = []
         self.collectionView.reloadData()
         self.collectionView.switchRefreshHeader(to: .removed)
         self.collectionView.isScrollEnabled = false
-        self.collectionView.backgroundView = NoInternet()
+        self.collectionView.backgroundView = noInternet
     }
     
     func updateModel(profiles: [Profiles]) {
@@ -185,6 +182,9 @@ extension CardViewController: NoInternetView {
     func tryAgain() {
         print("in try")
         self.presenter.page = 1
+        startWindless()
+        initLoadMore()
+        initPullToRefresh()
         self.presenter.getProfiles()
     }
     

@@ -18,7 +18,7 @@ class NoInternet: UIView {
     @IBOutlet private weak var noInternetLable: UILabel!
          
     weak var view: NoInternetView?
-
+    
     init(with view: NoInternetView) {
       super.init(frame: CGRect.zero)
       self.setupView()
