@@ -21,7 +21,7 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var bannerLabel: UILabel!
     
     var profiles = [Profiles]()
-    var windelssCount = 10;
+    var windelssCount = 10
     
     let reachability = try! Reachability()
     
@@ -29,6 +29,7 @@ class CardViewController: UIViewController {
     var minimumBannerHeight: CGFloat = 145
     
     lazy var presenter = CardPresenter(with: self)
+    lazy var noInternet = NoInternetPresenter(with: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,8 @@ class CardViewController: UIViewController {
         bannerLabel.font = UIFont(font: FontFamily._29LTAzer.bold, size: 21.9)
         
         self.imageMarkView.layer.cornerRadius = 2
-        
+        self.collectionView.semanticContentAttribute = .forceRightToLeft
+
         registerCell()
         startWindless()
         initLoadMore()
@@ -90,9 +92,7 @@ extension CardViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath as IndexPath) as? Card
-        
-        print("profiles.isEmpty \(profiles.isEmpty)")
-        
+                
         if !profiles.isEmpty {
             let card = profiles[indexPath.row]
             cell?.setCellData(profile: card)
@@ -141,7 +141,6 @@ extension CardViewController: CardPresenterView {
     func displayToast(isInternetConnectionError: Bool) {
         if isInternetConnectionError {
             windlessSetup()
-
             self.view.makeToast("The Internet connection appears to be offline!", duration: 3.0, position: .bottom)
         } else {
             windlessSetup()
@@ -150,12 +149,19 @@ extension CardViewController: CardPresenterView {
     }
     
     func updateCollectionBackground() {
-        windlessSetup()
+        let header = DefaultRefreshHeader.header()
+        header.setText("", mode: .releaseToRefresh)
+
+        self.collectionView.windless.end()
+        self.windelssCount = 0
+        self.profiles = []
+        self.collectionView.reloadData()
+        self.collectionView.switchRefreshHeader(to: .removed)
+        self.collectionView.isScrollEnabled = false
         self.collectionView.backgroundView = NoInternet()
     }
     
     func updateModel(profiles: [Profiles]) {
-
         windlessSetup()
         self.collectionView.backgroundView = nil
         self.profiles = profiles
@@ -168,6 +174,19 @@ extension CardViewController: CardPresenterView {
         self.collectionView.switchRefreshHeader(to: .normal(.success, 0.0))
         self.collectionView.windless.end()
         self.windelssCount = 0
+    }
+    
+    func endLoadMore() {
+        self.collectionView.switchRefreshFooter(to: .removed)
+    }
+}
+
+extension CardViewController: NoInternetView {
+    
+    func tryAgain() {
+        print("in try")
+        self.presenter.page = 1
+        self.presenter.getProfiles()
     }
     
 }

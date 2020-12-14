@@ -8,26 +8,43 @@
 
 import UIKit
 
+protocol NoInternetView: class {
+    func tryAgain()
+}
+
+class NoInternetPresenter {
+    weak var view: NoInternetView?
+    
+    init(with view: NoInternetView) {
+      self.view = view
+    }
+}
+
 class NoInternet: UIView {
     
     @IBOutlet private weak var checkConnectionLable: UILabel!
     @IBOutlet private weak var noInternetLable: UILabel!
-        
+         
+    weak var view: NoInternetView?
+
     init() {
       super.init(frame: CGRect.zero)
       self.setupView()
     }
+    
     override init(frame: CGRect) {
       super.init(frame: frame)
       self.setupView()
     }
+    
     required init?(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)
       self.setupView()
     }
     
     @IBAction func tryAgain(_ sender: UIButton) {
-        
+        print(" in action ")
+        self.view?.tryAgain()
     }
     
     private func setupView() {

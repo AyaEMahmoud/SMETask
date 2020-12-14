@@ -1,0 +1,4 @@
+APP_NAME = SME
+APP_BUNDLE_IDENTIFIER = com.ibtikar.SME
+TEAM = 2C86JD592M
+BASE_URL = https://demo-smea.ibtikar.sa
