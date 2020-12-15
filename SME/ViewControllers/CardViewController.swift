@@ -41,8 +41,6 @@ class CardViewController: UIViewController {
 
         registerCell()
         startWindless()
-        initLoadMore()
-        initPullToRefresh()
         presenter.getProfiles()
         
     }
@@ -152,14 +150,17 @@ extension CardViewController: CardPresenterView {
         self.collectionView.windless.end()
         self.windelssCount = 0
         self.profiles = []
-        self.collectionView.reloadData()
-        self.collectionView.switchRefreshHeader(to: .removed)
         self.collectionView.isScrollEnabled = false
+        self.collectionView.switchRefreshHeader(to: .removed)
+        self.collectionView.reloadData()
+        
         self.collectionView.backgroundView = noInternet
     }
     
     func updateModel(profiles: [Profiles]) {
         windlessSetup()
+        initPullToRefresh()
+        initLoadMore()
         self.collectionView.backgroundView = nil
         self.profiles = profiles
         self.collectionView.reloadData()

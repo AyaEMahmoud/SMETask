@@ -42,12 +42,12 @@ class CardPresenter {
 
                 } else {
                     self.profiles.append(contentsOf: profiles)
-                    if profiles.isEmpty {
-                        self.view?.endLoadMore()
-                    }
                 }
                 
                 self.view?.updateModel(profiles: self.profiles)
+                if profiles.isEmpty {
+                    self.view?.endLoadMore()
+                }
                 
                 } else {
                 if let error = ((error as? MoyaError)?.errorUserInfo["NSUnderlyingError"] as? Alamofire.AFError)?.underlyingError as NSError?,
