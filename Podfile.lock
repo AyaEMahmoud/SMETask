@@ -1,0 +1,20 @@
+PODS:
+  - FittedSheets (2.2.3)
+  - TwitterProfile (1.0.0)
+
+DEPENDENCIES:
+  - FittedSheets
+  - TwitterProfile
+
+SPEC REPOS:
+  trunk:
+    - FittedSheets
+    - TwitterProfile
+
+SPEC CHECKSUMS:
+  FittedSheets: 5533375af9ed713977b8e6d88b74c90e8f5df041
+  TwitterProfile: bbbf6e1ed97e57e8da673e13f8e155b56e922b5e
+
+PODFILE CHECKSUM: 0602fffbb1ed6959a572cc17f205cedbe3367409
+
+COCOAPODS: 1.9.1

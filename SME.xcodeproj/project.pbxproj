@@ -3,26 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E038BC032586E2680062EA67 /* Stage.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E038BC022586E2680062EA67 /* Stage.xcconfig */; };
-		E038BC052586E2740062EA67 /* Demo.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E038BC042586E2740062EA67 /* Demo.xcconfig */; };
 		E05433852580C0900036A881 /* 29LT_Azer-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */; };
 		E05433862580C0900036A881 /* 29LT_Azer-Bold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */; };
 		E05433872580C0900036A881 /* 29LT_Azer-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */; };
 		E05433892580C19D0036A881 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05433882580C19D0036A881 /* Fonts.swift */; };
 		E054338B2580C3770036A881 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; };
 		E054338C2580C3770036A881 /* ToastSwiftFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E09D386F2593949A00861B6F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; };
+		E09D38702593949A00861B6F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D45257B65B2009198C4 /* AppDelegate.swift */; };
 		E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D47257B65B2009198C4 /* SceneDelegate.swift */; };
 		E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D50257B65B4009198C4 /* LaunchScreen.storyboard */; };
 		E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D59257B660E009198C4 /* .swiftlint.yml */; };
 		E0E70D5D257B664D009198C4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D5C257B664D009198C4 /* .gitignore */; };
 		E0E70D5F257B665A009198C4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D5E257B665A009198C4 /* Cartfile */; };
-		E0E70D62257B698D009198C4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; };
-		E0E70D63257B698D009198C4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0E70D66257B6990009198C4 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D65257B6990009198C4 /* Cosmos.framework */; };
 		E0E70D67257B6990009198C4 /* Cosmos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D65257B6990009198C4 /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0E70D69257B6994009198C4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D68257B6994009198C4 /* Kingfisher.framework */; };
@@ -79,13 +77,13 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E0E70D6D257B6997009198C4 /* Moya.framework in Embed Frameworks */,
+				E09D38702593949A00861B6F /* Alamofire.framework in Embed Frameworks */,
 				E0E70D67257B6990009198C4 /* Cosmos.framework in Embed Frameworks */,
 				E0E70D70257B699A009198C4 /* ObjectMapper.framework in Embed Frameworks */,
 				E0E70DE2257CCE17009198C4 /* Reachability.framework in Embed Frameworks */,
 				E054338C2580C3770036A881 /* ToastSwiftFramework.framework in Embed Frameworks */,
 				E0E70D76257B69A2009198C4 /* Windless.framework in Embed Frameworks */,
 				E0E70D6A257B6994009198C4 /* Kingfisher.framework in Embed Frameworks */,
-				E0E70D63257B698D009198C4 /* Alamofire.framework in Embed Frameworks */,
 				E0E70D73257B699C009198C4 /* PullToRefreshKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -94,6 +92,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C1166D51FF59CF4FDF5AC6B /* Pods-SME.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.stage.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.stage.xcconfig"; sourceTree = "<group>"; };
+		4952D29A2BFB3873162ABE6A /* Pods-SME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.release.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.release.xcconfig"; sourceTree = "<group>"; };
+		63E68B298E552CE544565660 /* Pods-SME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.debug.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.debug.xcconfig"; sourceTree = "<group>"; };
+		B00E7B71A1E6448D4C15D74F /* Pods_SME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02EB730259399E9001836D5 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		E02EB73125939A07001836D5 /* FittedSheets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FittedSheets; path = Pods/FittedSheets; sourceTree = "<group>"; };
+		E02EB73225939A0D001836D5 /* TwitterProfile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TwitterProfile; path = Pods/TwitterProfile; sourceTree = "<group>"; };
 		E038BC022586E2680062EA67 /* Stage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Stage.xcconfig; sourceTree = "<group>"; };
 		E038BC042586E2740062EA67 /* Demo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Demo.xcconfig; sourceTree = "<group>"; };
 		E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Medium.OTF"; sourceTree = "<group>"; };
@@ -101,7 +106,7 @@
 		E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Regular.OTF"; sourceTree = "<group>"; };
 		E05433882580C19D0036A881 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		E054338A2580C3760036A881 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
-		E0E70D42257B65B2009198C4 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E70D42257B65B2009198C4 /* SME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E70D45257B65B2009198C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E70D47257B65B2009198C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0E70D51257B65B4009198C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,6 +154,7 @@
 		E0E70DF9257DFF44009198C4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		E0F0B874257E326B002B1912 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E0F0B876257E5804002B1912 /* InternetChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetChecker.swift; sourceTree = "<group>"; };
+		E7A5BC057C36F80B3902A0D8 /* Pods-SME.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.demo.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.demo.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,13 +163,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E70D6C257B6997009198C4 /* Moya.framework in Frameworks */,
+				E09D386F2593949A00861B6F /* Alamofire.framework in Frameworks */,
 				E0E70D66257B6990009198C4 /* Cosmos.framework in Frameworks */,
 				E0E70D6F257B699A009198C4 /* ObjectMapper.framework in Frameworks */,
 				E0E70DE1257CCE17009198C4 /* Reachability.framework in Frameworks */,
 				E054338B2580C3770036A881 /* ToastSwiftFramework.framework in Frameworks */,
 				E0E70D75257B69A2009198C4 /* Windless.framework in Frameworks */,
 				E0E70D69257B6994009198C4 /* Kingfisher.framework in Frameworks */,
-				E0E70D62257B698D009198C4 /* Alamofire.framework in Frameworks */,
 				E0E70D72257B699C009198C4 /* PullToRefreshKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +177,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20BD062ACEA1EFCD9919880D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63E68B298E552CE544565660 /* Pods-SME.debug.xcconfig */,
+				4952D29A2BFB3873162ABE6A /* Pods-SME.release.xcconfig */,
+				2C1166D51FF59CF4FDF5AC6B /* Pods-SME.stage.xcconfig */,
+				E7A5BC057C36F80B3902A0D8 /* Pods-SME.demo.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E038BC012586E2570062EA67 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,13 +215,14 @@
 				E0E70D44257B65B2009198C4 /* SME */,
 				E0E70D43257B65B2009198C4 /* Products */,
 				E0E70D60257B698D009198C4 /* Frameworks */,
+				20BD062ACEA1EFCD9919880D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		E0E70D43257B65B2009198C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0E70D42257B65B2009198C4 /* .app */,
+				E0E70D42257B65B2009198C4 /* SME.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +252,9 @@
 		E0E70D60257B698D009198C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E02EB73225939A0D001836D5 /* TwitterProfile */,
+				E02EB73125939A07001836D5 /* FittedSheets */,
+				E02EB730259399E9001836D5 /* Pods */,
 				E054338A2580C3760036A881 /* ToastSwiftFramework.framework */,
 				E0E70DE0257CCE16009198C4 /* Reachability.framework */,
 				E0E70D74257B69A2009198C4 /* Windless.framework */,
@@ -243,6 +264,7 @@
 				E0E70D68257B6994009198C4 /* Kingfisher.framework */,
 				E0E70D65257B6990009198C4 /* Cosmos.framework */,
 				E0E70D61257B698D009198C4 /* Alamofire.framework */,
+				B00E7B71A1E6448D4C15D74F /* Pods_SME.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -439,12 +461,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0E70D56257B65B4009198C4 /* Build configuration list for PBXNativeTarget "SME" */;
 			buildPhases = (
+				4D686328496E3A5D86778BAD /* [CP] Check Pods Manifest.lock */,
 				E0E70D3E257B65B2009198C4 /* Sources */,
 				E0E70D3F257B65B2009198C4 /* Frameworks */,
 				E0E70D40257B65B2009198C4 /* Resources */,
 				E0E70D5B257B6615009198C4 /* ShellScript */,
 				E0E70D64257B698D009198C4 /* Embed Frameworks */,
 				E0E70D77257B69AD009198C4 /* ShellScript */,
+				E9809AFAD3C12B54562BF1E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,7 +476,7 @@
 			);
 			name = SME;
 			productName = SME;
-			productReference = E0E70D42257B65B2009198C4 /* .app */;
+			productReference = E0E70D42257B65B2009198C4 /* SME.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -462,7 +486,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Aya E Mahmoud";
 				TargetAttributes = {
 					E0E70D41257B65B2009198C4 = {
@@ -496,13 +520,11 @@
 				E0E70D96257B6BF5009198C4 /* swiftgen.yml in Resources */,
 				E0E70D5F257B665A009198C4 /* Cartfile in Resources */,
 				E0E70D90257B6BDA009198C4 /* SF_Pro_Text_Semibold.ttf in Resources */,
-				E038BC032586E2680062EA67 /* Stage.xcconfig in Resources */,
 				E0E70D93257B6BDA009198C4 /* Assets.xcassets in Resources */,
 				E0E70DEE257CF6A5009198C4 /* NoInternet.xib in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
 				E05433872580C0900036A881 /* 29LT_Azer-Regular.OTF in Resources */,
 				E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */,
-				E038BC052586E2740062EA67 /* Demo.xcconfig in Resources */,
 				E0E70D5A257B660F009198C4 /* .swiftlint.yml in Resources */,
 				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
 				E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */,
@@ -515,6 +537,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4D686328496E3A5D86778BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SME-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E0E70D5B257B6615009198C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +601,23 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		E9809AFAD3C12B54562BF1E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SME/Pods-SME-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SME/Pods-SME-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SME/Pods-SME-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -636,6 +697,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -682,9 +744,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = SME;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Stage;
@@ -715,6 +778,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -761,9 +825,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = SME;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Demo;
@@ -794,6 +859,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -854,6 +920,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -884,10 +951,12 @@
 		};
 		E0E70D57257B65B4009198C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63E68B298E552CE544565660 /* Pods-SME.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "$(TEAM)";
+				DEVELOPMENT_TEAM = 2C86JD592M;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -897,20 +966,22 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.SME;
+				PRODUCT_NAME = SME;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		E0E70D58257B65B4009198C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4952D29A2BFB3873162ABE6A /* Pods-SME.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "$(TEAM)";
+				DEVELOPMENT_TEAM = 2C86JD592M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -920,10 +991,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.SME;
+				PRODUCT_NAME = SME;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
