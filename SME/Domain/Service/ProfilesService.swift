@@ -8,9 +8,8 @@
 
 import Foundation
 import Moya
-import ToastSwiftFramework
 
-class ProfilesService: Networkable {
+class ProfilesService {
     
     var provider = MoyaProvider<ProfilesApi>()
 

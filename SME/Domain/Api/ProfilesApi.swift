@@ -14,12 +14,12 @@ struct ProfilesParamters {
     static let page = "page"
 }
 
- enum ProfilesApi {
+enum ProfilesApi {
     case getProfiles(profilesRequest: ProfilesRequest)
 }
 
 extension ProfilesApi: TargetType {
-    
+ 
     public var baseURL: URL { return URL(string: APPURL.BaseURL)! }
     
     public var path: String {

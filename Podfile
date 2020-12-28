@@ -7,5 +7,5 @@ target 'SME' do
 
   # Pods for SME
 pod 'FittedSheets'
-pod 'TwitterProfile'
+pod 'XLPagerTabStrip', '~> 9.0'
 end

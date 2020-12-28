@@ -198,19 +198,19 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TwitterProfile/TwitterProfile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TwitterProfile/TwitterProfile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [[ "$CONFIGURATION" == "Stage" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TwitterProfile/TwitterProfile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [[ "$CONFIGURATION" == "Demo" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TwitterProfile/TwitterProfile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

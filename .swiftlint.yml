@@ -15,7 +15,11 @@ excluded:
   - Pods
   - Submodule
   - Carthage
-
+  - SME/TwitterPro
+  - SME/ViewControllers/ChildProfileControllers
+  - SME/Helpers/Constants/KeyConstants.swift
+  - SME/ViewControllers/ScheduleViewController.swift
+  
 opt_in_rules:
   - empty_count
   - explicit_init

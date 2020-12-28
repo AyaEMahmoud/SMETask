@@ -1,20 +1,20 @@
 PODS:
   - FittedSheets (2.2.3)
-  - TwitterProfile (1.0.0)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - FittedSheets
-  - TwitterProfile
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
     - FittedSheets
-    - TwitterProfile
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   FittedSheets: 5533375af9ed713977b8e6d88b74c90e8f5df041
-  TwitterProfile: bbbf6e1ed97e57e8da673e13f8e155b56e922b5e
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 0602fffbb1ed6959a572cc17f205cedbe3367409
+PODFILE CHECKSUM: 9ad969923017cb7a8023add4fe0c2942681f16b2
 
 COCOAPODS: 1.9.1

@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 protocol Networkable {
+    
     var provider: MoyaProvider<ProfilesApi> { get }
     
     func getProfiles(profilesRequest: ProfilesRequest, completion: @escaping ([Profiles], Error?) -> Void)
