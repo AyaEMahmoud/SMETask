@@ -92,7 +92,7 @@
                                         <constraint firstAttribute="height" constant="32" id="TZc-Pw-e4J"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R4d-xU-pPO">
-                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="itemSize" width="101" height="32"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -121,7 +121,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="EI7-vi-u0V"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jat-64-Efw">
-                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="itemSize" width="101" height="32"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -159,7 +159,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="nxY-Zr-JFR"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DwT-24-ylo">
-                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="itemSize" width="128" height="32"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -183,8 +183,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-as-VfJ">
                                             <rect key="frame" x="0.0" y="188" width="366" height="69"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختار الشركة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-05-EJ5">
-                                                    <rect key="frame" x="283.5" y="0.0" width="82.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختار المشروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-05-EJ5">
+                                                    <rect key="frame" x="271.5" y="0.0" width="94.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="Dark slate gray"/>
                                                     <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="oCd-Ht-FxG"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FmQ-KF-uEr">
-                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="itemSize" width="101" height="32"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -235,7 +235,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="T4H-BM-5J0"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ps7-La-vph">
-                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="itemSize" width="101" height="32"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

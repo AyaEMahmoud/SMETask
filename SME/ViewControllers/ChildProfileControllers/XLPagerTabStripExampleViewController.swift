@@ -35,16 +35,23 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
     }
     
     var pagerTabHeight: CGFloat?{
-        return 36
+        return 30
     }
 
     //MARK: Properties
     var isReload = false
     var id: String?
+    var info: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        settings.style.buttonBarBackgroundColor = UIColor(asset: Asset.Colors.ghostWhite)
+        settings.style.buttonBarItemBackgroundColor = UIColor(asset: Asset.Colors.ghostWhite)
+        settings.style.selectedBarBackgroundColor = UIColor(asset: Asset.Colors.seaBlue)!
+        settings.style.buttonBarItemTitleColor = UIColor(asset: Asset.Colors.seaBlue)
+        settings.style.selectedBarHeight = 4
+
     }
 
     //MARK: Life cycle
@@ -52,17 +59,12 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         super.viewDidLoad()
 
         delegate = self
-        
+
         self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-            oldCell?.label.textColor = Colors.twitterGray
-            newCell?.label.textColor = Colors.twitterBlue
+            oldCell?.label.textColor = UIColor(asset: Asset.Colors.ashGrey)
+            newCell?.label.textColor = UIColor(asset: Asset.Colors.seaBlue)
         }
         
-        settings.style.buttonBarBackgroundColor = Colors.background
-        settings.style.buttonBarItemBackgroundColor = Colors.background
-        settings.style.selectedBarBackgroundColor = Colors.twitterBlue
-        settings.style.buttonBarItemTitleColor = Colors.twitterBlue
-        settings.style.selectedBarHeight = 4
     }
 
     // MARK: - PagerTabStripDataSource
@@ -75,13 +77,13 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         vc.coordinator = self.coordinator
         let child_1 = vc
 
-        let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
-        vc1.pageIndex = 1
+        let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomInfoViewController") as! BottomInfoViewController
+        vc.pageIndex = 1
         vc1.pageTitle = "معلومات عامة"
-//        vc1.info = 
+        vc1.info = self.info
         let child_2 = vc1
 
-        return [child_1, child_2]
+        return [child_2, child_1]
     }
 
     override func reloadPagerTabStripView() {

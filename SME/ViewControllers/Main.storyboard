@@ -115,55 +115,64 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التمويل و الاستثمار" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqI-kc-9cg">
-                                        <rect key="frame" x="238.5" y="137" width="125.5" height="21"/>
+                                        <rect key="frame" x="238.5" y="137" width="125.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="Dark slate gray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مازن الضراب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZZ-bT-BR6">
-                                        <rect key="frame" x="165.5" y="25" width="85.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="Dark slate gray"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="center" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="n7H-rr-Sb7" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="87" y="52" width="166" height="18"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9vq-Is-lDJ">
+                                        <rect key="frame" x="40" y="25" width="217" height="109.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مازن الضراب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZZ-bT-BR6">
+                                                <rect key="frame" x="131.5" y="0.0" width="85.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Dark slate gray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="center" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="n7H-rr-Sb7" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="97" y="35.5" width="120" height="18"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="bFz-HC-hcM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" name="Mikado yellow"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" name="Languid lavender"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                        <color key="value" name="Languid lavender"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" name="Sea blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تطوير الاعمال ، المالية ، التسويق ، العمليات" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlu-YA-OWC">
+                                                <rect key="frame" x="56" y="68.5" width="161" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="Ash grey"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="bFz-HC-hcM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tlu-YA-OWC" secondAttribute="trailing" id="Si2-Ki-Lgw"/>
+                                            <constraint firstAttribute="trailing" secondItem="n7H-rr-Sb7" secondAttribute="trailing" id="UZe-y9-15Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="xZZ-bT-BR6" secondAttribute="trailing" id="dmL-HA-mv5"/>
+                                            <constraint firstItem="xZZ-bT-BR6" firstAttribute="top" secondItem="9vq-Is-lDJ" secondAttribute="top" id="mPI-Rk-j7N"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                                <color key="value" name="Mikado yellow"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                <color key="value" name="Languid lavender"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                <color key="value" name="Languid lavender"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تطوير الاعمال ، المالية ، التسويق ، العمليات" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlu-YA-OWC">
-                                        <rect key="frame" x="34" y="76" width="223" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="Ash grey"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Tlu-YA-OWC" firstAttribute="top" secondItem="n7H-rr-Sb7" secondAttribute="bottom" constant="6" id="4vp-Ge-n8b"/>
-                                    <constraint firstItem="qp5-Xa-iL4" firstAttribute="leading" secondItem="xZZ-bT-BR6" secondAttribute="trailing" constant="22" id="6VV-II-rlk"/>
-                                    <constraint firstItem="n7H-rr-Sb7" firstAttribute="top" secondItem="xZZ-bT-BR6" secondAttribute="bottom" constant="6" id="8P0-Jp-yuO"/>
-                                    <constraint firstItem="n7H-rr-Sb7" firstAttribute="leading" secondItem="5tl-wU-OLU" secondAttribute="leading" constant="87" id="Dwv-f6-LmT"/>
-                                    <constraint firstItem="xZZ-bT-BR6" firstAttribute="top" secondItem="5tl-wU-OLU" secondAttribute="top" constant="25" id="F8r-CZ-tbN"/>
-                                    <constraint firstItem="qp5-Xa-iL4" firstAttribute="leading" secondItem="Tlu-YA-OWC" secondAttribute="trailing" constant="16" id="Qib-t2-gIn"/>
+                                    <constraint firstItem="9vq-Is-lDJ" firstAttribute="leading" secondItem="5tl-wU-OLU" secondAttribute="leading" constant="40" id="4fe-o3-Ky9"/>
+                                    <constraint firstItem="qp5-Xa-iL4" firstAttribute="leading" secondItem="9vq-Is-lDJ" secondAttribute="trailing" constant="16" id="FRU-rT-2fw"/>
+                                    <constraint firstItem="9vq-Is-lDJ" firstAttribute="top" secondItem="5tl-wU-OLU" secondAttribute="top" constant="25" id="GOo-Gr-fAg"/>
                                     <constraint firstItem="IqI-kc-9cg" firstAttribute="top" secondItem="qp5-Xa-iL4" secondAttribute="bottom" constant="16" id="SP0-Fc-Axm"/>
-                                    <constraint firstItem="qp5-Xa-iL4" firstAttribute="leading" secondItem="n7H-rr-Sb7" secondAttribute="trailing" constant="20" id="XQ1-yv-AWl"/>
                                     <constraint firstAttribute="trailing" secondItem="qp5-Xa-iL4" secondAttribute="trailing" constant="16" id="bZG-XQ-xY0"/>
                                     <constraint firstItem="qp5-Xa-iL4" firstAttribute="top" secondItem="5tl-wU-OLU" secondAttribute="top" constant="12" id="hdu-lj-whO"/>
-                                    <constraint firstItem="Tlu-YA-OWC" firstAttribute="leading" secondItem="5tl-wU-OLU" secondAttribute="leading" constant="34" id="piu-zT-KbP"/>
                                     <constraint firstAttribute="trailing" secondItem="IqI-kc-9cg" secondAttribute="trailing" constant="20" id="wcg-Wy-O4m"/>
                                 </constraints>
                             </view>
@@ -242,6 +251,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sessionsLabel" destination="yWt-iH-eJu" id="vvC-dU-pPn"/>
                         <outlet property="tableView" destination="mzr-mR-xfp" id="4QB-WI-ZQo"/>
                     </connections>
                 </viewController>
@@ -339,6 +349,39 @@
             </objects>
             <point key="canvasLocation" x="4104.8000000000002" y="-7.6461769115442282"/>
         </scene>
+        <!--Bottom Info View Controller-->
+        <scene sceneID="SLK-aQ-m3L">
+            <objects>
+                <viewController restorationIdentifier="BottomInfoViewController" storyboardIdentifier="BottomInfoViewController" id="JvA-WM-1ds" customClass="BottomInfoViewController" customModule="SME" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lwu-LW-nzV"/>
+                        <viewControllerLayoutGuide type="bottom" id="IFW-1O-apK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JGL-E8-P6O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXA-Bh-eGD">
+                                <rect key="frame" x="167" y="150" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Manatee"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="White smoke"/>
+                        <constraints>
+                            <constraint firstItem="OXA-Bh-eGD" firstAttribute="top" secondItem="Lwu-LW-nzV" secondAttribute="bottom" constant="150" id="k19-61-oZW"/>
+                            <constraint firstItem="OXA-Bh-eGD" firstAttribute="centerX" secondItem="JGL-E8-P6O" secondAttribute="centerX" id="mEg-hV-pSF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="OXA-Bh-eGD" id="usv-Bx-T96"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxa-BV-ta3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="1109"/>
+        </scene>
         <!--Pager Tab Strip Example View Controller-->
         <scene sceneID="FlM-gj-iKp">
             <objects>
@@ -391,6 +434,9 @@
         </namedColor>
         <namedColor name="Languid lavender">
             <color red="0.82700002193450928" green="0.82700002193450928" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Manatee">
+            <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Mikado yellow">
             <color red="0.97299998998641968" green="0.80400002002716064" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

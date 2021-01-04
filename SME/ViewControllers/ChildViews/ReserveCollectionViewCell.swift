@@ -10,16 +10,14 @@ import UIKit
 
 class ReserveCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var cellLabel: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet private weak var cellContentView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         cellLabel.font = UIFont(font: FontFamily._29LTAzer.medium, size: 14)
-        cellContentView.layer.borderWidth = 1
-        cellContentView.layer.borderColor = UIColor(asset: Asset.Colors.steelBlue)?.cgColor
-        cellContentView.layer.cornerRadius = 16
+
     }
     
     func setCellData(time: Schedules) {
@@ -29,7 +27,15 @@ class ReserveCollectionViewCell: UICollectionViewCell {
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
-            cellLabel.text = "\(hour):\(minutes) AM"
+            let time = "\(hour):\(minutes)"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let date24 = dateFormatter.date(from: time)
+            
+            dateFormatter.dateFormat = "h:mm a"
+            let date12 = dateFormatter.string(from: date24!)
+
+            cellLabel.text = "\(date12)"
         }
     }
     

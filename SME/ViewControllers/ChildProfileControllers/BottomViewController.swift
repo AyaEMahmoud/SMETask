@@ -12,6 +12,7 @@ import FittedSheets
 
 class BottomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ReservationProtocal {
     
+    @IBOutlet weak var sessionsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var pageIndex: Int = 0
@@ -27,6 +28,7 @@ class BottomViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sessionsLabel.font = UIFont(font: FontFamily._29LTAzer.bold, size: 22)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
 
         if let id = self.contributerId {

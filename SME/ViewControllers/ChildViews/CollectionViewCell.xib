@@ -21,7 +21,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:30 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OQ-m4-IUx">
                         <rect key="frame" x="3" y="4.333333333333333" width="52" height="15.666666666666668"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" name="Manatee"/>
+                        <color key="textColor" name="Sea blue"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -40,8 +40,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="Manatee">
-            <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Sea blue">
+            <color red="0.0039215686274509803" green="0.45098039215686275" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

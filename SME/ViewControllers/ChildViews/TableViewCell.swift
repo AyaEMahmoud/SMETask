@@ -18,6 +18,7 @@ class TableViewCell: UITableViewCell,
                      UICollectionViewDataSource,
                      UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var reserveButton: UIButton!
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var dateLable: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -31,7 +32,7 @@ class TableViewCell: UITableViewCell,
         cellView.layer.cornerRadius = 12
         cellView.layer.borderColor = UIColor(red: 48, green: 132, blue: 178, alpha: 1).cgColor
         cellView.layer.borderWidth = 1
-
+        reserveButton.titleLabel?.font = UIFont(font: FontFamily._29LTAzer.medium, size: 16)
         dateLable.font = UIFont(font: FontFamily._29LTAzer.medium, size: 19)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self

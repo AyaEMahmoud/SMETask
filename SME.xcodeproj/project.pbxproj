@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9BAE6E5923D821123A036DAA /* Pods_SME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00E7B71A1E6448D4C15D74F /* Pods_SME.framework */; };
-		E00AE29F2599C5AF00E76BD7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00AE29E2599C5AE00E76BD7 /* Colors.swift */; };
-		E00AE2A12599C5ED00E76BD7 /* UIColor+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00AE2A02599C5ED00E76BD7 /* UIColor+Extentions.swift */; };
 		E00AE2A42599CFA500E76BD7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00AE2A32599CFA500E76BD7 /* TableViewCell.swift */; };
 		E00AE2A62599CFBA00E76BD7 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00AE2A52599CFBA00E76BD7 /* TableViewCell.xib */; };
 		E00AE2A82599D4EF00E76BD7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00AE2A72599D4EF00E76BD7 /* CollectionViewCell.swift */; };
@@ -53,6 +51,7 @@
 		E09D386F2593949A00861B6F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; };
 		E09D38702593949A00861B6F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BCA1DD25962FD60092D032 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E0BCA1DC25962FD60092D032 /* .swiftlint.yml */; };
+		E0D2914125A3668C008AE752 /* BottomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2914025A3668C008AE752 /* BottomInfoViewController.swift */; };
 		E0D8BFA2259644D9005A7216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8BFA1259644D9005A7216 /* Main.storyboard */; };
 		E0DABAE525A0B740006FF0C4 /* Companies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE325A0B740006FF0C4 /* Companies.swift */; };
 		E0DABAE625A0B740006FF0C4 /* CompaniesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE425A0B740006FF0C4 /* CompaniesResponse.swift */; };
@@ -144,8 +143,6 @@
 		4952D29A2BFB3873162ABE6A /* Pods-SME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.release.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.release.xcconfig"; sourceTree = "<group>"; };
 		63E68B298E552CE544565660 /* Pods-SME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SME.debug.xcconfig"; path = "Target Support Files/Pods-SME/Pods-SME.debug.xcconfig"; sourceTree = "<group>"; };
 		B00E7B71A1E6448D4C15D74F /* Pods_SME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E00AE29E2599C5AE00E76BD7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		E00AE2A02599C5ED00E76BD7 /* UIColor+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extentions.swift"; sourceTree = "<group>"; };
 		E00AE2A32599CFA500E76BD7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E00AE2A52599CFBA00E76BD7 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		E00AE2A72599D4EF00E76BD7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +188,7 @@
 		E087E84E2599F6EE00DBEF7B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E087E8502599F87400DBEF7B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E0BCA1DC25962FD60092D032 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		E0D2914025A3668C008AE752 /* BottomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInfoViewController.swift; sourceTree = "<group>"; };
 		E0D8BFA1259644D9005A7216 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E0DABAE325A0B740006FF0C4 /* Companies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Companies.swift; sourceTree = "<group>"; };
 		E0DABAE425A0B740006FF0C4 /* CompaniesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesResponse.swift; sourceTree = "<group>"; };
@@ -347,6 +345,7 @@
 				E053D322259624C00069B367 /* EmptyViewController.swift */,
 				E053D324259624C40069B367 /* HeaderViewController.swift */,
 				E053D328259624CC0069B367 /* XLPagerTabStripExampleViewController.swift */,
+				E0D2914025A3668C008AE752 /* BottomInfoViewController.swift */,
 			);
 			path = ChildProfileControllers;
 			sourceTree = "<group>";
@@ -473,7 +472,6 @@
 		E0E70D82257B6BDA009198C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E00AE29E2599C5AE00E76BD7 /* Colors.swift */,
 				E0E70D83257B6BDA009198C4 /* Fonts */,
 				E0E70D88257B6BDA009198C4 /* Assets */,
 			);
@@ -612,7 +610,6 @@
 			children = (
 				E0E70DDA257CB096009198C4 /* UIButton+Extentions.swift */,
 				E0E70DEF257D1A49009198C4 /* UIView+Extentions.swift */,
-				E00AE2A02599C5ED00E76BD7 /* UIColor+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -861,7 +858,6 @@
 				E0E70DA2257B740E009198C4 /* KeyConstants.swift in Sources */,
 				E04DB7862594718100378A3E /* SchedulesData.swift in Sources */,
 				E07967C8259A6B6500BC3DB2 /* ReservationViewController.swift in Sources */,
-				E00AE2A12599C5ED00E76BD7 /* UIColor+Extentions.swift in Sources */,
 				E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */,
 				E081690B25A3031200E625BC /* Reserve.swift in Sources */,
 				E04DB78F2594773D00378A3E /* SchedulesService.swift in Sources */,
@@ -879,6 +875,7 @@
 				E0E70DF2257D1B88009198C4 /* NoInternet.swift in Sources */,
 				E0E70D9D257B7401009198C4 /* ProfilesService.swift in Sources */,
 				E0DABAF225A0B906006FF0C4 /* CompaniesService.swift in Sources */,
+				E0D2914125A3668C008AE752 /* BottomInfoViewController.swift in Sources */,
 				E0E70DCF257B74FA009198C4 /* SsoUser.swift in Sources */,
 				E0F0B875257E326B002B1912 /* File.swift in Sources */,
 				E0DABAF625A0BB12006FF0C4 /* ProjectsSerivce.swift in Sources */,
@@ -891,7 +888,6 @@
 				E0E70DD1257B74FA009198C4 /* Center.swift in Sources */,
 				E081690725A2FC2100E625BC /* ReserveSlotService.swift in Sources */,
 				E0E70DCE257B74FA009198C4 /* Zoom.swift in Sources */,
-				E00AE29F2599C5AF00E76BD7 /* Colors.swift in Sources */,
 				E053D31F259624BA0069B367 /* BottomPageContainerViewController.swift in Sources */,
 				E053D3142596247A0069B367 /* PannableViewsProtocol.swift in Sources */,
 				E0DABAEC25A0B780006FF0C4 /* CompanyPresenter.swift in Sources */,

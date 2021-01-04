@@ -52,7 +52,11 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
         super.viewDidLoad()
         setupLabelFonts()
         textField.delegate = self
-        companyPresenter.getUserCompanies()
+//        print("textField.hasText \(textField.hasText)")
+//        if !textField.hasText {
+//            submitButton.isUserInteractionEnabled = false
+//        }
+//        companyPresenter.getUserCompanies()
         projectPresenter.getUserProjects()
         wayOfCommunication = schedule[0].communicationWay ?? 0
         setupCollectionView(collectionView: timeCollectionView)
@@ -65,9 +69,9 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func setupCollectionView(collectionView: UICollectionView) {
-        collectionView.register(UINib(nibName: "CollectionViewCell",
+        collectionView.register(UINib(nibName: "ReserveCollectionViewCell",
                                       bundle: nil),
-                                forCellWithReuseIdentifier: "CollectionViewCell")
+                                forCellWithReuseIdentifier: "ReserveCollectionViewCell")
         collectionView.semanticContentAttribute = .forceRightToLeft
     }
     
@@ -88,8 +92,8 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell",
-                                                      for: indexPath as IndexPath) as? CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReserveCollectionViewCell",
+                                                      for: indexPath as IndexPath) as? ReserveCollectionViewCell
 
         if collectionView == self.timeCollectionView {
             
@@ -111,6 +115,7 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
             let communication = wayOfCommunication
             cell?.setCellCommunicationData(communication: communication)
             cell?.contentView.backgroundColor = UIColor(asset: Asset.Colors.seaBlue)
+            cell?.cellLabel.isHighlighted = true
         } else {
             if !organizations.isEmpty {
                 let org = organizations[indexPath.row]
@@ -123,7 +128,7 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 101, height: 32)
+        return CGSize(width: 101, height: 31)
       }
 
     @IBAction func okButtonTapped(_ sender: UIButton) {
@@ -142,7 +147,7 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
 
             let selectedCell = collectionView.cellForItem(at: indexPath)
             selectedCell?.contentView.backgroundColor = UIColor(asset: Asset.Colors.seaBlue)
-            
+            selectedCell?.isSelected = true
             wayOfCommunication = schedule[indexPath.row].communicationWay ?? 0
             requestDictionary["type"] = wayOfCommunication
             scheduleID = schedule[indexPath.row].id ?? ""
@@ -267,9 +272,9 @@ extension ReservationViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == self.textField {
             if textField.hasText {
-                submitButton.isEnabled = true
+                submitButton.isUserInteractionEnabled = true
             } else {
-                submitButton.isEnabled = false
+                submitButton.isUserInteractionEnabled = false
             }
         }
     }

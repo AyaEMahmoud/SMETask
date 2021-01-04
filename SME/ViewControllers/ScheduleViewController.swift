@@ -68,6 +68,7 @@ class ScheduleViewController : UIViewController,
                                      bundle: nil).instantiateViewController(withIdentifier: "XLPagerTabStripExampleViewController") as! XLPagerTabStripExampleViewController
         if let profile = self.profile {
             self.bottomVC?.id = profile.id
+            self.bottomVC.info = profile.subject?.title
         }
         
         bottomVC.coordinator = self.coordinator

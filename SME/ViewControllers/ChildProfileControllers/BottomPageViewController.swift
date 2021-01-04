@@ -29,9 +29,7 @@ class BottomPageViewController: UIPageViewController, PagerAwareProtocol {
         vc.pageIndex = 0
         vc.count = 20
         vcList.append(vc)
-        
-        print("here BottomViewController")
-        
+                
         vcList.append(EmptyViewController())
         return vcList
     }()
