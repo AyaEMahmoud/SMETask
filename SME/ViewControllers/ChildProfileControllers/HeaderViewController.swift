@@ -11,19 +11,16 @@ import Cosmos
 
 class HeaderViewController: UIViewController {
     
-    @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userRating: CosmosView!
+    @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var coverImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var userImageView: UIImageView!
-//    @IBOutlet weak var userNameLabel: UILabel!
-//    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var covermageView: UIImageView!
 //    @IBOutlet weak var titleView: UIScrollView!
-//    @IBOutlet weak var visualEffectView: UIVisualEffectView!
-//    @IBOutlet weak var gradientView: UIView!
 
+    @IBOutlet weak var pageLabel: UILabel!
     var animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: nil)
 
     var titleInitialCenterY: CGFloat!
@@ -33,13 +30,29 @@ class HeaderViewController: UIViewController {
     
     var viewDidLayoutOnce = false
     
-    var profile: Profiles
+    var profile: Profiles?
+    var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.layer.cornerRadius = 12
         userImageView.layer.cornerRadius = 13
         
+        if let profile = self.profile {
+            
+            userName.text = profile.ssoUser?.fullName
+            userName.font = UIFont(font: FontFamily._29LTAzer.bold, size: 18)
+            userInfo.text = profile.subject?.title
+            userInfo.font = UIFont(font: FontFamily._29LTAzer.medium, size: 14)
+            userRating.rating = profile.rating ?? 0
+            userRating.text = String(format: "%.1f", profile.rating ?? 0)
+
+            if let imageString = profile.file?.path, let url = URL(string: APPURL.StorageURL + imageString) {
+                userImageView.kf.setImage(with: url)
+            } else {
+                userImageView.image = nil
+            }
+        }
 //        animator.addAnimations {
 //            self.visualEffectView.effect = UIBlurEffect(style: .regular)
 //        }
@@ -117,5 +130,12 @@ class HeaderViewController: UIViewController {
         }
 //        visualEffectView.center.y = covermageView.center.y
 //        titleView.center.y = covermageView.frame.maxY - titleView.frame.height/2
+    }
+    
+    @IBAction func backTapped(_ sender: UIButton) {
+        print("back tap")
+        let vc = CardViewController()
+        self.coordinator?.pop(viewController: vc)
+        
     }
 }

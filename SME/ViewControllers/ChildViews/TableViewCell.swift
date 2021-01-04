@@ -7,69 +7,87 @@
 //
 
 import UIKit
+import FittedSheets
 
-class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol ReservationProtocal {
+    func loadReservationScreen(schedule: [Schedules])
+}
+
+class TableViewCell: UITableViewCell,
+                     UICollectionViewDelegate,
+                     UICollectionViewDataSource,
+                     UICollectionViewDelegateFlowLayout {
     
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var dateLable: UILabel!
-    @IBOutlet private weak var reservationButton: UIButton!
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    var delegate: ReservationProtocal?
+    var schedule = [Schedules]()
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellView.layer.cornerRadius = 16
-        reservationButton.layer.cornerRadius = 17.5
+        cellView.layer.cornerRadius = 12
+        cellView.layer.borderColor = UIColor(red: 48, green: 132, blue: 178, alpha: 1).cgColor
+        cellView.layer.borderWidth = 1
+
+        dateLable.font = UIFont(font: FontFamily._29LTAzer.medium, size: 19)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
+        collectionView.register(UINib(nibName: "CollectionViewCell",
+                                      bundle: nil),
+                                forCellWithReuseIdentifier: "CollectionViewCell")
+        self.collectionView.semanticContentAttribute = .forceRightToLeft
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return schedule.count
     }
     
-    @IBAction func reserveAction(_ sender: UIButton) {
-        
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 58.0, height: 24.0)
+    @IBAction func reserveTapped(_ sender: UIButton) {
+        delegate?.loadReservationScreen(schedule: self.schedule)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 58, height: 24)
       }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
-        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath as IndexPath) as? CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell",
+                                                      for: indexPath as IndexPath) as? CollectionViewCell
+        
+        if !schedule.isEmpty {
+            let scheduleTime = schedule[indexPath.row]
+            cell?.setCellData(time: scheduleTime)
+        }
         return cell!
     }
 
-    func setCellData(schedule: Schedules) {
+    func setCellData(schedulesData: SchedulesData) {
         
-//        dateLable.text = schedule.startTime
-//        cardName.font = UIFont(font: FontFamily._29LTAzer.medium, size: 19.98)
-//        
-//        if profile.isAvailable ?? false {
-//            unAvaliable.isHidden = true
-//            activeStatus.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15.9)
-//        } else {
-//            activeStatus.isHidden = true
-//            unAvaliable.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15.9)
-//        }
-//        if !(profile.isOnline ?? false) {
-//            activeStatusIcon.isHidden = true
-//        }
-//        cardInfo.text = profile.subject?.title
-//        cardInfo.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13.9)
-//        cosmosView.rating = profile.rating ?? 0
-//        cosmosView.text = String(format: "%.1f", profile.rating ?? 0)
-//                  
-//        if let imageString = profile.file?.path, let url = URL(string: APPURL.StorageURL + imageString) {
-//            imageView.kf.setImage(with: url)
-//        } else {
-//            imageView.image = nil
-//        }
-//        
+        if let timeResult = (schedulesData.day as? Int) {
+            dateLable.text = formateDateToArabic(timeResult: timeResult)
+        }
+    }
+    
+    func formateDateToArabic(timeResult: Int) -> String {
         
+        let formatter = DateFormatter()
+        let date = Date(timeIntervalSince1970: TimeInterval(timeResult))
+        formatter.locale = NSLocale(localeIdentifier: "ar_DZ") as Locale
+        formatter.dateFormat = "EEEE, d MMMM"
+        let outputDate = formatter.string(from: date)
+                
+        return outputDate
     }
 }

@@ -11,7 +11,7 @@ import Moya
 import Alamofire
 
 protocol SchedulePresenterView: class {
-    func updateModel(schedules: [Schedules])
+    func updateModel(schedulesData: [SchedulesData])
     func updateCollectionBackground()
     func displayToast(isInternetConnectionError: Bool)
     func endLoadMore()
@@ -23,7 +23,7 @@ class SchedulePresenter {
     
     let networkManager = SchedulesService()
     var page = 1
-    var schedule: [Schedules] = []
+    var schedulesData: [SchedulesData] = []
     
     init(with view: SchedulePresenterView) {
     self.view = view
@@ -35,17 +35,17 @@ class SchedulePresenter {
             self.view?.updateCollectionBackground()
         } else {
          
-            networkManager.getSchedules(contributerId: contributerId) { (schedules, error) in
+            networkManager.getSchedules(contributerId: contributerId) { (schedulesData, error) in
             if error == nil {
                 if self.page == 1 {
-                    self.schedule = schedules
+                    self.schedulesData = schedulesData
 
                 } else {
-                    self.schedule.append(contentsOf: schedules)
+                    self.schedulesData.append(contentsOf: schedulesData)
                 }
                 
-                self.view?.updateModel(schedules: self.schedule)
-                if schedules.isEmpty {
+                self.view?.updateModel(schedulesData: self.schedulesData)
+                if schedulesData.isEmpty {
                     self.view?.endLoadMore()
                 }
                 

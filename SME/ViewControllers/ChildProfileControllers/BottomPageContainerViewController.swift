@@ -7,9 +7,8 @@
 //
 
 import UIKit
-//import TwitterProfile
 
-class BottomPageContainerViewController: UIViewController, PagerAwareProtocol{
+class BottomPageContainerViewController: UIViewController, PagerAwareProtocol {
 
     @IBOutlet weak var pagerContainer: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,7 +21,7 @@ class BottomPageContainerViewController: UIViewController, PagerAwareProtocol{
     }
     
     var pagerTabHeight: CGFloat?{
-        return 44
+        return 36
     }
     
     var pager: BottomPageViewController?
@@ -40,7 +39,7 @@ class BottomPageContainerViewController: UIViewController, PagerAwareProtocol{
     }
 }
 
-extension BottomPageContainerViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension BottomPageContainerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }

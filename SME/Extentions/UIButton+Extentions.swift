@@ -16,7 +16,7 @@ import UIKit
             return layer.borderWidth
         }
         set {
-                   layer.borderWidth = newValue
+            layer.borderWidth = newValue
         }
     }
 

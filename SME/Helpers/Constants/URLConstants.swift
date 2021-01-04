@@ -39,6 +39,9 @@ struct APPURL {
     struct Paths {
         static let Profiles = "/profile/bsa"
         static let AvaSlots = "/schedule/contributor/"
+        static let companies = "/profile/sme/companies"
+        static let projects = "/profile/projects"
+        static let reserveSlot = "schedule/v2/schedules/"
     }
     
 }

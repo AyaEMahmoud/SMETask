@@ -9,9 +9,8 @@
 import UIKit
 //import TwitterProfile
 
-class BottomPageViewController: UIPageViewController, PagerAwareProtocol{
+class BottomPageViewController: UIPageViewController, PagerAwareProtocol {
     
-//    MARK: PagerAwareProtocol
     var pageDelegate: BottomPageDelegate?
     
     var currentViewController: UIViewController?{
@@ -19,34 +18,30 @@ class BottomPageViewController: UIPageViewController, PagerAwareProtocol{
     }
     
     var pagerTabHeight: CGFloat?{
-        return 44
+        return 36
     }
     
-//    Properties
     fileprivate lazy var vcs: [UIViewController] = {
         var vcList: [UIViewController] = []
-        let counts = [2, 20, 1, 50]
-        for i in 0..<4{
-            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
-            vc.pageIndex = i
-            vc.count = counts[i]
-            vcList.append(vc)
-        }
+        let counts = 30
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
+        vc.pageIndex = 0
+        vc.count = 20
+        vcList.append(vc)
+        
+        print("here BottomViewController")
+        
         vcList.append(EmptyViewController())
         return vcList
     }()
     
-//    MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dataSource = self
         delegate = self
-        
         setViewControllers([vcs.first!], direction: .forward, animated: true, completion: nil)
-
     }
-    
 }
 
 //  MARK: UIPageViewControllerDataSource

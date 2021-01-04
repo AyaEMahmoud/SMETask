@@ -8,11 +8,11 @@
 
 import UIKit
 
-extension UIColor {
-    static let background: UIColor  = {
-        return UIColor(red: 243,
-                       green: 244,
-                       blue: 250,
-                       alpha: 1)
-    }()
-}
+//extension UIColor {
+//    static let background: UIColor  = {
+//        return UIColor(red: 243,
+//                       green: 244,
+//                       blue: 250,
+//                       alpha: 1)
+//    }()
+//}

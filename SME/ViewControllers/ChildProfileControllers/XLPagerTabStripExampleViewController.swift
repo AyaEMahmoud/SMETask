@@ -23,13 +23,12 @@
 // THE SOFTWARE.
 
 import UIKit
-//import TwitterProfile
 import XLPagerTabStrip
 
 class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController, PagerAwareProtocol {
     
-    //MARK: PagerAwareProtocol
     var pageDelegate: BottomPageDelegate?
+    var coordinator: MainCoordinator?
     
     var currentViewController: UIViewController?{
         return viewControllers[currentIndex]
@@ -41,14 +40,11 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
 
     //MARK: Properties
     var isReload = false
+    var id: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        settings.style.buttonBarBackgroundColor = .background
-        settings.style.buttonBarItemBackgroundColor = .background
-        settings.style.selectedBarBackgroundColor = Colors.twitterBlue
-        settings.style.buttonBarItemTitleColor = Colors.twitterBlue
-        settings.style.selectedBarHeight = 4
+        
     }
 
     //MARK: Life cycle
@@ -61,20 +57,27 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
             oldCell?.label.textColor = Colors.twitterGray
             newCell?.label.textColor = Colors.twitterBlue
         }
+        
+        settings.style.buttonBarBackgroundColor = Colors.background
+        settings.style.buttonBarItemBackgroundColor = Colors.background
+        settings.style.selectedBarBackgroundColor = Colors.twitterBlue
+        settings.style.buttonBarItemTitleColor = Colors.twitterBlue
+        settings.style.selectedBarHeight = 4
     }
 
     // MARK: - PagerTabStripDataSource
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
         vc.pageIndex = 0
-        vc.pageTitle = "Tweets"
+        vc.pageTitle = "جدول الجلسات"
         vc.count = 10
+        vc.contributerId = self.id
+        vc.coordinator = self.coordinator
         let child_1 = vc
-        
+        print("in xlpager")
         let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
         vc1.pageIndex = 1
-        vc1.pageTitle = "Tweets & replies"
-        vc1.count = 1
+        vc1.pageTitle = "معلومات عامة"
         let child_2 = vc1
 
         return [child_1, child_2]

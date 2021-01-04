@@ -9,6 +9,12 @@
 import UIKit
 
 struct Colors {
+    
+    static let background = UIColor(red: 243,
+                                    green: 244,
+                                    blue: 250,
+                                    alpha: 1)
+    
     static let twitterBlue = UIColor(red: 48,
                                      green: 132,
                                      blue: 178,

@@ -20,6 +20,8 @@ class CardViewController: UIViewController {
     @IBOutlet private weak var imageMarkView: UIImageView!
     @IBOutlet private weak var bannerLabel: UILabel!
     
+    var coordinator: MainCoordinator?
+    
     var profiles = [Profiles]()
     var windelssCount = 10
     
@@ -81,6 +83,10 @@ extension CardViewController: UICollectionViewDelegate {
 }
 
 extension CardViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.viewSchedules(profile: profiles[indexPath.row])
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {

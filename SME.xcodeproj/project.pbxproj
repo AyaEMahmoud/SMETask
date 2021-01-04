@@ -33,7 +33,6 @@
 		E053D321259624BC0069B367 /* BottomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053D320259624BC0069B367 /* BottomPageViewController.swift */; };
 		E053D323259624C00069B367 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053D322259624C00069B367 /* EmptyViewController.swift */; };
 		E053D325259624C40069B367 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053D324259624C40069B367 /* HeaderViewController.swift */; };
-		E053D327259624C80069B367 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053D326259624C80069B367 /* LabelCell.swift */; };
 		E053D329259624CC0069B367 /* XLPagerTabStripExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053D328259624CC0069B367 /* XLPagerTabStripExampleViewController.swift */; };
 		E05433852580C0900036A881 /* 29LT_Azer-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */; };
 		E05433862580C0900036A881 /* 29LT_Azer-Bold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */; };
@@ -41,10 +40,27 @@
 		E05433892580C19D0036A881 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05433882580C19D0036A881 /* Fonts.swift */; };
 		E054338B2580C3770036A881 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; };
 		E054338C2580C3770036A881 /* ToastSwiftFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E054338A2580C3760036A881 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E07967C8259A6B6500BC3DB2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07967C6259A6B6500BC3DB2 /* ReservationViewController.swift */; };
+		E07967C9259A6B6500BC3DB2 /* ReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07967C7259A6B6500BC3DB2 /* ReservationViewController.xib */; };
+		E081690525A2F7EF00E625BC /* ReserveSlotApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081690425A2F7EF00E625BC /* ReserveSlotApi.swift */; };
+		E081690725A2FC2100E625BC /* ReserveSlotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081690625A2FC2100E625BC /* ReserveSlotService.swift */; };
+		E081690925A3006500E625BC /* ReserveSlotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081690825A3006500E625BC /* ReserveSlotPresenter.swift */; };
+		E087E84F2599F6EE00DBEF7B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E087E84E2599F6EE00DBEF7B /* Coordinator.swift */; };
+		E087E8512599F87400DBEF7B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E087E8502599F87400DBEF7B /* MainCoordinator.swift */; };
 		E09D386F2593949A00861B6F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; };
 		E09D38702593949A00861B6F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E70D61257B698D009198C4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BCA1DD25962FD60092D032 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E0BCA1DC25962FD60092D032 /* .swiftlint.yml */; };
 		E0D8BFA2259644D9005A7216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8BFA1259644D9005A7216 /* Main.storyboard */; };
+		E0DABAE525A0B740006FF0C4 /* Companies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE325A0B740006FF0C4 /* Companies.swift */; };
+		E0DABAE625A0B740006FF0C4 /* CompaniesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE425A0B740006FF0C4 /* CompaniesResponse.swift */; };
+		E0DABAE925A0B74D006FF0C4 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE725A0B74C006FF0C4 /* Projects.swift */; };
+		E0DABAEA25A0B74D006FF0C4 /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAE825A0B74C006FF0C4 /* ProjectsResponse.swift */; };
+		E0DABAEC25A0B780006FF0C4 /* CompanyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAEB25A0B780006FF0C4 /* CompanyPresenter.swift */; };
+		E0DABAEE25A0B78D006FF0C4 /* ProjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAED25A0B78D006FF0C4 /* ProjectPresenter.swift */; };
+		E0DABAF025A0B804006FF0C4 /* CompaniesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAEF25A0B804006FF0C4 /* CompaniesApi.swift */; };
+		E0DABAF225A0B906006FF0C4 /* CompaniesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAF125A0B906006FF0C4 /* CompaniesService.swift */; };
+		E0DABAF425A0BAFC006FF0C4 /* ProjectsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAF325A0BAFC006FF0C4 /* ProjectsApi.swift */; };
+		E0DABAF625A0BB12006FF0C4 /* ProjectsSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABAF525A0BB12006FF0C4 /* ProjectsSerivce.swift */; };
 		E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D45257B65B2009198C4 /* AppDelegate.swift */; };
 		E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E70D47257B65B2009198C4 /* SceneDelegate.swift */; };
 		E0E70D52257B65B4009198C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E70D50257B65B4009198C4 /* LaunchScreen.storyboard */; };
@@ -155,15 +171,31 @@
 		E053D320259624BC0069B367 /* BottomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPageViewController.swift; sourceTree = "<group>"; };
 		E053D322259624C00069B367 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		E053D324259624C40069B367 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
-		E053D326259624C80069B367 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		E053D328259624CC0069B367 /* XLPagerTabStripExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLPagerTabStripExampleViewController.swift; sourceTree = "<group>"; };
 		E05433822580C0900036A881 /* 29LT_Azer-Medium.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Medium.OTF"; sourceTree = "<group>"; };
 		E05433832580C0900036A881 /* 29LT_Azer-Bold.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Bold.OTF"; sourceTree = "<group>"; };
 		E05433842580C0900036A881 /* 29LT_Azer-Regular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29LT_Azer-Regular.OTF"; sourceTree = "<group>"; };
 		E05433882580C19D0036A881 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		E054338A2580C3760036A881 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
+		E07967C6259A6B6500BC3DB2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		E07967C7259A6B6500BC3DB2 /* ReservationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationViewController.xib; sourceTree = "<group>"; };
+		E081690425A2F7EF00E625BC /* ReserveSlotApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveSlotApi.swift; sourceTree = "<group>"; };
+		E081690625A2FC2100E625BC /* ReserveSlotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveSlotService.swift; sourceTree = "<group>"; };
+		E081690825A3006500E625BC /* ReserveSlotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveSlotPresenter.swift; sourceTree = "<group>"; };
+		E087E84E2599F6EE00DBEF7B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E087E8502599F87400DBEF7B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E0BCA1DC25962FD60092D032 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E0D8BFA1259644D9005A7216 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E0DABAE325A0B740006FF0C4 /* Companies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Companies.swift; sourceTree = "<group>"; };
+		E0DABAE425A0B740006FF0C4 /* CompaniesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesResponse.swift; sourceTree = "<group>"; };
+		E0DABAE725A0B74C006FF0C4 /* Projects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
+		E0DABAE825A0B74C006FF0C4 /* ProjectsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
+		E0DABAEB25A0B780006FF0C4 /* CompanyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPresenter.swift; sourceTree = "<group>"; };
+		E0DABAED25A0B78D006FF0C4 /* ProjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPresenter.swift; sourceTree = "<group>"; };
+		E0DABAEF25A0B804006FF0C4 /* CompaniesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesApi.swift; sourceTree = "<group>"; };
+		E0DABAF125A0B906006FF0C4 /* CompaniesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesService.swift; sourceTree = "<group>"; };
+		E0DABAF325A0BAFC006FF0C4 /* ProjectsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsApi.swift; sourceTree = "<group>"; };
+		E0DABAF525A0BB12006FF0C4 /* ProjectsSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSerivce.swift; sourceTree = "<group>"; };
 		E0E70D42257B65B2009198C4 /* SME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E70D45257B65B2009198C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E70D47257B65B2009198C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,10 +338,18 @@
 				E053D320259624BC0069B367 /* BottomPageViewController.swift */,
 				E053D322259624C00069B367 /* EmptyViewController.swift */,
 				E053D324259624C40069B367 /* HeaderViewController.swift */,
-				E053D326259624C80069B367 /* LabelCell.swift */,
 				E053D328259624CC0069B367 /* XLPagerTabStripExampleViewController.swift */,
 			);
 			path = ChildProfileControllers;
+			sourceTree = "<group>";
+		};
+		E087E84D2599F6DA00DBEF7B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E087E84E2599F6EE00DBEF7B /* Coordinator.swift */,
+				E087E8502599F87400DBEF7B /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		E0978DF9257E987B004C769B /* Generated */ = {
@@ -318,6 +358,24 @@
 				E05433882580C19D0036A881 /* Fonts.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		E0DABAE125A0B716006FF0C4 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				E0DABAE325A0B740006FF0C4 /* Companies.swift */,
+				E0DABAE425A0B740006FF0C4 /* CompaniesResponse.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		E0DABAE225A0B728006FF0C4 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				E0DABAE725A0B74C006FF0C4 /* Projects.swift */,
+				E0DABAE825A0B74C006FF0C4 /* ProjectsResponse.swift */,
+			);
+			path = Project;
 			sourceTree = "<group>";
 		};
 		E0E70D39257B65B2009198C4 = {
@@ -345,6 +403,7 @@
 		E0E70D44257B65B2009198C4 /* SME */ = {
 			isa = PBXGroup;
 			children = (
+				E087E84D2599F6DA00DBEF7B /* Coordinators */,
 				E053D30C2596245D0069B367 /* TwitterPro */,
 				E038BC012586E2570062EA67 /* Config */,
 				E0F0B876257E5804002B1912 /* InternetChecker.swift */,
@@ -359,7 +418,6 @@
 				E0E70D82257B6BDA009198C4 /* Resources */,
 				E0E70D45257B65B2009198C4 /* AppDelegate.swift */,
 				E0E70D47257B65B2009198C4 /* SceneDelegate.swift */,
-				E0D8BFA1259644D9005A7216 /* Main.storyboard */,
 				E0E70D50257B65B4009198C4 /* LaunchScreen.storyboard */,
 				E0E70D53257B65B4009198C4 /* Info.plist */,
 			);
@@ -458,6 +516,9 @@
 			children = (
 				E0E70D99257B7401009198C4 /* ProfilesApi.swift */,
 				E04DB789259471C200378A3E /* SchedulesApi.swift */,
+				E0DABAEF25A0B804006FF0C4 /* CompaniesApi.swift */,
+				E0DABAF325A0BAFC006FF0C4 /* ProjectsApi.swift */,
+				E081690425A2F7EF00E625BC /* ReserveSlotApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -467,6 +528,9 @@
 			children = (
 				E0E70D9B257B7401009198C4 /* ProfilesService.swift */,
 				E04DB78E2594773D00378A3E /* SchedulesService.swift */,
+				E0DABAF125A0B906006FF0C4 /* CompaniesService.swift */,
+				E0DABAF525A0BB12006FF0C4 /* ProjectsSerivce.swift */,
+				E081690625A2FC2100E625BC /* ReserveSlotService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -491,6 +555,8 @@
 		E0E70DA4257B7424009198C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E0DABAE225A0B728006FF0C4 /* Project */,
+				E0DABAE125A0B716006FF0C4 /* Company */,
 				E04DB77B25946FE800378A3E /* Schedule */,
 				E0E70DA5257B7441009198C4 /* Card */,
 			);
@@ -550,6 +616,9 @@
 				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
 				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
 				E04DB79D2594B8C100378A3E /* ScheduleViewController.swift */,
+				E0D8BFA1259644D9005A7216 /* Main.storyboard */,
+				E07967C6259A6B6500BC3DB2 /* ReservationViewController.swift */,
+				E07967C7259A6B6500BC3DB2 /* ReservationViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -576,6 +645,9 @@
 			children = (
 				E0E70DF9257DFF44009198C4 /* CardPresenter.swift */,
 				E00AE2AB2599E4BC00E76BD7 /* SchedulePresenter.swift */,
+				E0DABAEB25A0B780006FF0C4 /* CompanyPresenter.swift */,
+				E0DABAED25A0B78D006FF0C4 /* ProjectPresenter.swift */,
+				E081690825A3006500E625BC /* ReserveSlotPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -652,6 +724,7 @@
 				E0E70DEE257CF6A5009198C4 /* NoInternet.xib in Resources */,
 				E0E70D5D257B664D009198C4 /* .gitignore in Resources */,
 				E05433872580C0900036A881 /* 29LT_Azer-Regular.OTF in Resources */,
+				E07967C9259A6B6500BC3DB2 /* ReservationViewController.xib in Resources */,
 				E0E70D7B257B6ABA009198C4 /* CardViewController.xib in Resources */,
 				E0E70D92257B6BDA009198C4 /* Colors.xcassets in Resources */,
 				E0D8BFA2259644D9005A7216 /* Main.storyboard in Resources */,
@@ -756,27 +829,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				E053D318259624850069B367 /* MasterViewController.swift in Sources */,
-				E053D327259624C80069B367 /* LabelCell.swift in Sources */,
 				E05433892580C19D0036A881 /* Fonts.swift in Sources */,
 				E0E70DC9257B74FA009198C4 /* User.swift in Sources */,
 				E0E70DCA257B74FA009198C4 /* Office.swift in Sources */,
 				E0E70D46257B65B2009198C4 /* AppDelegate.swift in Sources */,
 				E0E70DA3257B740E009198C4 /* URLConstants.swift in Sources */,
 				E053D321259624BC0069B367 /* BottomPageViewController.swift in Sources */,
+				E087E84F2599F6EE00DBEF7B /* Coordinator.swift in Sources */,
 				E053D325259624C40069B367 /* HeaderViewController.swift in Sources */,
+				E0DABAE525A0B740006FF0C4 /* Companies.swift in Sources */,
 				E04DB7872594718100378A3E /* SchedulesResponse.swift in Sources */,
+				E0DABAE925A0B74D006FF0C4 /* Projects.swift in Sources */,
 				E0E70DCB257B74FA009198C4 /* Response.swift in Sources */,
 				E04DB78A259471C200378A3E /* SchedulesApi.swift in Sources */,
 				E053D3162596247E0069B367 /* TPProgressDelegate.swift in Sources */,
 				E04DB7882594718100378A3E /* Schedules.swift in Sources */,
+				E0DABAF425A0BAFC006FF0C4 /* ProjectsApi.swift in Sources */,
 				E053D31A259624880069B367 /* TPDataSource.swift in Sources */,
 				E0E70DC8257B74FA009198C4 /* City.swift in Sources */,
 				E0E70DA2257B740E009198C4 /* KeyConstants.swift in Sources */,
 				E04DB7862594718100378A3E /* SchedulesData.swift in Sources */,
+				E07967C8259A6B6500BC3DB2 /* ReservationViewController.swift in Sources */,
 				E00AE2A12599C5ED00E76BD7 /* UIColor+Extentions.swift in Sources */,
 				E0E70D91257B6BDA009198C4 /* Assets.swift in Sources */,
 				E04DB78F2594773D00378A3E /* SchedulesService.swift in Sources */,
+				E081690525A2F7EF00E625BC /* ReserveSlotApi.swift in Sources */,
 				E0E70D48257B65B2009198C4 /* SceneDelegate.swift in Sources */,
+				E0DABAE625A0B740006FF0C4 /* CompaniesResponse.swift in Sources */,
 				E0F0B877257E5804002B1912 /* InternetChecker.swift in Sources */,
 				E053D310259624730069B367 /* BottomPageDelegate.swift in Sources */,
 				E0E70D7A257B6ABA009198C4 /* CardViewController.swift in Sources */,
@@ -787,27 +866,36 @@
 				E053D329259624CC0069B367 /* XLPagerTabStripExampleViewController.swift in Sources */,
 				E0E70DF2257D1B88009198C4 /* NoInternet.swift in Sources */,
 				E0E70D9D257B7401009198C4 /* ProfilesService.swift in Sources */,
+				E0DABAF225A0B906006FF0C4 /* CompaniesService.swift in Sources */,
 				E0E70DCF257B74FA009198C4 /* SsoUser.swift in Sources */,
 				E0F0B875257E326B002B1912 /* File.swift in Sources */,
+				E0DABAF625A0BB12006FF0C4 /* ProjectsSerivce.swift in Sources */,
 				E00AE2A82599D4EF00E76BD7 /* CollectionViewCell.swift in Sources */,
 				E0E70D80257B6B43009198C4 /* Card.swift in Sources */,
 				E0E70DD0257B74FA009198C4 /* Bsa.swift in Sources */,
+				E087E8512599F87400DBEF7B /* MainCoordinator.swift in Sources */,
+				E0DABAF025A0B804006FF0C4 /* CompaniesApi.swift in Sources */,
 				E0E70DCC257B74FA009198C4 /* Profiles.swift in Sources */,
 				E0E70DD1257B74FA009198C4 /* Center.swift in Sources */,
+				E081690725A2FC2100E625BC /* ReserveSlotService.swift in Sources */,
 				E0E70DCE257B74FA009198C4 /* Zoom.swift in Sources */,
 				E00AE29F2599C5AF00E76BD7 /* Colors.swift in Sources */,
 				E053D31F259624BA0069B367 /* BottomPageContainerViewController.swift in Sources */,
 				E053D3142596247A0069B367 /* PannableViewsProtocol.swift in Sources */,
+				E0DABAEC25A0B780006FF0C4 /* CompanyPresenter.swift in Sources */,
 				E053D31D259624B00069B367 /* BottomViewController.swift in Sources */,
 				E0E70DD5257BC585009198C4 /* Networkable.swift in Sources */,
 				E0E70DFA257DFF44009198C4 /* CardPresenter.swift in Sources */,
+				E0DABAEE25A0B78D006FF0C4 /* ProjectPresenter.swift in Sources */,
 				E0E70D9C257B7401009198C4 /* ProfilesApi.swift in Sources */,
 				E053D312259624770069B367 /* PagerAwareProtocol.swift in Sources */,
 				E00AE2AC2599E4BC00E76BD7 /* SchedulePresenter.swift in Sources */,
 				E053D323259624C00069B367 /* EmptyViewController.swift in Sources */,
+				E081690925A3006500E625BC /* ReserveSlotPresenter.swift in Sources */,
 				E00AE2A42599CFA500E76BD7 /* TableViewCell.swift in Sources */,
 				E0E70DCD257B74FA009198C4 /* Subject.swift in Sources */,
 				E0E70DA9257B745E009198C4 /* ProfilesRequest.swift in Sources */,
+				E0DABAEA25A0B74D006FF0C4 /* ProjectsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
