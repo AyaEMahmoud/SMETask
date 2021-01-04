@@ -11,59 +11,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Y8v-bt-Gp6" customClass="CollectionViewCell" customModule="SME" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Y8v-bt-Gp6" customClass="CollectionViewCell" customModule="SME" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="58" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mmn-yV-zY5">
                 <rect key="frame" x="0.0" y="0.0" width="58" height="24"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-Xu-Gea">
-                        <rect key="frame" x="0.0" y="0.0" width="58" height="24"/>
-                        <color key="backgroundColor" name="Ghost white"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" name="Steel blue"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="12"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:30 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OQ-m4-IUx">
                         <rect key="frame" x="3" y="4.333333333333333" width="52" height="15.666666666666668"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" name="Steel blue"/>
+                        <color key="textColor" name="Manatee"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="6OQ-m4-IUx" firstAttribute="centerX" secondItem="Mmn-yV-zY5" secondAttribute="centerX" id="2pq-qa-rG7"/>
-                    <constraint firstAttribute="bottom" secondItem="zBg-Xu-Gea" secondAttribute="bottom" id="6mL-gR-PL0"/>
-                    <constraint firstAttribute="trailing" secondItem="zBg-Xu-Gea" secondAttribute="trailing" id="OZL-oM-Vh3"/>
                     <constraint firstItem="6OQ-m4-IUx" firstAttribute="centerY" secondItem="Mmn-yV-zY5" secondAttribute="centerY" id="YYq-qB-wx5"/>
-                    <constraint firstItem="zBg-Xu-Gea" firstAttribute="leading" secondItem="Mmn-yV-zY5" secondAttribute="leading" id="d0M-oN-Mi6"/>
-                    <constraint firstItem="zBg-Xu-Gea" firstAttribute="top" secondItem="Mmn-yV-zY5" secondAttribute="top" id="muU-gm-juB"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="58" height="24"/>
             <connections>
-                <outlet property="cellView" destination="zBg-Xu-Gea" id="RXj-zz-ViK"/>
-                <outlet property="timeLabel" destination="6OQ-m4-IUx" id="5xl-Am-8Pk"/>
+                <outlet property="cellView" destination="Mmn-yV-zY5" id="au0-bN-Crw"/>
+                <outlet property="timeLabel" destination="6OQ-m4-IUx" id="dBS-bm-nkW"/>
             </connections>
             <point key="canvasLocation" x="-30.434782608695656" y="-1240.7608695652175"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="Ghost white">
-            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Steel blue">
-            <color red="0.22745098039215686" green="0.55686274509803924" blue="0.65098039215686276" alpha="0.79100000858306885" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Manatee">
+            <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

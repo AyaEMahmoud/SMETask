@@ -23,6 +23,7 @@ class BottomViewController: UIViewController, UITableViewDataSource, UITableView
     lazy var presenter = SchedulePresenter(with: self)
     lazy var noInternet = NoInternet(with: self)
     var contributerId: String?
+    var info: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +69,6 @@ class BottomViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.delegate = self
         
-        print("table view \(schedulesData)")
-        print("indexPath.row \(indexPath.row)")
         if !schedulesData.isEmpty {
             cell.schedule = schedulesData[indexPath.row].schedules ?? []
             let scheduleData = schedulesData[indexPath.row]
@@ -83,11 +82,11 @@ class BottomViewController: UIViewController, UITableViewDataSource, UITableView
         return 120
     }
     
-    func loadReservationScreen(schedule: [Schedules]) {
+    func loadReservationScreen(schedule: [Schedules], date: String) {
 
         let vc = ReservationViewController()
         vc.schedule = schedule
-        
+        vc.date = date
         let sheetController = SheetViewController(controller: vc, sizes: [.fixed(420), .fullscreen])
         self.present(sheetController, animated: true, completion: nil)
         
@@ -125,10 +124,10 @@ extension BottomViewController: SchedulePresenterView {
     }
     
     func updateModel(schedulesData: [SchedulesData]) {
-//        windlessSetup()
-//        initPullToRefresh()
-//        initLoadMore()
-//        self.tableView.backgroundView = nil
+        windlessSetup()
+        initPullToRefresh()
+        initLoadMore()
+        self.tableView.backgroundView = nil
         self.schedulesData = schedulesData
         self.tableView.reloadData()
     }

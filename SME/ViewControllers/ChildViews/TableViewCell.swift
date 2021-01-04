@@ -10,7 +10,7 @@ import UIKit
 import FittedSheets
 
 protocol ReservationProtocal {
-    func loadReservationScreen(schedule: [Schedules])
+    func loadReservationScreen(schedule: [Schedules], date: String)
 }
 
 class TableViewCell: UITableViewCell,
@@ -24,7 +24,8 @@ class TableViewCell: UITableViewCell,
     
     var delegate: ReservationProtocal?
     var schedule = [Schedules]()
-
+    var selectedDate = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         cellView.layer.cornerRadius = 12
@@ -51,7 +52,7 @@ class TableViewCell: UITableViewCell,
     }
     
     @IBAction func reserveTapped(_ sender: UIButton) {
-        delegate?.loadReservationScreen(schedule: self.schedule)
+        delegate?.loadReservationScreen(schedule: self.schedule, date: selectedDate)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -75,8 +76,9 @@ class TableViewCell: UITableViewCell,
 
     func setCellData(schedulesData: SchedulesData) {
         
-        if let timeResult = (schedulesData.day as? Int) {
+        if let timeResult = (schedulesData.day) {
             dateLable.text = formateDateToArabic(timeResult: timeResult)
+            
         }
     }
     
@@ -85,9 +87,8 @@ class TableViewCell: UITableViewCell,
         let formatter = DateFormatter()
         let date = Date(timeIntervalSince1970: TimeInterval(timeResult))
         formatter.locale = NSLocale(localeIdentifier: "ar_DZ") as Locale
-        formatter.dateFormat = "EEEE, d MMMM"
-        let outputDate = formatter.string(from: date)
-                
-        return outputDate
+        formatter.dateFormat = "EEEE, d, MMMM"
+        selectedDate = formatter.string(from: date)
+        return selectedDate
     }
 }

@@ -29,6 +29,7 @@
                 <outlet property="reserveDateLabel" destination="tPt-cI-uSL" id="V7T-pg-cq1"/>
                 <outlet property="stackView" destination="0PU-Re-Zgv" id="5aP-Cc-PUt"/>
                 <outlet property="submitButton" destination="55J-yp-APP" id="TOB-4h-SFt"/>
+                <outlet property="textField" destination="3eS-Mo-YkB" id="5oA-qK-iyo"/>
                 <outlet property="timeCollectionView" destination="s6G-VI-Qmx" id="bOI-lY-9i2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wayOfCommunicationCollectionView" destination="qJ6-zP-ask" id="EYb-w7-o0D"/>
@@ -96,6 +97,10 @@
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="j82-4t-bJL"/>
+                                        <outlet property="delegate" destination="-1" id="Ybu-hs-GKd"/>
+                                    </connections>
                                 </collectionView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-Re-Zgv">
                                     <rect key="frame" x="20" y="380" width="366" height="351"/>
@@ -121,6 +126,10 @@
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="-1" id="vie-wU-Qz8"/>
+                                                        <outlet property="delegate" destination="-1" id="nZz-3j-aLs"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,6 +164,10 @@
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="-1" id="iWq-oC-H2Q"/>
+                                                        <outlet property="delegate" destination="-1" id="TdC-x1-xSv"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,6 +201,10 @@
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="-1" id="MUv-oL-hWg"/>
+                                                        <outlet property="delegate" destination="-1" id="Gv2-tN-cTs"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,6 +240,10 @@
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="-1" id="CQO-lY-T99"/>
+                                                        <outlet property="delegate" destination="-1" id="Weo-ps-pfX"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

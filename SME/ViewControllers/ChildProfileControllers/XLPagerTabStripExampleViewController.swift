@@ -74,10 +74,11 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         vc.contributerId = self.id
         vc.coordinator = self.coordinator
         let child_1 = vc
-        print("in xlpager")
+
         let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomViewController") as! BottomViewController
         vc1.pageIndex = 1
         vc1.pageTitle = "معلومات عامة"
+//        vc1.info = 
         let child_2 = vc1
 
         return [child_1, child_2]
