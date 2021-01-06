@@ -282,19 +282,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E00AE2A22599CF8000E76BD7 /* ChildViews */ = {
-			isa = PBXGroup;
-			children = (
-				E00AE2A32599CFA500E76BD7 /* TableViewCell.swift */,
-				E00AE2A52599CFBA00E76BD7 /* TableViewCell.xib */,
-				E00AE2A72599D4EF00E76BD7 /* CollectionViewCell.swift */,
-				E00AE2A92599D4FD00E76BD7 /* CollectionViewCell.xib */,
-				E081691225A34E3D00E625BC /* ReserveCollectionViewCell.swift */,
-				E081691025A34E1600E625BC /* ReserveCollectionViewCell.xib */,
-			);
-			path = ChildViews;
-			sourceTree = "<group>";
-		};
 		E038BC012586E2570062EA67 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,14 +289,6 @@
 				E038BC042586E2740062EA67 /* Demo.xcconfig */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		E04DB77B25946FE800378A3E /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				E04DB77C2594700300378A3E /* Response */,
-			);
-			path = Schedule;
 			sourceTree = "<group>";
 		};
 		E04DB77C2594700300378A3E /* Response */ = {
@@ -336,7 +315,7 @@
 			path = TwitterPro;
 			sourceTree = "<group>";
 		};
-		E053D31B2596249B0069B367 /* ChildProfileControllers */ = {
+		E053D31B2596249B0069B367 /* ChildScheduleControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E053D31C259624B00069B367 /* BottomViewController.swift */,
@@ -347,7 +326,7 @@
 				E053D328259624CC0069B367 /* XLPagerTabStripExampleViewController.swift */,
 				E0D2914025A3668C008AE752 /* BottomInfoViewController.swift */,
 			);
-			path = ChildProfileControllers;
+			path = ChildScheduleControllers;
 			sourceTree = "<group>";
 		};
 		E087E84D2599F6DA00DBEF7B /* Coordinators */ = {
@@ -365,6 +344,174 @@
 				E05433882580C19D0036A881 /* Fonts.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		E0B2740725A4849A003EB065 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2740825A484AC003EB065 /* BsaProfiles */,
+				E0B2740925A484B8003EB065 /* Schedules */,
+				E0B2740A25A484CF003EB065 /* Reservation */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E0B2740825A484AC003EB065 /* BsaProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2740E25A48782003EB065 /* ViewControllers */,
+				E0B2740B25A484F9003EB065 /* Presenters */,
+				E0B2740C25A48760003EB065 /* Models */,
+				E0B2740D25A4876A003EB065 /* Views */,
+			);
+			path = BsaProfiles;
+			sourceTree = "<group>";
+		};
+		E0B2740925A484B8003EB065 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2741225A48811003EB065 /* ViewControllers */,
+				E0B2741125A4880B003EB065 /* Views */,
+				E0B2741025A487FF003EB065 /* Presenters */,
+				E0B2740F25A487F5003EB065 /* Models */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		E0B2740A25A484CF003EB065 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2741725A488D4003EB065 /* ViewControllers */,
+				E0B2741625A488CF003EB065 /* Views */,
+				E0B2741525A488CB003EB065 /* Models */,
+				E0B2741425A488C3003EB065 /* Presenters */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		E0B2740B25A484F9003EB065 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DF9257DFF44009198C4 /* CardPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E0B2740C25A48760003EB065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70DA6257B7448009198C4 /* Request */,
+				E0E70DA7257B744F009198C4 /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0B2740D25A4876A003EB065 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D7D257B6B43009198C4 /* Cells */,
+				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0B2740E25A48782003EB065 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E0B2740F25A487F5003EB065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E04DB77C2594700300378A3E /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0B2741025A487FF003EB065 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E00AE2AB2599E4BC00E76BD7 /* SchedulePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E0B2741125A4880B003EB065 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2741325A48851003EB065 /* Cells */,
+				E0D8BFA1259644D9005A7216 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0B2741225A48811003EB065 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E053D31B2596249B0069B367 /* ChildScheduleControllers */,
+				E04DB79D2594B8C100378A3E /* ScheduleViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E0B2741325A48851003EB065 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E00AE2A32599CFA500E76BD7 /* TableViewCell.swift */,
+				E00AE2A52599CFBA00E76BD7 /* TableViewCell.xib */,
+				E00AE2A72599D4EF00E76BD7 /* CollectionViewCell.swift */,
+				E00AE2A92599D4FD00E76BD7 /* CollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0B2741425A488C3003EB065 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E0DABAEB25A0B780006FF0C4 /* CompanyPresenter.swift */,
+				E0DABAED25A0B78D006FF0C4 /* ProjectPresenter.swift */,
+				E081690825A3006500E625BC /* ReserveSlotPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E0B2741525A488CB003EB065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E081690A25A3031200E625BC /* Reserve.swift */,
+				E0DABAE225A0B728006FF0C4 /* Project */,
+				E0DABAE125A0B716006FF0C4 /* Company */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0B2741625A488CF003EB065 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2741825A488EF003EB065 /* Cells */,
+				E07967C7259A6B6500BC3DB2 /* ReservationViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0B2741725A488D4003EB065 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E07967C6259A6B6500BC3DB2 /* ReservationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E0B2741825A488EF003EB065 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E081691225A34E3D00E625BC /* ReserveCollectionViewCell.swift */,
+				E081691025A34E1600E625BC /* ReserveCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E0DABAE125A0B716006FF0C4 /* Company */ = {
@@ -414,13 +561,11 @@
 				E053D30C2596245D0069B367 /* TwitterPro */,
 				E038BC012586E2570062EA67 /* Config */,
 				E0F0B876257E5804002B1912 /* InternetChecker.swift */,
-				E0E70DF7257DFE85009198C4 /* Presenters */,
 				E0E70DF5257DFE60009198C4 /* Protocals */,
 				E0E70DF3257DFDFF009198C4 /* Extentions */,
+				E0B2740725A4849A003EB065 /* Scenes */,
 				E0E70D97257B7401009198C4 /* Domain */,
 				E0E70D9E257B740E009198C4 /* Helpers */,
-				E0E70DF4257DFE17009198C4 /* ViewControllers */,
-				E0E70DA4257B7424009198C4 /* Models */,
 				E0E70D7C257B6B43009198C4 /* Views */,
 				E0E70D82257B6BDA009198C4 /* Resources */,
 				E0E70D45257B65B2009198C4 /* AppDelegate.swift */,
@@ -455,7 +600,6 @@
 			isa = PBXGroup;
 			children = (
 				E0E70DF6257DFE73009198C4 /* NoInternet */,
-				E0E70D7D257B6B43009198C4 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -558,27 +702,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		E0E70DA4257B7424009198C4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E081690A25A3031200E625BC /* Reserve.swift */,
-				E0DABAE225A0B728006FF0C4 /* Project */,
-				E0DABAE125A0B716006FF0C4 /* Company */,
-				E04DB77B25946FE800378A3E /* Schedule */,
-				E0E70DA5257B7441009198C4 /* Card */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E0E70DA5257B7441009198C4 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				E0E70DA7257B744F009198C4 /* Response */,
-				E0E70DA6257B7448009198C4 /* Request */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
 		E0E70DA6257B7448009198C4 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,21 +737,6 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		E0E70DF4257DFE17009198C4 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E00AE2A22599CF8000E76BD7 /* ChildViews */,
-				E053D31B2596249B0069B367 /* ChildProfileControllers */,
-				E0E70D78257B6ABA009198C4 /* CardViewController.swift */,
-				E0E70D79257B6ABA009198C4 /* CardViewController.xib */,
-				E04DB79D2594B8C100378A3E /* ScheduleViewController.swift */,
-				E0D8BFA1259644D9005A7216 /* Main.storyboard */,
-				E07967C6259A6B6500BC3DB2 /* ReservationViewController.swift */,
-				E07967C7259A6B6500BC3DB2 /* ReservationViewController.xib */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		E0E70DF5257DFE60009198C4 /* Protocals */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,18 +752,6 @@
 				E0E70DEC257CF6A5009198C4 /* NoInternet.xib */,
 			);
 			path = NoInternet;
-			sourceTree = "<group>";
-		};
-		E0E70DF7257DFE85009198C4 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				E0E70DF9257DFF44009198C4 /* CardPresenter.swift */,
-				E00AE2AB2599E4BC00E76BD7 /* SchedulePresenter.swift */,
-				E0DABAEB25A0B780006FF0C4 /* CompanyPresenter.swift */,
-				E0DABAED25A0B78D006FF0C4 /* ProjectPresenter.swift */,
-				E081690825A3006500E625BC /* ReserveSlotPresenter.swift */,
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
