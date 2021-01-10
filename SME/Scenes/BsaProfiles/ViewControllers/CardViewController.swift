@@ -95,13 +95,13 @@ extension CardViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath as IndexPath) as? Card
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath as IndexPath) as! Card
                 
         if !profiles.isEmpty {
             let profile = profiles[indexPath.row]
-            cell?.setCellData(profile: profile)
+            cell.setCellData(profile: profile)
         }
-        return cell!
+        return cell
     }
     
     func showAlert() {

@@ -93,36 +93,36 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReserveCollectionViewCell",
-                                                      for: indexPath as IndexPath) as? ReserveCollectionViewCell
+                                                      for: indexPath as IndexPath) as! ReserveCollectionViewCell
 
         if collectionView == self.timeCollectionView {
             
             if !schedule.isEmpty {
                 let scheduleTime = schedule[indexPath.row]
-                cell?.setCellData(time: scheduleTime)
+                cell.setCellData(time: scheduleTime)
             }
         } else if collectionView == self.companiesCollectionView {
             if !companies.isEmpty {
                 let company = companies[indexPath.row]
-                cell?.setCellCompaniesData(company: company)
+                cell.setCellCompaniesData(company: company)
             }
         } else if collectionView == self.projectsCollectionView {
             if !projects.isEmpty {
                 let project = projects[indexPath.row]
-                cell?.setCellProjectsData(project: project)
+                cell.setCellProjectsData(project: project)
             }
         } else if collectionView == self.wayOfCommunicationCollectionView {
             let communication = wayOfCommunication
-            cell?.setCellCommunicationData(communication: communication)
-            cell?.contentView.backgroundColor = UIColor(asset: Asset.Colors.seaBlue)
-            cell?.cellLabel.isHighlighted = true
+            cell.setCellCommunicationData(communication: communication)
+            cell.contentView.backgroundColor = UIColor(asset: Asset.Colors.seaBlue)
+            cell.cellLabel.isHighlighted = true
         } else {
             if !organizations.isEmpty {
                 let org = organizations[indexPath.row]
-                cell?.setCellOrganizationsData(text: org)
+                cell.setCellOrganizationsData(text: org)
             }
         }
-        return cell!
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,

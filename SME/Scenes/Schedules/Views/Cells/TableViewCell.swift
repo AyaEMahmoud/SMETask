@@ -66,13 +66,13 @@ class TableViewCell: UITableViewCell,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell",
-                                                      for: indexPath as IndexPath) as? CollectionViewCell
+                                                      for: indexPath as IndexPath) as! CollectionViewCell
         
         if !schedule.isEmpty {
             let scheduleTime = schedule[indexPath.row]
-            cell?.setCellData(time: scheduleTime)
+            cell.setCellData(time: scheduleTime)
         }
-        return cell!
+        return cell
     }
 
     func setCellData(schedulesData: SchedulesData) {
