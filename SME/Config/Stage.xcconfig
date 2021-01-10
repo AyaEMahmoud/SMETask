@@ -1,6 +1,6 @@
 APP_NAME = SME
 APP_BUNDLE_IDENTIFIER = com.ibtikar.SME
 TEAM = 2C86JD592M
-BASE_URL = https://smea-pc.ibtikar.sa
+BASE_URL = smea-pc.ibtikar.sa
 EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
 PRODUCT_NAME = SME

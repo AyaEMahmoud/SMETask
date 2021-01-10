@@ -38,7 +38,6 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         return 30
     }
 
-    //MARK: Properties
     var isReload = false
     var id: String?
     var info: String?
@@ -54,13 +53,17 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
 
     }
 
-    //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegate = self
 
-        self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?,
+                                                newCell: ButtonBarViewCell?,
+                                                progressPercentage: CGFloat,
+                                                changeCurrentIndex: Bool,
+                                                animated: Bool) -> Void in
+            
             oldCell?.label.textColor = UIColor(asset: Asset.Colors.ashGrey)
             newCell?.label.textColor = UIColor(asset: Asset.Colors.seaBlue)
         }
@@ -75,15 +78,15 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         vc.count = 10
         vc.contributerId = self.id
         vc.coordinator = self.coordinator
-        let child_1 = vc
+        let child1 = vc
 
         let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottomInfoViewController") as! BottomInfoViewController
         vc.pageIndex = 1
         vc1.pageTitle = "معلومات عامة"
         vc1.info = self.info
-        let child_2 = vc1
+        let child2 = vc1
 
-        return [child_2, child_1]
+        return [child2, child1]
     }
 
     override func reloadPagerTabStripView() {
@@ -91,7 +94,11 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         super.reloadPagerTabStripView()
     }
     
-    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+    override func updateIndicator(for viewController: PagerTabStripViewController,
+                                  fromIndex: Int,
+                                  toIndex: Int,
+                                  withProgressPercentage progressPercentage: CGFloat,
+                                  indexWasChanged: Bool) {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
         
         guard indexWasChanged == true else { return }

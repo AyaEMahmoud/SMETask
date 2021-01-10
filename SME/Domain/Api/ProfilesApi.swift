@@ -24,14 +24,14 @@ extension ProfilesApi: TargetType {
     
     public var path: String {
         switch self {
-        case .getProfiles(_):
+        case .getProfiles:
             return APPURL.Paths.Profiles
         }
     }
     
     public var method: Moya.Method {
        switch self {
-       case .getProfiles(_):
+       case .getProfiles:
         return .get
         }
     }

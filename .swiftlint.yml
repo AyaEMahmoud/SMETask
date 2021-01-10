@@ -16,9 +16,9 @@ excluded:
   - Submodule
   - Carthage
   - SME/TwitterPro
-  - SME/ViewControllers/ChildProfileControllers
+  - SME/Scenes/Schedules/ViewControllers/ChildProfileControllers
   - SME/Helpers/Constants/KeyConstants.swift
-  - SME/ViewControllers/ScheduleViewController.swift
+  - SME/Scenes/Schedules/ViewControllers/ScheduleViewController.swift
   
 opt_in_rules:
   - empty_count
@@ -59,7 +59,7 @@ vertical_parameter_alignment_on_call: error
 multiline_parameters: error
 notification_center_detachment: error
 
-warning_threshold: 70
+warning_threshold: 110
 
 line_length:
   error: 180
@@ -104,4 +104,6 @@ identifier_name:
     - to
     - qr
     - cr
+    - y
+    - t
 

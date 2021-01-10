@@ -29,7 +29,8 @@ class ReserveSlotPresenter {
             if error == nil {
                 self.view?.displaySuccessToast()
                 } else {
-                if let error = ((error as? MoyaError)?.errorUserInfo["NSUnderlyingError"] as? Alamofire.AFError)?.underlyingError as NSError?,
+                if let error = ((error as? MoyaError)?
+                                    .errorUserInfo["NSUnderlyingError"] as? Alamofire.AFError)?.underlyingError as NSError?,
                     error.domain == NSURLErrorDomain,
                     error.code == NSURLErrorNotConnectedToInternet
                         || error.code == NSURLErrorTimedOut

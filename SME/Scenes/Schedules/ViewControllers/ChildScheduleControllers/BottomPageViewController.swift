@@ -45,7 +45,10 @@ class BottomPageViewController: UIPageViewController, PagerAwareProtocol {
 //  MARK: UIPageViewControllerDataSource
 extension BottomPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
         
         if !completed { return }
         
