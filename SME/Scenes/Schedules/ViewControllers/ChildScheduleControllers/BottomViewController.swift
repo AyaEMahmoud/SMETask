@@ -10,7 +10,10 @@ import UIKit
 import XLPagerTabStrip
 import FittedSheets
 
-class BottomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ReservationProtocal {
+class BottomViewController: UIViewController,
+                            UITableViewDataSource,
+                            UITableViewDelegate,
+                            ReservationProtocal {
     
     @IBOutlet weak var sessionsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!

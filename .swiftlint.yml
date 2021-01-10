@@ -16,7 +16,7 @@ excluded:
   - Submodule
   - Carthage
   - SME/TwitterPro
-  - SME/Scenes/Schedules/ViewControllers/ChildProfileControllers
+  - SME/Scenes/Schedules/ViewControllers/ChildScheduleControllers
   - SME/Helpers/Constants/KeyConstants.swift
   - SME/Scenes/Schedules/ViewControllers/ScheduleViewController.swift
   
