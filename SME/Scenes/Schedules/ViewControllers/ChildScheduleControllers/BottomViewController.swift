@@ -34,6 +34,7 @@ class BottomViewController: UIViewController,
         sessionsLabel.font = UIFont(font: FontFamily._29LTAzer.bold, size: 22)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
 
+        print("table coor \(coordinator)")
         if let id = self.contributerId {
             presenter.getSchedules(contributerId: id)
         }

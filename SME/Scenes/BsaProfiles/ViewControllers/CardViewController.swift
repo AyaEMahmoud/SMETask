@@ -85,6 +85,7 @@ extension CardViewController: UICollectionViewDelegate {
 extension CardViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("coor \(coordinator)")
         coordinator?.viewSchedules(profile: profiles[indexPath.row])
     }
     

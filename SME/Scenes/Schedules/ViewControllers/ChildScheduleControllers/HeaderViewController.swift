@@ -18,9 +18,8 @@ class HeaderViewController: UIViewController {
     @IBOutlet weak var coverImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var covermageView: UIImageView!
-//    @IBOutlet weak var titleView: UIScrollView!
-
     @IBOutlet weak var pageLabel: UILabel!
+    
     var animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: nil)
 
     var titleInitialCenterY: CGFloat!
@@ -37,7 +36,7 @@ class HeaderViewController: UIViewController {
         super.viewDidLoad()
         contentView.layer.cornerRadius = 12
         userImageView.layer.cornerRadius = 13
-        
+        print("header coor \(coordinator)")
         if let profile = self.profile {
             
             userName.text = profile.ssoUser?.fullName
@@ -95,23 +94,26 @@ class HeaderViewController: UIViewController {
         }
     }
     
-    func update(with progress: CGFloat, minHeaderHeight: CGFloat){
+    func update(with progress: CGFloat, headerHeight: ClosedRange<CGFloat>){
 
-        let y = progress * (view.frame.height - minHeaderHeight)
+        let y = progress * (headerHeight.upperBound - headerHeight.lowerBound)
         
-        coverImageHeightConstraint.constant = max(covernitialHeight, covernitialHeight - y)
-                
-//        let titleOffset = max(min(0, (userNameLabel.convert(userNameLabel.bounds, to: nil).minY - minHeaderHeight)), -titleView.frame.height)
-//        titleView.contentOffset.y = -titleOffset-titleView.frame.height
-        
+        coverImageHeightConstraint.constant = max(covernitialHeight,
+                                                  covernitialHeight - y)
+                        
         if progress < 0 {
             animator.fractionComplete = abs(min(0, progress))
-        }else{
-//            animator.fractionComplete = (abs((titleOffset)/(titleView.frame.height)))
         }
         
-        let topLimit = covernitialHeight - minHeaderHeight
-        if y > topLimit{
+        let topLimit = covernitialHeight - headerHeight.lowerBound
+        
+        if y > 0 {
+            covermageView.center.y = covermageView.bounds.height / 2 + y
+        } else {
+            covermageView.center.y = covermageView.bounds.height / 2
+        }
+        
+        if y > topLimit {
             covermageView.center.y = covernitialCenterY + y - topLimit
             if stickyCover{
                 self.stickyCover = false
@@ -125,17 +127,14 @@ class HeaderViewController: UIViewController {
             
             if !stickyCover{
                 self.stickyCover = true
-//                userImageView.layer.zPosition = titleView.layer.zPosition
             }
         }
-//        visualEffectView.center.y = covermageView.center.y
-//        titleView.center.y = covermageView.frame.maxY - titleView.frame.height/2
+        
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
-        print("back tap")
         let vc = CardViewController()
-        self.coordinator?.pop(viewController: vc)
-        
+        coordinator?.pop(viewController: vc)
     }
+    
 }

@@ -27,18 +27,12 @@ class MainCoordinator: Coordinator {
     
     func viewSchedules(profile: Profiles) {
         let vc = ScheduleViewController()
-        let tableVC = BottomViewController()
         vc.coordinator = self
         vc.profile = profile
-        tableVC.contributerId = profile.id
         navigationController.pushViewController(vc, animated: true)
     }
-    
-    func viewReservation() {
 
-    }
-    
     func pop(viewController: UIViewController) {
-        navigationController.popToViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: false)
     }
 }

@@ -13,27 +13,28 @@ class ScheduleViewController : UIViewController,
                                TPDataSource,
                                TPProgressDelegate {
     
-    func headerHeight() -> ClosedRange<CGFloat> {
-        let lowerBound = CGFloat(100.0)
-        let upperBound = CGFloat(297.0)
-        let height = lowerBound...upperBound
-        return height
-    }
-    
-    func infiniteScrollTriggered(scroll: UIScrollView) {
-        
-    }
     
     var coordinator: MainCoordinator?
     var headerVC: HeaderViewController?
-//    var bottomTableVC: BottomViewController?
+    var bottomTableVC: BottomViewController?
     var profile: Profiles?
     let refresh = UIRefreshControl()
+    let refreshControl = UIRefreshControl()
+    var refreshView = UIView(frame: CGRect(x: 0, y: 230, width: 0, height: 0))
+    var scrollView = UIScrollView()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tp_configure(with: self, delegate: self)
+    }
+    
+    func tp_refreshController() -> UIRefreshControl {
+        refreshControl.isHidden = false
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+        return refreshControl
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +43,21 @@ class ScheduleViewController : UIViewController,
     }
     
     @objc func handleRefreshControl() {
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.refresh.endRefreshing()
+        print("refresh")
+        self.bottomTableVC?.initPullToRefresh()
+        self.refresh.endRefreshing()
+    }
+    
+    func headerHeight() -> ClosedRange<CGFloat> {
+        let lowerBound = UIScreen.main.bounds.height * 0.2
+        let upperBound = CGFloat(297.0)
+        return (topInset + lowerBound )...upperBound
+        
+    }
+    func infiniteScrollTriggered(scroll: UIScrollView) {
+        self.refresh.endRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            scroll.scrollsToTop = true
         }
     }
     
@@ -58,6 +72,7 @@ class ScheduleViewController : UIViewController,
         if let profile = self.profile {
             self.headerVC?.profile = profile
         }
+        headerVC?.coordinator = self.coordinator
         return headerVC!
     }
     
@@ -65,7 +80,9 @@ class ScheduleViewController : UIViewController,
     func bottomViewController() -> UIViewController & PagerAwareProtocol {
         
         bottomVC = UIStoryboard.init(name: "Main",
-                                     bundle: nil).instantiateViewController(withIdentifier: "XLPagerTabStripExampleViewController") as! XLPagerTabStripExampleViewController
+                                     bundle: nil)
+            .instantiateViewController(withIdentifier: "XLPagerTabStripExampleViewController") as! XLPagerTabStripExampleViewController
+        
         if let profile = self.profile {
             self.bottomVC?.id = profile.id
             self.bottomVC.info = profile.subject?.title
@@ -78,20 +95,20 @@ class ScheduleViewController : UIViewController,
     
     //stop scrolling header at this point
     func minHeaderHeight() -> CGFloat {
-        return (topInset + 120)
+        return (topInset + 90)
     }
     
     //MARK: TPProgressDelegate
     func tp_scrollView(_ scrollView: UIScrollView, didUpdate progress: CGFloat) {
-        headerVC?.update(with: progress, minHeaderHeight: minHeaderHeight())
+        headerVC?.update(with: progress, headerHeight: headerHeight())
     }
     
     func tp_scrollViewDidLoad(_ scrollView: UIScrollView) {
         
+        self.scrollView = scrollView
         refresh.tintColor = .white
         refresh.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-        
-        let refreshView = UIView(frame: CGRect(x: 0, y: 120, width: 0, height: 0))
+
         scrollView.addSubview(refreshView)
         refreshView.addSubview(refresh)
     }

@@ -33,9 +33,9 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
     var currentViewController: UIViewController?{
         return viewControllers[currentIndex]
     }
-    
+
     var pagerTabHeight: CGFloat?{
-        return 30
+        return 50
     }
 
     var isReload = false
@@ -54,6 +54,7 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
     }
 
     override func viewDidLoad() {
+        styleTapsButton()
         super.viewDidLoad()
 
         delegate = self
@@ -89,6 +90,19 @@ class XLPagerTabStripExampleViewController: ButtonBarPagerTabStripViewController
         return [child2, child1]
     }
 
+    private func styleTapsButton () {
+        settings.style.selectedBarBackgroundColor = UIColor.lightGray
+        settings.style.buttonBarBackgroundColor = UIColor(asset: Asset.Colors.ghostWhite)
+        settings.style.buttonBarHeight = 45
+        settings.style.buttonBarLeftContentInset = 16
+        settings.style.buttonBarRightContentInset = 20
+        settings.style.buttonBarItemFont = FontFamily._29LTAzer.bold.font(size: 18)
+        settings.style.selectedBarBackgroundColor = UIColor(asset: Asset.Colors.seaBlue)!
+        settings.style.buttonBarItemBackgroundColor = UIColor(asset: Asset.Colors.ghostWhite)
+        settings.style.buttonBarMinimumInteritemSpacing = 5
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+    }
+    
     override func reloadPagerTabStripView() {
         pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0 )
         super.reloadPagerTabStripView()

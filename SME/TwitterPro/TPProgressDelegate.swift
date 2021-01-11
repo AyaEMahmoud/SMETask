@@ -8,10 +8,10 @@
 //swiftlint:disable all
 import UIKit
 
-public protocol TPProgressDelegate{
+public protocol TPProgressDelegate {
     func tp_scrollView(_ scrollView: UIScrollView, didUpdate progress: CGFloat)
     func tp_scrollViewDidLoad(_ scrollView: UIScrollView)
-//    func tp_refreshController() -> UIRefreshControl
-//    func infiniteScrollTriggered(scroll:UIScrollView)
- //   func scrollViewDidScrollToTop(_ scrollView: UIScrollView,)
+    func tp_refreshController() -> UIRefreshControl
+    func infiniteScrollTriggered(scroll:UIScrollView)
+//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView,)
 }
