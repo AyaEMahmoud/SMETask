@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ToastSwiftFramework
 
 class ReservationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -132,9 +133,18 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
       }
 
     @IBAction func okButtonTapped(_ sender: UIButton) {
-        requestDictionary["purpose"] = textField.text
+        if textField.text != nil {
+            requestDictionary["purpose"] = textField.text
+        }
         print("request \(requestDictionary)")
-        reservePresenter.reserveSlot(dictionaryRequest: requestDictionary)
+        if requestDictionary.isEmpty || requestDictionary["purpose"] as! String == "" {
+            self.view.makeToast("Please complete your reservation!", duration: 3.0, position: .bottom)
+        } else {
+            reservePresenter.reserveSlot(dictionaryRequest: requestDictionary)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -191,7 +201,7 @@ class ReservationViewController: UIViewController, UICollectionViewDataSource, U
         }
             let selectedCell = collectionView.cellForItem(at: indexPath)
             selectedCell?.contentView.backgroundColor = UIColor(asset: Asset.Colors.seaBlue)
-            requestDictionary["project_id"] = projects[indexPath.row].id
+            requestDictionary["company_id"] = projects[indexPath.row].id
        }
         
     }
@@ -271,7 +281,7 @@ extension ReservationViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == self.textField {
-            if textField.hasText {
+            if textField.text != nil {
                 submitButton.isUserInteractionEnabled = true
             } else {
                 submitButton.isUserInteractionEnabled = false

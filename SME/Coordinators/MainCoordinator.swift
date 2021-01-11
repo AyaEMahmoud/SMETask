@@ -32,7 +32,7 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
 
-    func pop(viewController: UIViewController) {
-        navigationController.pushViewController(viewController, animated: false)
+    func pop() {
+        navigationController.popViewController(animated: true)
     }
 }

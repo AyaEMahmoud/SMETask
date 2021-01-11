@@ -36,9 +36,8 @@ class HeaderViewController: UIViewController {
         super.viewDidLoad()
         contentView.layer.cornerRadius = 12
         userImageView.layer.cornerRadius = 13
-        print("header coor \(coordinator)")
+        
         if let profile = self.profile {
-            
             userName.text = profile.ssoUser?.fullName
             userName.font = UIFont(font: FontFamily._29LTAzer.bold, size: 18)
             userInfo.text = profile.subject?.title
@@ -52,27 +51,11 @@ class HeaderViewController: UIViewController {
                 userImageView.image = nil
             }
         }
-//        animator.addAnimations {
-//            self.visualEffectView.effect = UIBlurEffect(style: .regular)
-//        }
-        
-//        covermageView.layer.zPosition = 0.1
-//        visualEffectView.layer.zPosition = covermageView.layer.zPosition + 0.1
-//        titleView.layer.zPosition = visualEffectView.layer.zPosition + 0.1
-//        userImageView.layer.zPosition = titleView.layer.zPosition
-
-//        visualEffectView.effect = nil
-
-//        userImageView.rounded()
-//        userImageView.bordered(lineWidth: 8)
-        
-//        descriptionLabel.numberOfLines = 2
         
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-//        titleView.setContentOffset(CGPoint(x: 0, y: -titleView.frame.height), animated: true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,15 +65,12 @@ class HeaderViewController: UIViewController {
             viewDidLayoutOnce = true
             covernitialCenterY = covermageView.center.y
             covernitialHeight = covermageView.frame.height
-//            titleInitialCenterY = titleView.center.y
         }
 
     }
     
     @IBAction func readMoreAction(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
-//            self.descriptionLabel.numberOfLines = 0
-//            self.gradientView.isHidden = true
         }
     }
     
@@ -133,8 +113,7 @@ class HeaderViewController: UIViewController {
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
-        let vc = CardViewController()
-        coordinator?.pop(viewController: vc)
+        coordinator?.pop()
     }
     
 }

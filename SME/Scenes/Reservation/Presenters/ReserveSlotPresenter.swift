@@ -27,6 +27,7 @@ class ReserveSlotPresenter {
     func reserveSlot(dictionaryRequest: [String: Any]) {
         networkManager.reserveSlot(dictionaryRequest: dictionaryRequest) { (success, error) in
             if error == nil {
+                print("scueess \(success)")
                 self.view?.displaySuccessToast()
                 } else {
                 if let error = ((error as? MoyaError)?
