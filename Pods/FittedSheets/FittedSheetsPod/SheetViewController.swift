@@ -63,10 +63,7 @@ public class SheetViewController: UIViewController {
         }
     }
     
-    public static var minimumSpaceAbovePullBar: CGFloat {
-        get { return SheetOptions.default._minimumSpaceAbovePullBar }
-        set { SheetOptions.default._minimumSpaceAbovePullBar = newValue }
-    }
+    public static var minimumSpaceAbovePullBar: CGFloat = 0
     public var minimumSpaceAbovePullBar: CGFloat {
         didSet {
             if self.isViewLoaded {
@@ -100,37 +97,25 @@ public class SheetViewController: UIViewController {
         }
     }
     
-    public static var cornerRadius: CGFloat {
-        get { return SheetOptions.default._cornerRadius }
-        set { SheetOptions.default._cornerRadius = newValue }
-    }
+    public static var cornerRadius: CGFloat = 12
     public var cornerRadius: CGFloat {
         get { return self.contentViewController.cornerRadius }
         set { self.contentViewController.cornerRadius = newValue }
     }
     
-    public static var gripSize: CGSize {
-        get { return SheetOptions.default._gripSize }
-        set { SheetOptions.default._gripSize = newValue }
-    }
+    public static var gripSize: CGSize = CGSize (width: 50, height: 6)
     public var gripSize: CGSize {
         get { return self.contentViewController.gripSize }
         set { self.contentViewController.gripSize = newValue }
     }
     
-    public static var gripColor: UIColor {
-        get { return SheetOptions.default._gripColor }
-        set { SheetOptions.default._gripColor = newValue }
-    }
+    public static var gripColor: UIColor = UIColor(white: 0.868, black: 0.1)
     public var gripColor: UIColor? {
         get { return self.contentViewController.gripColor }
         set { self.contentViewController.gripColor = newValue }
     }
     
-    public static var pullBarBackgroundColor: UIColor {
-        get { return SheetOptions.default._pullBarBackgroundColor }
-        set { SheetOptions.default._pullBarBackgroundColor = newValue }
-    }
+    public static var pullBarBackgroundColor: UIColor = UIColor.clear
     public var pullBarBackgroundColor: UIColor? {
         get { return self.contentViewController.pullBarBackgroundColor }
         set { self.contentViewController.pullBarBackgroundColor = newValue }
@@ -182,12 +167,12 @@ public class SheetViewController: UIViewController {
         self.sizes = sizes.count > 0 ? sizes : [.intrinsic]
         self.options = options
         self.transition = SheetTransition(options: options)
-        self.minimumSpaceAbovePullBar = options._minimumSpaceAbovePullBar
+        self.minimumSpaceAbovePullBar = SheetViewController.minimumSpaceAbovePullBar
         super.init(nibName: nil, bundle: nil)
-        self.gripColor = options._gripColor
-        self.gripSize = options._gripSize
-        self.pullBarBackgroundColor = options._pullBarBackgroundColor
-        self.cornerRadius = options._cornerRadius
+        self.gripColor = SheetViewController.gripColor
+        self.gripSize = SheetViewController.gripSize
+        self.pullBarBackgroundColor = SheetViewController.pullBarBackgroundColor
+        self.cornerRadius = SheetViewController.cornerRadius
         self.updateOrderedSizes()
         self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
@@ -334,7 +319,11 @@ public class SheetViewController: UIViewController {
         self.contentViewController.delegate = self
         Constraints(for: self.contentViewController.view) {
             $0.left.pinToSuperview().priority = UILayoutPriority(999)
-            $0.left.pinToSuperview(inset: 0, relation: .greaterThanOrEqual)
+            $0.left.pinToSuperview(inset: self.options.horizontalPadding, relation: .greaterThanOrEqual)
+            if let maxWidth = self.options.maxWidth {
+                $0.width.set(maxWidth, relation: .lessThanOrEqual)
+            }
+            
             $0.centerX.alignWithSuperview()
             self.contentViewHeightConstraint = $0.height.set(self.height(for: self.currentSize))
             
@@ -342,7 +331,7 @@ public class SheetViewController: UIViewController {
             if (self.options.useFullScreenMode) {
                 top = 0
             } else {
-                top = max(12, UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 12)
+                top = max(12, UIApplication.shared.windows.first(where:  { $0.isKeyWindow })?.safeAreaInsets.top ?? 12)
             }
             $0.bottom.pinToSuperview()
             $0.top.pinToSuperview(inset: top, relation: .greaterThanOrEqual).priority = UILayoutPriority(999)
@@ -417,21 +406,23 @@ public class SheetViewController: UIViewController {
                 let animationDuration = TimeInterval(abs(velocity*0.0002) + 0.2)
                 
                 guard finalHeight > 0 || !self.dismissOnPull else {
-                    // Dismiss
-                    UIView.animate(
-                        withDuration: animationDuration,
-                        delay: 0,
-                        usingSpringWithDamping: self.options.transitionDampening,
-                        initialSpringVelocity: self.options.transitionVelocity,
-                        options: self.options.transitionAnimationOptions,
-                        animations: {
-                        self.contentViewController.view.transform = CGAffineTransform(translationX: 0, y: self.contentViewController.view.bounds.height)
-                        self.view.backgroundColor = UIColor.clear
-                        self.transition.setPresentor(percentComplete: 1)
-                        self.overlayView.alpha = 0
-                    }, completion: { complete in
-                        self.attemptDismiss(animated: false)
-                    })
+                    if self.options.useInlineMode {
+                        self.attemptDismiss(animated: true, duration: animationDuration)
+                    } else {
+                        // Dismiss
+                        UIView.animate(
+                            withDuration: animationDuration,
+                            delay: 0,
+                            usingSpringWithDamping: self.options.transitionDampening,
+                            initialSpringVelocity: self.options.transitionVelocity,
+                            options: self.options.transitionAnimationOptions,
+                            animations: {
+                            self.contentViewController.view.transform = CGAffineTransform(translationX: 0, y: self.contentViewController.view.bounds.height)
+                            self.view.backgroundColor = UIColor.clear
+                            self.transition.setPresentor(percentComplete: 1)
+                            self.overlayView.alpha = 0
+                        }, completion: nil)
+                    }
                     return
                 }
                 
@@ -580,11 +571,11 @@ public class SheetViewController: UIViewController {
         }
     }
     
-    public func attemptDismiss(animated: Bool) {
+    public func attemptDismiss(animated: Bool, duration: TimeInterval = 0.3) {
         if self.shouldDismiss?(self) != false {
             if self.options.useInlineMode {
                 if animated {
-                    self.animateOut {
+                    self.animateOut(duration: duration) {
                         self.didDismiss?(self)
                     }
                 } else {
@@ -599,12 +590,16 @@ public class SheetViewController: UIViewController {
     }
     
     /// Animates the sheet in, but only if presenting using the inline mode
-    public func animateIn(duration: TimeInterval = 0.3, completion: (() -> Void)? = nil) {
+    public func animateIn(size: SheetSize? = nil, duration: TimeInterval = 0.3, completion: (() -> Void)? = nil) {
         guard self.options.useInlineMode else { return }
+        guard self.view.superview != nil else {
+            print("It appears your sheet is not set as a subview of another view. Make sure to add this view as a subview before trying to animate it in.")
+            return
+        }
         self.view.superview?.layoutIfNeeded()
         self.contentViewController.updatePreferredHeight()
-        self.resize(to: self.currentSize, animated: false)
-        let contentView = self.contentViewController.contentView
+        self.resize(to: size ?? self.sizes.first ?? self.currentSize, animated: false)
+        let contentView = self.contentViewController.view!
         contentView.transform = CGAffineTransform(translationX: 0, y: contentView.bounds.height)
         self.overlayView.alpha = 0
         self.updateOrderedSizes()
@@ -624,10 +619,14 @@ public class SheetViewController: UIViewController {
     /// Animates the sheet out, but only if presenting using the inline mode
     public func animateOut(duration: TimeInterval = 0.3, completion: (() -> Void)? = nil) {
         guard self.options.useInlineMode else { return }
-        let contentView = self.contentViewController.contentView
+        let contentView = self.contentViewController.view!
         
         UIView.animate(
             withDuration: duration,
+            delay: 0,
+            usingSpringWithDamping: self.options.transitionDampening,
+            initialSpringVelocity: self.options.transitionVelocity,
+            options: self.options.transitionAnimationOptions,
             animations: {
                 contentView.transform = CGAffineTransform(translationX: 0, y: contentView.bounds.height)
                 self.overlayView.alpha = 0

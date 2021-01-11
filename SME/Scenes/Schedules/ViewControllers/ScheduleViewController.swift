@@ -106,9 +106,8 @@ class ScheduleViewController : UIViewController,
     func tp_scrollViewDidLoad(_ scrollView: UIScrollView) {
         
         self.scrollView = scrollView
-        refresh.tintColor = .white
+        refresh.tintColor = UIColor.gray
         refresh.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-
         scrollView.addSubview(refreshView)
         refreshView.addSubview(refresh)
     }

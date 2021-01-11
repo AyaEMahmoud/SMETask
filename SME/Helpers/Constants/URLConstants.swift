@@ -29,7 +29,7 @@ struct APPURL {
     private static let Route = Routes.Api
  
     public static var BaseURL: String {
-        return  APPURL.Domain + APPURL.Route + APPURL.Version
+        return  Environment.rootURL + APPURL.Route + APPURL.Version
     }
     
     public static var StorageURL: String {

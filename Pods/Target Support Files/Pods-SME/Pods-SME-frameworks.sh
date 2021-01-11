@@ -208,7 +208,23 @@ if [[ "$CONFIGURATION" == "Stage" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
+if [[ "$CONFIGURATION" == "Stage_Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
+fi
+if [[ "$CONFIGURATION" == "Stage_Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
+fi
 if [[ "$CONFIGURATION" == "Demo" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
+fi
+if [[ "$CONFIGURATION" == "Demo_Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
+fi
+if [[ "$CONFIGURATION" == "Demo_Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi

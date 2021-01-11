@@ -1,5 +1,5 @@
 PODS:
-  - FittedSheets (2.2.3)
+  - FittedSheets (2.3.0)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ SPEC REPOS:
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
-  FittedSheets: 5533375af9ed713977b8e6d88b74c90e8f5df041
+  FittedSheets: c64310ca8fd55846703a272da3ea3916d381d839
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
 PODFILE CHECKSUM: 9ad969923017cb7a8023add4fe0c2942681f16b2
