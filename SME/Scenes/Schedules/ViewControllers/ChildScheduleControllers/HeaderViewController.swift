@@ -25,6 +25,8 @@ class HeaderViewController: UIViewController {
     var titleInitialCenterY: CGFloat!
     var covernitialCenterY: CGFloat!
     var covernitialHeight: CGFloat!
+    var bannerInitialHeight: CGFloat!
+    
     var stickyCover = true
     
     var viewDidLayoutOnce = false
@@ -35,7 +37,10 @@ class HeaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.layer.cornerRadius = 12
-        userImageView.layer.cornerRadius = 13
+        userImageView.layer.cornerRadius = 16
+        userImageView.layer.borderWidth = 7
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.borderColor = UIColor(asset: Asset.Colors.timberwolf)?.cgColor
         
         if let profile = self.profile {
             userName.text = profile.ssoUser?.fullName
@@ -77,20 +82,19 @@ class HeaderViewController: UIViewController {
     func update(with progress: CGFloat, headerHeight: ClosedRange<CGFloat>){
 
         let y = progress * (headerHeight.upperBound - headerHeight.lowerBound)
+        let topLimit = covernitialHeight - headerHeight.lowerBound
+      
+        if y > 0 {
+            covermageView.center.y = covermageView.bounds.height / 2 + y
+        } else {
+            covermageView.center.y = covermageView.bounds.height / 2
+        }
         
         coverImageHeightConstraint.constant = max(covernitialHeight,
                                                   covernitialHeight - y)
                         
         if progress < 0 {
             animator.fractionComplete = abs(min(0, progress))
-        }
-        
-        let topLimit = covernitialHeight - headerHeight.lowerBound
-        
-        if y > 0 {
-            covermageView.center.y = covermageView.bounds.height / 2 + y
-        } else {
-            covermageView.center.y = covermageView.bounds.height / 2
         }
         
         if y > topLimit {
@@ -104,16 +108,35 @@ class HeaderViewController: UIViewController {
             let scale = min(1, (1-progress*1.3))
             let t = CGAffineTransform(scaleX: scale, y: scale)
             userImageView.transform = t.translatedBy(x: 0, y: userImageView.frame.height*(1 - scale))
-            
+
             if !stickyCover{
                 self.stickyCover = true
             }
         }
         
+//        if y > topLimit {
+//            if stickyCover {
+//                self.stickyCover = false
+//                self.userImageView.layer.zPosition = 0
+//            }
+//        } else {
+//            let scale = min(1, (1 - (progress * 1.3)))
+//            let t = CGAffineTransform(scaleX: scale, y: scale)
+//            userImageView.transform = t.translatedBy(x: 0, y: userImageView.frame.height * (1 - scale))
+//            
+//            if !stickyCover {
+//                self.stickyCover = true
+//                self.userImageView.layer.zPosition = 2
+//            }
+//        }
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
         coordinator?.pop()
     }
+    
+}
+
+extension HeaderViewController {
     
 }
